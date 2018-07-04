@@ -10,9 +10,9 @@ I will concentrate on Macs first, as that is what is on our lab. As I set up thi
 * Install XCode. This takes a long time. `$ xcode-select --install`. (or maybe use the [App store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).) (Once you’ve installed XCode, don’t forget to launch it first and accepting the Terms and Conditions.)
 * Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). This is the code editor I will use in class.
 * Add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac).
-* Install [Node.js](https://nodejs.org/en/download/). Node is a Javascript runtime environment we will use to build news applications.
-    * Note, if you have node problems, [you might have to do this](https://gist.github.com/DanHerbert/9520689).
-    * If we go with NVM, [follow this](https://medium.com/@itsromiljain/the-best-way-to-install-node-js-npm-and-yarn-on-mac-osx-4d8a8544987a).
+* Install Node.js, which is a Javascript runtime environment we will use to build news applications. But DO NOT install from the Node.js site.
+    * Instead, we'll use NVM. Follow [this post](https://yoember.com/nodejs/the-best-way-to-install-node-js/) and install the version `8.11.3`.
+    * This [post is similar](https://medium.com/@itsromiljain/the-best-way-to-install-node-js-npm-and-yarn-on-mac-osx-4d8a8544987a).
 * Install [homebrew](https://brew.sh/). This is a package manager for Macs.
 * Install the `git-bash-prompt` [as described here](https://github.com/magicmonty/bash-git-prompt) by:
     * run `$ brew install bash-git-prompt`
