@@ -7,11 +7,13 @@ I will concentrate on Macs first, as that is what is on our lab. As I set up thi
 
 ## Macintosh
 
+* Install XCode. This takes a long time. `$ xcode-select --install`. (or maybe use the [App store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).) (Once you’ve installed XCode, don’t forget to launch it first and accepting the Terms and Conditions.)
 * Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). This is the code editor I will use in class.
 * Add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac).
 * Install [Node.js](https://nodejs.org/en/download/). Node is a Javascript runtime environment we will use to build news applications.
+    * Note, if you have node problems, [you might have to do this](https://gist.github.com/DanHerbert/9520689).
+    * If we go with NVM, [follow this](https://medium.com/@itsromiljain/the-best-way-to-install-node-js-npm-and-yarn-on-mac-osx-4d8a8544987a).
 * Install [homebrew](https://brew.sh/). This is a package manager for Macs.
-* Install [yarn](https://yarnpkg.com/en/docs/install#mac-stable). Note the one that says "Node is already installed".
 * Install the `git-bash-prompt` [as described here](https://github.com/magicmonty/bash-git-prompt) by:
     * run `$ brew install bash-git-prompt`
     * run `$ code ~/.bash_profile` and add this to the bottom of the file:
@@ -22,31 +24,12 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 ```
-    * run `$ code ~/.bashrc`. Add this to the bottom of the file:
+Close your terminal and start a new one.
 
-``` bash
- # Set config variables first
-   GIT_PROMPT_ONLY_IN_REPO=1
-
-   # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
-   # GIT_PROMPT_IGNORE_SUBMODULES=1 # uncomment to avoid searching for changed files in submodules
-
-   # GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
-   # GIT_PROMPT_SHOW_UNTRACKED_FILES=all # can be no, normal or all; determines counting of untracked files
-
-   # GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
-
-   # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
-
-   # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
-   # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
-
-   # as last entry source the gitprompt script
-   # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
-   # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
-   # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
-   source ~/.bash-git-prompt/gitprompt.sh
-```
-You can use these changes to adjust the git commands that will now show on your command prompt. Close out your command prompt and open a new one.
-
+* Install [yarn](https://yarnpkg.com/en/docs/install#mac-stable). Note the one that says "Node is already installed".
+* Maybe install [gulp](https://gulpjs.com/). `sudo npm install gulp-cli -g`. Put in computer password.
 * Install [miniconda](https://conda.io/miniconda.html). Use the Python 3.6 version. Miniconda is python package manager. You are welcome to install the full [Anaconda](https://conda.io/docs/user-guide/install/index.html), but it takes much more space on your computer.
+
+## Uninstalling node
+
+This [post was very helpful](http://stackabuse.com/how-to-uninstall-node-js-from-mac-osx/). Especially `which node`.
