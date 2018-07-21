@@ -10,8 +10,17 @@ Everything listed here is free unless otherwise noted.
 
 ## Version control system
 
-* Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps.
-* Since you are using Windows, install [Github Desktop](https://desktop.github.com/). This will get you the Git Bash shell, which understands Linux-like commands like the Mac Terminal program.
+* Install [Git for Windows](https://gitforwindows.org/), our source code version control program. This will allow us to save our code in steps.
+* I THINK I DON'T NEED THIS ANYMORE IF USING GITFORWINDOWS: Since you are using Windows, install [Github Desktop](https://desktop.github.com/). This will get you the Git Bash shell, which understands Linux-like commands like the Mac Terminal program.
+* After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Pallete and type in `Select Default Shell` and find it, but I haven't tried it.
+* [Set your username](https://help.github.com/articles/setting-your-username-in-git/) in git.
+
+## Github
+
+If you don't already have a github account, set one up.
+
+* Go to [github.com](github.com) and create an account.
+* [Set up authentication](https://help.github.com/articles/caching-your-github-password-in-git/), so you don't have to type in your password all the time.
 
 ## Node.js
 
