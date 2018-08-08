@@ -4,17 +4,17 @@ Everything listed here is free unless otherwise noted.
 
 ## Code editor
 
-* Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). There are other good ones ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but this is the code editor I will use in class.
+* Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). There are other good ones ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
 * Add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac).
 
 ## Version control system
 
 * Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
-* [Set your username](https://help.github.com/articles/setting-your-username-in-git/) in git.
+* [Set your username](https://confluence.atlassian.com/get-started-with-bitbucket/install-and-set-up-git-860009658.html) in Git.
 * Install [homebrew](https://brew.sh/). This is a package manager for Macs, to get all the cool stuff Mac doesn't do out of the box.
 * Install the `git-bash-prompt` [as described here](https://github.com/magicmonty/bash-git-prompt) by:
-  * run `$ brew install bash-git-prompt`
-  * run `$ code ~/.bash_profile` and add this to the bottom of the file:
+  1. run `$ brew install bash-git-prompt`
+  2. run `$ code ~/.bash_profile` and add this to the bottom of the file:
 
 ``` bash
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
@@ -25,19 +25,24 @@ fi
 
 Close and restart your terminal to take the new settings.
 
-## Set up Github
+## Set up Bitbucket
 
-* If you don't already have a github account, go to [github.com](github.com) and create an account.
-* [Set up authentication](https://help.github.com/articles/caching-your-github-password-in-git/), so you don't have to type in your password all the time.
+* If you don't already have a github account, go to [bitbucket.org](https://bitbucket.org/) and create an account. USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE.
+* If you don't have an university email, then [use this form](https://www.atlassian.com/software/views/bitbucket-academic-license) to apply for an academic licence.
+* [Set up SSH keys](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html) for your computer so you don't have to type in your password all the time. (I'm not sure how this will work on lab computers.)
 
-## Setting up a Node environment
+## Parts for later in the class
 
-* If you don't have it already, install XCode from the [App store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12). (Alternatively, you can run this: `$ xcode-select --install`.) Once you’ve installed XCode, Launch it and accept the Terms and Conditions.
-* Install Node.js, but DO NOT install from the Node.js site. Node is a Javascript runtime environment we will use to build news applications.
+We won't do this until later in the semester.
+
+### Setting up a Node environment
+
+* If you don't have it already, install XCode from the [App store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12). This will take some time to download. (Alternatively, you can run this: `$ xcode-select --install`, but it will still take forever.) Once you’ve installed XCode, Launch it and accept the Terms and Conditions.
+* Install Node.js, but __DO NOT__ install from the Node.js site. Node is a Javascript runtime environment we will use to build news applications.
   * To install, we'll use NVM. Follow [this post](https://yoember.com/nodejs/the-best-way-to-install-node-js/) and install the version `8.11.3`.
   * (Note to self: Rewrite this in this repo.) [This post is similar](https://medium.com/@itsromiljain/the-best-way-to-install-node-js-npm-and-yarn-on-mac-osx-4d8a8544987a).
-* Install [yarn](https://yarnpkg.com/en/docs/install#mac-stable). Note the one that says "Node is already installed".
-* Maybe install [gulp](https://gulpjs.com/). `sudo npm install gulp-cli -g`. Put in computer password.
+* ~~Install [yarn](https://yarnpkg.com/en/docs/install#mac-stable). Note the one that says "Node is already installed".~~
+* ~~Maybe install [gulp](https://gulpjs.com/). `sudo npm install gulp-cli -g`. Put in computer password.~~
 
 ### Uninstalling node
 

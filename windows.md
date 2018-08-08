@@ -10,24 +10,25 @@ Everything listed here is free unless otherwise noted.
 
 ## Version control system
 
-* Install [Git for Windows](https://gitforwindows.org/), our source code version control program. This will allow us to save our code in steps.
-* I THINK I DON'T NEED THIS ANYMORE IF USING GITFORWINDOWS: Since you are using Windows, install [Github Desktop](https://desktop.github.com/). This will get you the Git Bash shell, which understands Linux-like commands like the Mac Terminal program.
+* Install [Git](https://git-scm.com/download/win), our source code version control program. This will allow us to save our code in steps. This will also install Git Bash, which will be your terminal app.
+* Configure your [Git profile](https://confluence.atlassian.com/get-started-with-bitbucket/install-and-set-up-git-860009658.html) so you don't have to type you password all the time.
 * After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Pallete and type in `Select Default Shell` and find it, but I haven't tried it.
-* [Set your username](https://help.github.com/articles/setting-your-username-in-git/) in git.
 
-## Github
+## Bitbucket
 
-If you don't already have a github account, set one up.
+If you don't already have a Bitbucket account, set one up.
 
-* Go to [github.com](github.com) and create an account.
-* [Set up authentication](https://help.github.com/articles/caching-your-github-password-in-git/), so you don't have to type in your password all the time.
+* Go to [bitbucket.org](https://bitbucket.org/) and create an account. USE A UNIVERSITY EMAIL IF YOU HAVE ONE.
+* If you don't have an university email, then [use this form](https://www.atlassian.com/software/views/bitbucket-academic-license) to apply for an academic licence.
+* [Set up SSH keys](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html) for your computer so you don't have to type in your password all the time. (I'm not sure how this will work on lab computers.)
 
 ## Node.js
 
  Node is a Javascript runtime environment we will use to build news applications. This is where things get really dicey with my Windows experience.
 
 * Install Node.js [using the installer](https://nodejs.org/en/download/), or with [Chocolatey](https://nodejs.org/en/download/package-manager/#windows).
-* We _might_ use [yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable).
+* MAYBE, just maybe, it's better to use [NVM for Window](https://danielarancibia.wordpress.com/2017/03/28/install-or-upgrade-nodejs-with-nvm-for-windows/), but I don't know for sure.
+* ~~We _might_ use [yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable).~~
 
 ## Python 3
 
