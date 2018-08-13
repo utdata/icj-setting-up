@@ -2,12 +2,14 @@
 
 Everything listed here is free unless otherwise noted.
 
-## Code editor
+## At the beginning of the semester
+
+### Code editor
 
 * Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). There are other good ones ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
 * Add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac).
 
-## Version control system
+### Version control system
 
 * Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
 * [Set your username](https://confluence.atlassian.com/get-started-with-bitbucket/install-and-set-up-git-860009658.html) in Git.
@@ -25,10 +27,12 @@ fi
 
 Close and restart your terminal to take the new settings.
 
-## Set up Bitbucket
+### Set up Bitbucket
 
-* If you don't already have a github account, go to [bitbucket.org](https://bitbucket.org/) and create an account. USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE.
-* If you don't have an university email, then [use this form](https://www.atlassian.com/software/views/bitbucket-academic-license) to apply for an academic licence.
+If you don't already have a github account, go to [bitbucket.org](https://bitbucket.org/) and create an account. Two important things to note:
+
+* Choose your username carefully. Don't use upper case characters or special characters because this will become part of a URL later.
+* USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. If you don't have an university email, then [use this form](https://www.atlassian.com/software/views/bitbucket-academic-license) to apply for an academic licence.
 * [Set up SSH keys](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html) for your computer so you don't have to type in your password all the time. (I'm not sure how this will work on lab computers.)
 
 ## Parts for later in the class
@@ -44,10 +48,10 @@ We won't do this until later in the semester.
 * ~~Install [yarn](https://yarnpkg.com/en/docs/install#mac-stable). Note the one that says "Node is already installed".~~
 * ~~Maybe install [gulp](https://gulpjs.com/). `sudo npm install gulp-cli -g`. Put in computer password.~~
 
-### Uninstalling node
+#### Uninstalling node
 
 If you installed Node.js from the website, it will suck and you'll probably need to uninstall it and try again using NVM. This [post was very helpful](http://stackabuse.com/how-to-uninstall-node-js-from-mac-osx/). Especially `which node`.
 
-## If we get into Python
+### If we get into Python
 
 * Install [miniconda](https://conda.io/miniconda.html). Use the Python 3.6 version. Miniconda is python package manager. You are welcome to install the full [Anaconda](https://conda.io/docs/user-guide/install/index.html), but it takes much more space on your computer.
