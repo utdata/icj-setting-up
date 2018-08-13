@@ -8,6 +8,12 @@
 * [Academic license](https://www.atlassian.com/software/views/bitbucket-academic-license)
 * [SSH keys](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html)
 
+## VCS on Windows
+
+* I need to explore how the Terminal in VS Code works. Does it understand unix commands?
+* I'd like to find something equivalent to git-bash-prompt, but those features may already be baked into Git Bash.
+* We might consider [Chocolatey](https://chocolatey.org/) package manager.
+
 ## Scaffold managers
 
 ### generator-politico-interactives
