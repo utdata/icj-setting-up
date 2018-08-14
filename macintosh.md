@@ -29,7 +29,7 @@ Close and restart your terminal to take the new settings.
 
 ### Set up Bitbucket
 
-If you don't already have a github account, go to [bitbucket.org](https://bitbucket.org/) and create an account. Two important things to note:
+If you don't already have a Bitbucket account, go to [bitbucket.org](https://bitbucket.org/) and create an account. Two important things to note:
 
 * Choose your username carefully. Don't use upper case characters or special characters because this will become part of a URL later.
 * USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. If you don't have an university email, then [use this form](https://www.atlassian.com/software/views/bitbucket-academic-license) to apply for an academic licence.
