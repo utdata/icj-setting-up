@@ -12,17 +12,16 @@ Everything listed here is free unless otherwise noted.
 ### Version control system
 
 * Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
-* [Set your username](https://confluence.atlassian.com/get-started-with-bitbucket/install-and-set-up-git-860009658.html) in Git.
-* Install [homebrew](https://brew.sh/). This is a package manager for Macs, to get all the cool stuff Mac doesn't do out of the box.
+* [Set your username](https://help.github.com/articles/setting-your-username-in-git/) in Git.
+~~ * Install [homebrew](https://brew.sh/). This is a package manager for Macs, to get all the cool stuff Mac doesn't do out of the box. ~~
 * Install the `git-bash-prompt` [as described here](https://github.com/magicmonty/bash-git-prompt) by:
-  1. run `$ brew install bash-git-prompt`
-  2. run `$ code ~/.bash_profile` and add this to the bottom of the file:
+  1. `$ cd ~`
+  2. run `git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1  `
+  3. run `$ code ~/.bash_profile` and add this to the bottom of the file:
 
 ``` bash
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
 ```
 
 Close and restart your terminal to take the new settings.
