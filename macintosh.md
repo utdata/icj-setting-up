@@ -13,26 +13,27 @@ Everything listed here is free unless otherwise noted.
 
 * Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
 * [Set your username](https://help.github.com/articles/setting-your-username-in-git/) in Git.
-~~ * Install [homebrew](https://brew.sh/). This is a package manager for Macs, to get all the cool stuff Mac doesn't do out of the box. ~~
-* Install the `git-bash-prompt` [as described here](https://github.com/magicmonty/bash-git-prompt) by:
-  1. `$ cd ~`
-  2. run `git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1  `
-  3. run `$ code ~/.bash_profile` and add this to the bottom of the file:
+* ~~Install [homebrew](https://brew.sh/). This is a package manager for Macs, to get all the cool stuff Mac doesn't do out of the box. (We're gonna avoid this if we can.)~~
+* Install the `git-bash-prompt` by following the directions below. :
+  1. `cd ~`
+  2. `git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1  `
+  3. `code ~/.bash_profile` and add this to the bottom of the file:
 
-``` bash
+``` text
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 ```
 
-Close and restart your terminal to take the new settings.
+Close and restart your terminal to take the new settings. [More on git-bash-prompt if we need it.](https://github.com/magicmonty/bash-git-prompt)
 
-### Set up Bitbucket
 
-If you don't already have a Bitbucket account, go to [bitbucket.org](https://bitbucket.org/) and create an account. Two important things to note:
+### Set up Github
 
-* Choose your username carefully. Don't use upper case characters or special characters because this will become part of a URL later.
-* USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. If you don't have an university email, then [use this form](https://www.atlassian.com/software/views/bitbucket-academic-license) to apply for an academic licence.
-* [Set up SSH keys](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html) for your computer so you don't have to type in your password all the time. (I'm not sure how this will work on lab computers.)
+If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account. Two important things to note:
+
+* Choose your username carefully. I wouldn't use upper case characters or special characters because this will become part of a URL later.
+* USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. You might want to apply for the [Student developer pack](https://help.github.com/articles/applying-for-a-student-developer-pack/), which will get you private repositories.
+* I recommend you [set up SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) for your computer so you don't have to type in your password all the time. It is not as scary as it looks, though there is some command-line foo to execute. (I'm not sure how this will work on lab computers. We might try [osxkeychain helper](https://help.github.com/articles/caching-your-github-password-in-git/).)
 
 ## Parts for later in the class
 
@@ -53,4 +54,4 @@ If you installed Node.js from the website, it will suck and you'll probably need
 
 ### If we get into Python
 
-* Install [miniconda](https://conda.io/miniconda.html). Use the Python 3.6 version. Miniconda is python package manager. You are welcome to install the full [Anaconda](https://conda.io/docs/user-guide/install/index.html), but it takes much more space on your computer.
+* Install [miniconda](https://conda.io/miniconda.html). Use the Python 3.6 version. Miniconda is python package manager. You are welcome to install the full [Anaconda](https://conda.io/docs/user-guide/install/index.html), but it takes more space on your computer.

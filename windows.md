@@ -9,6 +9,7 @@ Everything listed here is free unless otherwise noted.
 ### Text editor
 
 * Install [VS Code](https://code.visualstudio.com/docs/setup/windows). The installation process should add it to your `%PATH%`.
+* There are other good code editors like [Atom](https://atom.io/) and [Sublime](https://www.sublimetext.com/3), but I'll use VS Code in class.
 
 ### Version control system
 
@@ -16,14 +17,13 @@ Everything listed here is free unless otherwise noted.
 * Configure your [Git profile](https://confluence.atlassian.com/get-started-with-bitbucket/install-and-set-up-git-860009658.html) so you don't have to type you password all the time.
 * After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Pallete and type in `Select Default Shell` and find it, but I haven't tried it.
 
-### Set up Bitbucket
+### Set up Github
 
-If you don't already have a bitbucket account, go to [bitbucket.org](https://bitbucket.org/) and create an account. Two important things to note:
+If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account. Two important things to note:
 
-* Choose your username carefully. Don't use upper case characters or special characters because this will become part of a URL later.
-* USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. If you don't have an university email, then [use this form](https://www.atlassian.com/software/views/bitbucket-academic-license) to apply for an academic licence.
-* [Set up SSH keys](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html) for your computer so you don't have to type in your password all the time. (I'm not sure how this will work on lab computers.)
-
+* Choose your username carefully. I wouldn't use upper case characters or special characters because this will become part of a URL later.
+* USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. You might want to apply for the [Student developer pack](https://help.github.com/articles/applying-for-a-student-developer-pack/), which will get you private repositories.
+* [Set up SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) for your computer so you don't have to type in your password all the time.
 
 ## Later in the semester
 
