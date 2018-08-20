@@ -45,7 +45,7 @@ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --d
 From your Terminal, in your home directory, download the stock `.bash_profile` I have saved.
 
 ```bash
-curl https://raw.githubusercontent.com/utdata/setting-up/master/.bash_profile > .bash_profile
+curl https://raw.githubusercontent.com/utdata/setting-up/master/.bash_profile-lab > .bash_profile
 ```
 
 Close and restart your terminal. You should be good for the day (or week).
@@ -62,6 +62,8 @@ From your Terminal, in your home directory, install NVM:
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
+Close and restart your Terminal window.
+
 Now install the version of Node we wll use:
 
 ```bash
@@ -74,7 +76,7 @@ Now install node package manager:
 npm install -g npm
 ```
 
-Install [Yoeman](http://yeoman.io/:
+Install [Yoeman](http://yeoman.io/):
 
 ```bash
 npm install -g yo

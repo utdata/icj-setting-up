@@ -13,14 +13,13 @@ Everything listed here is free unless otherwise noted.
 
 * Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
 * [Set your username](https://help.github.com/articles/setting-your-username-in-git/) in Git.
-* Install the `git-bash-prompt` by following the directions below:
+* Open a new Terminal window to install the `git-bash-prompt` and do the following:
 
 ```bash
-cd ~
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 ```
 
-* From VS Code, start a New Window, the Open your home folder on your Mac.
+* If you were able to set the `code` command above, you should be able to do `code ./` to open VS Code in a new window from your home directory. If that doesn't work, then from VS Code, start a New Window, the Open your home folder on your Mac.
 * Look for a file called `.bash_profile`, which might not exist yet. If you have one, open it. If you don't, then use VS Code to create a new file there and call it ".bash_profile". The preceeding dot is important.
 * Add this to the bottom of the file `.bash_profile` file:
 
@@ -29,7 +28,7 @@ GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 ```
 
-Close and restart your terminal to take the new settings. [More on git-bash-prompt if we need it.](https://github.com/magicmonty/bash-git-prompt)
+Close and restart your terminal to take the new settings. [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
 ### Set up Github
 
