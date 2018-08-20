@@ -65,7 +65,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 Now install the version of Node we wll use:
 
 ```bash
-install 8.11.4
+nvm install 8.11.4
 ```
 
 Now install node package manager:
