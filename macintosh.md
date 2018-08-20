@@ -18,12 +18,11 @@ Everything listed here is free unless otherwise noted.
 ```bash
 cd ~
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
-code ~/.bash_profile
 ```
 
-(If that last command doesn't work you'll need to start with VS Code and open the file `.bash_profile` in your home directory.)
-
-* Add this to the bottom of the file `.bash_profeil` file:
+* From VS Code, start a New Window, the Open your home folder on your Mac.
+* Look for a file called `.bash_profile`, which might not exist yet. If you have one, open it. If you don't, then use VS Code to create a new file there and call it ".bash_profile". The preceeding dot is important.
+* Add this to the bottom of the file `.bash_profile` file:
 
 ``` text
 GIT_PROMPT_ONLY_IN_REPO=1
