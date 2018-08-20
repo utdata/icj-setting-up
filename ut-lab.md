@@ -1,31 +1,28 @@
 # Starting up a UT Lab computer
 
-Lab machines could get wiped on Monday mornings, so you might have to reset everything. You definitely will have to for the first time.
+Lab machines could get wiped on Monday mornings, so you might have to reset everything. You definitely will have to set this up for the first time.
 
-## Things to do
+## Bash and git setups
 
-### code and git
-- git config
-- git keychain helper
-- update/download `.bash_profile`
+### Git config
 
-### nvm and node
-- install nvm
-- install node
-- install npm
-
-## Git config
-
-Check to see if your git config is set properly:
+Open a new Terminal window and check the git configs:
 
 ```bash
 git config user.name
 ```
 
-If it returns your name, great.If not, do this:
+If it returns your name, great. You can probably stop here.
+
+If not, do this (with your actual name):
 
 ```bash
 git config --global user.name "Your Name"
+```
+
+And then set your email (with your actual email):
+
+```bash
 git config --glboal user.email youremail@yourdomain.com
 ```
 
@@ -35,7 +32,15 @@ Next, set the computer to save your credentials after the first time you enter t
 git config --global credential.helper osxkeychain
 ```
 
-## Set up your bash_profile
+### Install bash-git-prompt
+
+From your Terminal, in your home directory, download bash-git-prompt:
+
+```bash
+git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+```
+
+### Download the lab bash_profile
 
 From your Terminal, in your home directory, download the stock `.bash_profile` I have saved.
 
@@ -43,36 +48,46 @@ From your Terminal, in your home directory, download the stock `.bash_profile` I
 curl https://raw.githubusercontent.com/utdata/setting-up/master/.bash_profile > .bash_profile
 ```
 
-Close and restart your terminal.
+Close and restart your terminal. You should be good for the day (or week).
 
+## Installing Node
 
-## bash setups
+When we need it, you will have to install (and possibly re-install) the node ecosystem.
 
-### in applications
+### Install NVM, Node, npm
+
+From your Terminal, in your home directory, install NVM:
 
 ```bash
-# adds enhanced git prompt if installed
-GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
-
-# Add Visual Studio Code (code)
-export PATH="$PATH://Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
-### on my desktop
+Now install the version of Node we wll use:
 
 ```bash
-# adds enhanced git prompt if installed
-GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
-
-# Add Visual Studio Code (code)
-export PATH="$PATH://Users/ccm346/Desktop/Visual Studio Code.app/Contents/Resources/app/bin"
+install 8.11.4
 ```
 
-## git keychain helper
+Now install node package manager:
 
 ```bash
-git config --global credential.helper osxkeychain
-# Set git to use the osxkeychain credential helper
+npm install -g npm
+```
+
+Install [Yoeman](http://yeoman.io/:
+
+```bash
+npm install -g yo
+```
+
+Install [Gulp](https://gulpjs.com/):
+
+```bash
+npm install -g gulp
+```
+
+Install [yoegurt](https://github.com/larsonjj/generator-yeogurt):
+
+```bash
+npm install -g generator-yeogurt
 ```
