@@ -88,7 +88,7 @@ Install [Gulp](https://gulpjs.com/):
 npm install -g gulp
 ```
 
-Install [yoegurt](https://github.com/larsonjj/generator-yeogurt):
+Install [yeogurt](https://github.com/larsonjj/generator-yeogurt):
 
 ```bash
 npm install -g generator-yeogurt
