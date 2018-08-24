@@ -7,5 +7,6 @@ If you are using a lab computer, most (but perhaps not all) of this will be done
 Pay attention to verbal details given, as not all things may be installed or at the same time.
 
 * [Macintosh](macintosh.md)
+  - [UT lab machines](ut-lab.md)
 * [Windows](windows.md)
 * [Linux](https://giphy.com/gifs/lol-laughing-muttley-3oEjHAUOqG3lSS0f1C)
