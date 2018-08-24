@@ -20,7 +20,7 @@ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --d
 ```
 
 * If you were able to set the `code` command above, you should be able to do `code ./` to open VS Code in a new window from your home directory. If that doesn't work, then from VS Code, start a New Window, the Open your home folder on your Mac.
-* Look for a file called `.bash_profile`, which might not exist yet. If you have one, open it. If you don't, then use VS Code to create a new file there and call it ".bash_profile". The preceeding dot is important.
+* Look for a file called `.bash_profile`, which might not exist yet. If you have one, open it. If you don't, then use VS Code to create a new file there and call it ".bash_profile". The preceding dot is important.
 * Add this to the bottom of the file `.bash_profile` file:
 
 ``` text
@@ -41,8 +41,8 @@ If you don't already have a Github account, go to [github.com/](http://github.co
 
 There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option. 
 
-* I use these directions for [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
-* You can save yourself from having to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
+* You can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
+* But, I use these directions for [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
 
 ## Parts for later in the class: Node.js setup
 
@@ -71,15 +71,22 @@ nvm install 8.11.4
 npm install -g npm
 ```
 
-### Yeogurt setup
+### First Graphics App setup
 
-We'll need gulp, yoeman and yeogurt, but that is part of the [First Graphics App](http://www.firstgraphicsapp.org/).
+There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools. Do each of these, one line at a time.
 
-### Resources
+```bash
+npm install -g yo
+npm install -g gulp
+npm install -g generator-yeogurt
+npm install -g grunt
+```
+
+These are for [Yoeman](http://yeoman.io/), [Gulp](https://gulpjs.com/), [Yeogurt](https://github.com/larsonjj/generator-yeogurt) and [Grunt](https://gruntjs.com/).
+
+### Resources for Uninstalling node
 
 I used this [yoember](https://yoember.com/nodejs/the-best-way-to-install-node-js/) and this [medium post]((https://medium.com/@itsromiljain/the-best-way-to-install-node-js-npm-and-yarn-on-mac-osx-4d8a8544987a)) to come up with the script above.
-
-### Uninstalling node
 
 If you installed Node.js from the website, it will suck and you'll probably need to uninstall it and try again using NVM. This [post was very helpful](http://stackabuse.com/how-to-uninstall-node-js-from-mac-osx/). Especially `which node`.
 
