@@ -10,3 +10,4 @@ Pay attention to verbal details given, as not all things may be installed or at 
   - [UT lab machines](ut-lab.md)
 * [Windows](windows.md)
 * [Linux](https://giphy.com/gifs/lol-laughing-muttley-3oEjHAUOqG3lSS0f1C)
+* [VS Code Goodies](vscode-goodies.md)
