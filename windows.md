@@ -9,12 +9,12 @@ Everything listed here is free unless otherwise noted.
 ### Text editor
 
 * Install [VS Code](https://code.visualstudio.com/docs/setup/windows). The installation process should add it to your `%PATH%`.
-* There are other good code editors like [Atom](https://atom.io/) and [Sublime](https://www.sublimetext.com/3), but I'll use VS Code in class.
+* (There are other good code editors like [Atom](https://atom.io/) and [Sublime](https://www.sublimetext.com/3), but I'll use VS Code in class.)
 
 ### Version control system
 
 * Install [Git](https://git-scm.com/download/win), our source code version control program. This will allow us to save our code in steps. This will also install Git Bash, which will be your terminal app.
-* Configure your [Git profile](https://confluence.atlassian.com/get-started-with-bitbucket/install-and-set-up-git-860009658.html) so you don't have to type you password all the time.
+* Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) so you don't have to type you password all the time.
 * After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Pallete and type in `Select Default Shell` and find it, but I haven't tried it.
 
 ### Set up Github

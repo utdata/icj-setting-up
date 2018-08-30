@@ -20,9 +20,12 @@ The user settings I have right now:
 
 ```javascript
 {
-    "editor.fontSize": 18,
-    "terminal.integrated.fontSize": 16,
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 14,
     "editor.renderWhitespace": "boundary",
+    "cSpell.userWords": [
+        "repo"
+    ],
     "editor.tabSize": 2,
     "[md]": {
         "editor.insertSpaces": true,
