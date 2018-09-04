@@ -21,17 +21,17 @@ Everything listed here is free unless otherwise noted.
 
 If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account. Two important things to note:
 
-* Choose your username carefully. Don't use upper case characters or special characters because this will become part of a URL later.
+* Choose your username carefully. Don't use upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal Github profile FOREVER.
 * USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. You might want to apply for the [Student developer pack](https://help.github.com/articles/applying-for-a-student-developer-pack/), which will get you private repositories.
 
 ### Saving your Github credentials
 
-There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option. 
+There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
 
 * I use these directions to create [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
 * Or, you can at least reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
 
-## Later in the semester
+## For later in the semester
 
 We don't do this until later, when we start using Node-based tools.
 
