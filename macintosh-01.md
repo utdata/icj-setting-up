@@ -1,4 +1,4 @@
-# Setting up  your Macintosh
+# Setting up your Macintosh, Part 1
 
 Everything listed here is free unless otherwise noted.
 
@@ -44,52 +44,23 @@ There are ways you can tell your computers to save your Github username/password
 * You can save an encrypted connection from your machine to Github and never have to enter a username/password by following these directions for [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/). It is not as scary as it looks, though there is some command-line foo to execute.
 * Or, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
 
-## These directions for later in the semester: Node.js setup
+### Testing Part 1
 
-Hold off on these directions until we get to that part of the semester.
+We need to make sure everything is set correctly before moving on. So here is how to check:
 
-### Setting up a Node environment
+Before doing this, open a new Terminal window:
 
-* If you don't have it already, install XCode from the [App store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12). This will take some time to download. (Alternatively, you can run this: `$ xcode-select --install`, but it will still take forever.) Once you’ve installed XCode, Launch it and accept the Terms and Conditions.
-* We will use NVM to install Node.js. Again, follow the prompts and you should be fine:
+- Do `cd ~` to make sure you are in your home directory.
+- Do `git config user.name` and you should get a response that is your name.
+- Do `git config user.email` and you should get back your email address.
+- Do `code ./` and it should launch VS Code in your home directory.
 
-``` bash
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-```
+In the list of Documents, there should be two things:
 
-* Close and reopen a terminal and do `nvm list` to make sure you don't get an error.
-* Install node:
+1. A folder called `bash-git-promopt`.
 
-``` bash
-nvm install 8.11.4
-```
+![git-bash-prompt](images/git-bash-prompt-installed.png)
 
-* Do `node --version` to make sure it worked. (v8.11.4 was the current stable version when this was written.)
-* Now lets update npm:
+2. A file called `.bash_profile` with the bash-git-prompt info:
 
-```bash
-npm install -g npm
-```
-
-### First Graphics App setup
-
-There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools. Do each of these, one line at a time.
-
-```bash
-npm install -g yo
-npm install -g gulp
-npm install -g generator-yeogurt
-npm install -g grunt
-```
-
-These are for [Yoeman](http://yeoman.io/), [Gulp](https://gulpjs.com/), [Yeogurt](https://github.com/larsonjj/generator-yeogurt) and [Grunt](https://gruntjs.com/).
-
-### Resources for Uninstalling node
-
-I used this [yoember](https://yoember.com/nodejs/the-best-way-to-install-node-js/) and this [medium post]((https://medium.com/@itsromiljain/the-best-way-to-install-node-js-npm-and-yarn-on-mac-osx-4d8a8544987a)) to come up with the script above.
-
-If you installed Node.js from the website, it will suck and you'll probably need to uninstall it and try again using NVM. This [post was very helpful](http://stackabuse.com/how-to-uninstall-node-js-from-mac-osx/). Especially `which node`.
-
-## If we get into Python
-
-* Install [miniconda](https://conda.io/miniconda.html). Use the Python 3.6 version. Miniconda is python package manager. You are welcome to install the full [Anaconda](https://conda.io/docs/user-guide/install/index.html), but it takes more space on your computer.
+![git-bash-prompt](images/bash_profile-example.png)
