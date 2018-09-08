@@ -2,16 +2,14 @@
 
 We are working through some of the Windows set up, so Windows users may need a little extra care and feeding.
 
-Everything listed here is free unless otherwise noted.
+Everything listed here is free.
 
-## At the beginning of the semester
-
-### Text editor
+## Text editor
 
 - Install [VS Code](https://code.visualstudio.com/docs/setup/windows).
 - Once you have installed, use the Command Pallete and select `Select Default Shell` to set your editor as "Git Bash Shell". [Reference](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). (We _may_ have to set this up after Git is installed?)
 
-### Version control system
+## Version control system
 
 - Install [Git](https://git-scm.com/download/win), our source code version control program. This will allow us to save our code in steps. This will also install Git Bash, which will be your terminal app.
 
@@ -46,7 +44,7 @@ There are ways you can tell your computers to save your Github username/password
 
 If you can't set SSH keys, you can at least reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
 
-### Installing bash-git-prompt
+## Installing bash-git-prompt
 
 - Open a new Git Bash window to install the `git-bash-prompt` and do the following, one line at at time:
 
@@ -68,7 +66,7 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
-## Testing Part 1
+## Testing Part 1 setup
 
 We need to make sure everything is set correctly before moving on. So here is how to check:
 

@@ -14,9 +14,11 @@ Some of those that I have used (and I'm finding more every day):
 
 ## Preferences
 
-Go to the Code > Preferenes > Settings and you'll get two windows. On the left are all the default settings. You can search for different settings, and then copy them into the JavaScript array on the right and then override them.
+The way preferences worked changed in the middle of the semester. The list below can be a guide to find and change settings, but the JSON object itself is useless now.
 
-The user settings I have right now:
+~~Go to the Code > Preferenes > Settings and you'll get two windows. On the left are all the default settings. You can search for different settings, and then copy them into the JavaScript array on the right and then override them.~~
+
+The user settings I used to set up:
 
 ```javascript
 {

@@ -1,13 +1,27 @@
 # Setting up your computer for development
 
-I really recommend that you use your own computer in my coding and data clases, especially if you own a Macintosh. Windows users will have more of a challenge, especially since this is the first year of a revamped coding class, but we'll work through issues.
+I really recommend that you use your own computer in my coding and data classes. I use a Macintosh, so I'm more familiar with them, but students can use Windows for all the lessons and programs I use.
 
 If you are using a lab computer, most (but perhaps not all) of this will be done already.
 
 Pay attention to verbal details given, as not all things may be installed or at the same time.
 
-- Macintosh [Part 1](macintosh-01.md) and [Part 2](macinstosh-02.md)
-  - [UT lab machines](ut-lab.md)
-- Windows [Part 1](windows-01.md) and [Part 2](windows-02.md)
+## Part 1: VS Code, Git & Github
+
+- [Macintosh Part 1](macintosh-01.md)
+- [Windows Part 1](windows-01.md)
 - [Linux](https://giphy.com/gifs/lol-laughing-muttley-3oEjHAUOqG3lSS0f1C)
+
+## Part 2: Node.js and npm
+
+- [Macintosh Part 2](macinstosh-02.md)
+- [Windows Part 2](windows-02.md)
+
+## UT Lab machines
+
+- [UT lab machines](ut-lab.md)
+
+## Other resources
+
 - [VS Code Goodies](vscode-goodies.md)
+

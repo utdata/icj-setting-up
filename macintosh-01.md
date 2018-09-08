@@ -1,20 +1,18 @@
 # Setting up your Macintosh, Part 1
 
-Everything listed here is free unless otherwise noted.
+Everything listed here is free.
 
-## At the beginning of the semester
-
-### Code editor
+## Code editor
 
 - Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). There are other good ones ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
 - Add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac).
 
-### Version control system
+## Version control system
 
 - Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
 - [Set your user.name and user.email](https://help.github.com/articles/setting-your-username-in-git/) in Git. You only need to do the first set "for _every_ repository".
 
-### Set up Github
+## Set up Github
 
 If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account. Two important things to note:
 
@@ -38,7 +36,7 @@ There are ways you can tell your computers to save your Github username/password
 
 (If you can't set up SSH, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.)
 
-### Installing bash-git-prompt
+## Installing bash-git-prompt
 
 - Open a new Terminal window and do the following, one line at at time:
 
@@ -60,7 +58,7 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
-## Testing Part 1
+## Testing Part 1 setup
 
 We need to make sure everything is set correctly before moving on. So here is how to check:
 
