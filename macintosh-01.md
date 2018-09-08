@@ -12,7 +12,7 @@ Everything listed here is free unless otherwise noted.
 ### Version control system
 
 - Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
-- [Set your user.name and user.email](https://help.github.com/articles/setting-your-username-in-git/) in Git.
+- [Set your user.name and user.email](https://help.github.com/articles/setting-your-username-in-git/) in Git. You only need to do the first set "for _every_ repository".
 
 ### Set up Github
 

@@ -19,7 +19,7 @@ There is one point in the installation process where you need to set "Use Git fr
 
 ![git-setup-windows](images/git-setup-windows.png)
 
-- Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) so you don't have to type you password all the time.
+- Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) . You only need to do the first set "for _every_ repository".
 - After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Pallete and type in `Select Default Shell` and find it, but I haven't tried it.
 
 ### Set up Github
