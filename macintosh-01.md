@@ -12,23 +12,7 @@ Everything listed here is free unless otherwise noted.
 ### Version control system
 
 * Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
-* [Set your username](https://help.github.com/articles/setting-your-username-in-git/) in Git.
-* Open a new Terminal window to install the `git-bash-prompt` and do the following:
-
-```bash
-git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
-```
-
-* If you were able to set the `code` command above, you should be able to do `code ./` to open VS Code in a new window from your home directory. If that doesn't work, then from VS Code, start a New Window, the Open your home folder on your Mac.
-* Look for a file called `.bash_profile`, which might not exist yet. If you have one, open it. If you don't, then use VS Code to create a new file there and call it ".bash_profile". The preceding dot is important.
-* Add this to the bottom of the file `.bash_profile` file:
-
-``` text
-GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
-```
-
-Close and restart your terminal to take the new settings. [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
+* [Set your user.name and user.email](https://help.github.com/articles/setting-your-username-in-git/) in Git.
 
 ### Set up Github
 
@@ -41,10 +25,42 @@ If you don't already have a Github account, go to [github.com/](http://github.co
 
 There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
 
-* You can save an encrypted connection from your machine to Github and never have to enter a username/password by following these directions for [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/). It is not as scary as it looks, though there is some command-line foo to execute.
-* Or, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
+- I use these directions to create [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
+  - During this process, you'll be asked to save the location of the rsa_id. Just hit return to save the default location.
+  - You'll be asked to set a password for the file. Just leave this blank and hit return. It may ask you a couple of times.
+  - At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.
 
-### Testing Part 1
+### Add the SSH key to Github
+
+- Follow [these directions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add your key to Github.
+
+### Alternative to SSH keys
+
+(If you can't set up SSH, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.)
+
+### Installing bash-git-prompt
+
+- Open a new Terminal window and do the following, one line at at time:
+
+```bash
+$ cd ~
+$ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+$ code .bash_profile
+```
+
+- This should install the software you need to your home directory, then open (or create) the `.bash_profile` file.
+- Add this to the bottom of the file `.bash_profile` file:
+
+``` text
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
+```
+
+- Close and restart your terminal to take the new settings.
+
+[More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
+
+## Testing Part 1
 
 We need to make sure everything is set correctly before moving on. So here is how to check:
 

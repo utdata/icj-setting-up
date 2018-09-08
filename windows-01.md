@@ -1,6 +1,6 @@
 # Windows
 
-I'll be honest ... We may have extra stumbling blocks with course material using Windows. I'm less familiar with it, and haven't had a chance yet to explore and tailor the course for Windows users. It is NOT impossible ... plenty of folks do development on Windows, and it is getting easier every day. Just be prepared to troubleshoot many of your own problems.
+We are working through some of the Windows set up, so Windows users may need a little extra care and feeding.
 
 Everything listed here is free unless otherwise noted.
 
@@ -8,12 +8,17 @@ Everything listed here is free unless otherwise noted.
 
 ### Text editor
 
-- Install [VS Code](https://code.visualstudio.com/docs/setup/windows). The installation process should add it to your `%PATH%`.
-- (There are other good code editors like [Atom](https://atom.io/) and [Sublime](https://www.sublimetext.com/3), but I'll use VS Code in class.)
+- Install [VS Code](https://code.visualstudio.com/docs/setup/windows).
+- Once you have installed, use the Command Pallete and select `Select Default Shell` to set your editor as "Git Bash Shell". [Reference](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). (We _may_ have to set this up after Git is installed?)
 
 ### Version control system
 
 - Install [Git](https://git-scm.com/download/win), our source code version control program. This will allow us to save our code in steps. This will also install Git Bash, which will be your terminal app.
+
+There is one point in the installation process where you need to set "Use Git from Git Bash only".
+
+![git-setup-windows](images/git-setup-windows.png)
+
 - Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) so you don't have to type you password all the time.
 - After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Pallete and type in `Select Default Shell` and find it, but I haven't tried it.
 
@@ -29,9 +34,41 @@ If you don't already have a Github account, go to [github.com/](http://github.co
 There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
 
 - I use these directions to create [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
-- Or, you can at least reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
+  - During this process, you'll be asked to save the location of the rsa_id. Just hit return to save the default location.
+  - You'll be asked to set a password for the file. Just leave this blank and hit return. It may ask you a couple of time.
+  - At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.
 
-### Testing Part 1
+### Add the SSH key to Github
+
+- Follow [these directions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/).
+
+### Alternative to SSH keys
+
+If you can't set SSH keys, you can at least reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
+
+### Installing bash-git-prompt
+
+- Open a new Git Bash window to install the `git-bash-prompt` and do the following, one line at at time:
+
+```bash
+cd ~
+git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+code .bash_profile
+```
+
+- This should install the software you need to your home directory, then open (or create) the `.bash_profile` file.
+- Add this to the bottom of the file `.bash_profile` file:
+
+``` text
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
+```
+
+- Close and restart your terminal to take the new settings.
+
+[More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
+
+## Testing Part 1
 
 We need to make sure everything is set correctly before moving on. So here is how to check:
 
