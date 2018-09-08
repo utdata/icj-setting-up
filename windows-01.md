@@ -77,8 +77,7 @@ Before doing this, open a new Git Bash window:
 - Do `cd ~` to make sure you are in your home directory.
 - Do `git config user.name` and you should get a response that is your name.
 - Do `git config user.email` and you should get back your email address.
-- Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not
-provide shell access."
+- Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
 - Do `code ./` and it should launch VS Code in your home directory.
 
 In the list of Documents, there should be two things:

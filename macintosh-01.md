@@ -6,20 +6,20 @@ Everything listed here is free unless otherwise noted.
 
 ### Code editor
 
-* Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). There are other good ones ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
-* Add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac).
+- Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). There are other good ones ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
+- Add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac).
 
 ### Version control system
 
-* Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
-* [Set your user.name and user.email](https://help.github.com/articles/setting-your-username-in-git/) in Git.
+- Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
+- [Set your user.name and user.email](https://help.github.com/articles/setting-your-username-in-git/) in Git.
 
 ### Set up Github
 
 If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account. Two important things to note:
 
-* Choose your username carefully. I wouldn't use upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal Github profile FOREVER.
-* USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. You might want to apply for the [Student developer pack](https://help.github.com/articles/applying-for-a-student-developer-pack/), which will get you private repositories.
+- Choose your username carefully. I wouldn't use upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal Github profile FOREVER.
+- USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. You might want to apply for the [Student developer pack](https://help.github.com/articles/applying-for-a-student-developer-pack/), which will get you private repositories.
 
 ### Saving your Github credentials
 
@@ -69,8 +69,7 @@ Before doing this, open a new Terminal window:
 - Do `cd ~` to make sure you are in your home directory.
 - Do `git config user.name` and you should get a response that is your name.
 - Do `git config user.email` and you should get back your email address.
-- Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not
-provide shell access."
+- Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
 - Do `code ./` and it should launch VS Code in your home directory.
 
 In the list of Documents, there should be two things:
