@@ -14,7 +14,7 @@ Pay attention to verbal details given, as not all things may be installed or at 
 
 ## Part 2: Node.js and npm
 
-- [Macintosh Part 2](macinstosh-02.md)
+- [Macintosh Part 2](macintosh-02.md)
 - [Windows Part 2](windows-02.md)
 
 ## UT Lab machines
