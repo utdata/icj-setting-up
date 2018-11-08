@@ -16,7 +16,9 @@ Some of those that I have used (and I'm finding more every day):
 
 The way preferences worked changed in the middle of the semester. The list below can be a guide to find and change settings, but the JSON object itself is useless now.
 
-~~Go to the Code > Preferenes > Settings and you'll get two windows. On the left are all the default settings. You can search for different settings, and then copy them into the JavaScript array on the right and then override them.~~
+- Go to the Code > Preferences > Settings.
+- On the space with the sames "User settings" and "Workspace settings", there is a triple dot `...` to the right. Click on that and choose `open settings.json`.
+- You'll get two windows. On the left are all the default settings. You can search for different settings, and then copy them into the JavaScript array on the right and then override them.
 
 The user settings I used to set up:
 
@@ -40,7 +42,8 @@ The user settings I used to set up:
     "editor.wordWrap": "on",
     "window.zoomLevel": 0,
     "emmet.includeLanguages": {
-        "nunjucks": "html"
+        "nunjucks": "html",
+        "njk": "html"
     },
     "editor.minimap.enabled": false,
 }
