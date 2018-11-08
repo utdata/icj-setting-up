@@ -8,9 +8,8 @@ If you look on the left-menu, there is a square looking icon that gives you a li
 
 Some of those that I have used (and I'm finding more every day):
 
-- **HTML Boilerplate**: Gives you a base HTML5 document. Note it won't work unless the file is already created and saved with an `.html` extension.
 - **markdownlint**: tells you when your Markdown syntax is incorrect.
-- **Nunjucks**: gives you syntax highlighting for Nunjucks pages. Needs a little configuration to work with our First Graphics App pages. See Preferences below.
+- **Nunjucks Templates**: gives you syntax highlighting for Nunjucks pages. Needs a little configuration to work with our First Graphics App pages. See Preferences below.
 
 ## Preferences
 
@@ -23,13 +22,11 @@ The way preferences worked changed in the middle of the semester. The list below
 The user settings I used to set up:
 
 ```javascript
+
 {
     "editor.fontSize": 16,
     "terminal.integrated.fontSize": 14,
     "editor.renderWhitespace": "boundary",
-    "cSpell.userWords": [
-        "repo"
-    ],
     "editor.tabSize": 2,
     "[md]": {
         "editor.insertSpaces": true,
@@ -40,11 +37,14 @@ The user settings I used to set up:
         "backgroundColor": "rgba(63, 191, 63, 0.20)"
     },
     "editor.wordWrap": "on",
-    "window.zoomLevel": 0,
-    "emmet.includeLanguages": {
-        "nunjucks": "html",
-        "njk": "html"
-    },
+    "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
+    "files.associations": {
+        "*.html": "html"
+    },
+    "emmet.includeLanguages": {
+        "njk": "html",
+        "nunjucks": "html"
+    }
 }
 ```
