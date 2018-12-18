@@ -4,12 +4,15 @@ VS Code is a pretty awesome editor. It can save you a $4!t-ton of time.
 
 ## Extensions
 
-If you look on the left-menu, there is a square looking icon that gives you a list of extentions that you can search for an enable.
+If you look on the left-menu, there is a square looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
 
 Some of those that I have used (and I'm finding more every day):
 
 - **markdownlint**: tells you when your Markdown syntax is incorrect.
 - **Nunjucks Templates**: gives you syntax highlighting for Nunjucks pages. Needs a little configuration to work with our First Graphics App pages. See Preferences below.
+- **Excel Viewer**: is something to help preview csv files. Not essential, but helpful when working with data.
+
+
 
 ## Preferences
 
