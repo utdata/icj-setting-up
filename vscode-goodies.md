@@ -37,7 +37,7 @@ The user settings I used to set up:
         "backgroundColor": "rgba(63, 191, 63, 0.20)"
     },
     "editor.wordWrap": "on",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
     "files.associations": {
         "*.html": "html"
@@ -45,6 +45,6 @@ The user settings I used to set up:
     "emmet.includeLanguages": {
         "njk": "html",
         "nunjucks": "html"
-    }
+    },
 }
 ```
