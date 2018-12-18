@@ -12,15 +12,14 @@ Some of those that I have used (and I'm finding more every day):
 - **Nunjucks Templates**: gives you syntax highlighting for Nunjucks pages. Needs a little configuration to work with our First Graphics App pages. See Preferences below.
 - **Excel Viewer**: is something to help preview csv files. Not essential, but helpful when working with data.
 
-
-
 ## Preferences
 
-The way preferences worked changed in the middle of the semester. The list below can be a guide to find and change settings, but the JSON object itself is useless now.
+The way preferences worked changed in the middle of the semester. There is a user interface to change some settings, but in the end it just edits a JSON file. I have a set of useful settings that you can add to your own preferences by following these steps.
 
 - Go to the Code > Preferences > Settings.
-- On the space with the sames "User settings" and "Workspace settings", there is a triple dot `...` to the right. Click on that and choose `open settings.json`.
-- You'll get two windows. On the left are all the default settings. You can search for different settings, and then copy them into the JavaScript array on the right and then override them.
+- At the top right of the code editor are a series of icons, including `{}`. If you click on the `{}` it will open the JSON verson of the settings.
+- In the new pane that opens on the right, make sure you are on the "User settings".
+- In the pane on the left, you can search through the different settings that are possible to change. You essentially copy the code and add it to your settings on the right. HOWEVER, you might instead copy all the settings I have below and paste them into the pane on the right.
 
 The user settings I used to set up:
 
@@ -51,3 +50,13 @@ The user settings I used to set up:
     },
 }
 ```
+
+If you look through the JSON, you might be able to figure out what some of these do. This isn't a full description of them, but ...
+
+- I set default size of text in the editor. I'm old, so I make it bigger so it's easier to read.
+- I set make the text in the terminal window bigger. Still old.
+- I set the editor to show spaces that aren't between words. This makes intending code easier to see.
+- I set the tab character to insert two spaces. This is a common coding default.
+- I remove the minimap thing that shows by default at the right side of an open file. I find it more of a hassle than useful.
+
+There are more. They will be helpful.
