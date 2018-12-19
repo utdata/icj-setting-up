@@ -1,6 +1,6 @@
 # Macintosh Part 2: Installing Node.js setup
 
-Hold off on these directions until we get to that part of the semester.
+Hold off on this until we get to this part later in the semester.
 
 ## Checking xcode
 

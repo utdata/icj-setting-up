@@ -6,11 +6,15 @@ Everything listed here is free.
 
 - Install the code editor [Visual Studio Code](https://code.visualstudio.com/download). There are other good ones ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
 - Add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac).
+- **TEST**: Close your Terminal and restart it. Type `code ./` and see it opens VS Code. Hollar if it doesn't.
 
 ## Version control system
 
 - Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
 - [Set your user.name and user.email](https://help.github.com/articles/setting-your-username-in-git/) in Git. You only need to do the first set "for _every_ repository".
+- **TEST**: In your Terminal, do `git config user.name` and you should get a response that is your name.
+- **TEST**: Do `git config user.email` and you should get back your email address.
+
 
 ## Set up Github
 
@@ -21,20 +25,21 @@ If you don't already have a Github account, go to [github.com/](http://github.co
 
 ### Saving your Github credentials
 
-There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
+There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. It appears complicated, but it isn't too bad and you only have to do it once.
 
 - I use these directions to create [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
   - During this process, you'll be asked to save the location of the rsa_id. Just hit return to save the default location.
-  - You'll be asked to set a password for the file. Just leave this blank and hit return. It may ask you a couple of times.
+  - You'll be asked to set a password for the file. JUST LEAVE THE PASSWORD BLANK and hit return. It may ask you a couple of times.
   - At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.
 
 ### Add the SSH key to Github
 
 - Follow [these directions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add your key to Github.
+- TEST: From your Terminal, do `ssh -T git@github.com` to test the SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
 
 ### Alternative to SSH keys
 
-(If you can't set up SSH, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.)
+(If you can't set up SSH, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). If you use a lab computer, you'll have to use this method.)
 
 ## Installing bash-git-prompt
 
@@ -79,3 +84,4 @@ In the list of Documents, there should be two things:
 2. A file called `.bash_profile` with the bash-git-prompt info:
 
 ![git-bash-prompt](images/bash_profile-example.png)
+

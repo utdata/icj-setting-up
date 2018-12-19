@@ -1,6 +1,6 @@
 # VS Code Goodies
 
-VS Code is a pretty awesome editor. It can save you a $4!t-ton of time.
+VS Code is a pretty awesome code editor. It can save you a $4!t-ton of time.
 
 ## Extensions
 
