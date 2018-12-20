@@ -20,13 +20,11 @@ npm install -g npm
 There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools. Do each of these, one line at a time.
 
 ```bash
-npm install -g yo
 npm install -g gulp
-npm install -g generator-yeogurt
-npm install -g grunt
+npm install -g degit
 ```
 
-These are for [Yoeman](http://yeoman.io/), [Gulp](https://gulpjs.com/), [Yeogurt](https://github.com/larsonjj/generator-yeogurt) and [Grunt](https://gruntjs.com/).
+These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding tool [Degit](https://www.npmjs.com/package/degit).
 
 ## Python 3
 
