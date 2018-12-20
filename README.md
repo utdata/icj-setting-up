@@ -14,12 +14,14 @@ Pay attention to verbal details given, as not all things may be installed or at 
 
 ## Part 2: Node.js and npm
 
+This part we will do later in the year, once we start using it.
+
 - [Macintosh Part 2](macintosh-02.md)
 - [Windows Part 2](windows-02.md)
 
 ## UT Lab machines
 
-- [UT lab machines](ut-lab.md)
+- Dealing with [UT lab machines](ut-lab.md)
 
 ## Other resources
 

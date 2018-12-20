@@ -87,20 +87,14 @@ nvm install 8.11.4
 npm install -g npm
 ```
 
-- Install [Yoeman](http://yeoman.io/):
-
-```bash
-npm install -g yo
-```
-
 - Install [Gulp](https://gulpjs.com/):
 
 ```bash
 npm install -g gulp
 ```
 
-- Install [yeogurt](https://github.com/larsonjj/generator-yeogurt):
+- Install [Degit](https://www.npmjs.com/package/degit):
 
 ```bash
-npm install -g generator-yeogurt
+npm install -g degit
 ```

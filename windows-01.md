@@ -33,7 +33,7 @@ There are ways you can tell your computers to save your Github username/password
 
 - I use these directions to create [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
   - During this process, you'll be asked to save the location of the rsa_id. Just hit return to save the default location.
-  - You'll be asked to set a password for the file. Just leave this blank and hit return. It may ask you a couple of time.
+  - You'll be asked to set a password for the file. JUST LEAVE THE PASSWORD BLANK and hit return. It may ask you a couple of times.
   - At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.
 
 ### Add the SSH key to Github
