@@ -43,6 +43,8 @@ There are ways you can tell your computers to save your Github username/password
 
 ## Installing bash-git-prompt
 
+We are adding some software to adjust your terminal prompt to show your git "state" when in a tracked folder.
+
 - Open a new Terminal window and do the following, one line at at time:
 
 ```bash
@@ -51,15 +53,22 @@ $ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt -
 $ code .bash_profile
 ```
 
-- This should install the software you need to your home directory, then open (or create) the `.bash_profile` file.
-- Add this to the bottom of the file `.bash_profile` file:
+This should install the software you need to your home directory, then open (or create) the `.bash_profile` file.
 
-``` text
+- Copy and paste this to the bottom of the file `.bash_profile` file:
+
+``` bash
+# initiates the git bash prompt
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
+
+# sets shorter prompt name
+PS1='\u:\W\$ '
 ```
 
 - Close and restart your terminal to take the new settings.
+
+In addition to adding some commands to help you with git, we also added something to shorten your terminal prompt.
 
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
@@ -73,15 +82,7 @@ Before doing this, open a new Terminal window:
 - Do `git config user.name` and you should get a response that is your name.
 - Do `git config user.email` and you should get back your email address.
 - Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
-- Do `code ./` and it should launch VS Code in your home directory.
-
-In the list of Documents, there should be two things:
-
-1. A folder called `bash-git-promopt`.
-
-![git-bash-prompt](images/git-bash-prompt-installed.png)
-
-2. A file called `.bash_profile` with the bash-git-prompt info:
+- Do `ls -a | grep bash` and you should get a list that includes at least ".bash-git-prompt" and ".bash_profile".
+- Do `code ~/.bash_profile` and it should open your bash_profile, which should have (at least):
 
 ![git-bash-prompt](images/bash_profile-example.png)
-
