@@ -92,3 +92,8 @@ npm install -g npm
 ```bash
 npm install -g gulp degit
 ```
+
+### Visual Studio Code preferences
+
+You might also consider setting up some [VS code goodies](scode-goodies.md).
+
