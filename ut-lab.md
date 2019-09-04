@@ -87,14 +87,13 @@ nvm install 8.11.4
 npm install -g npm
 ```
 
-- Install [Gulp](https://gulpjs.com/):
+- Install [Gulp](https://gulpjs.com/) and [Degit](https://www.npmjs.com/package/degit):
 
 ```bash
-npm install -g gulp
+npm install -g gulp degit
 ```
 
-- Install [Degit](https://www.npmjs.com/package/degit):
+### Visual Studio Code preferences
 
-```bash
-npm install -g degit
-```
+You might also consider setting up some [VS code goodies](vscode-goodies.md).
+
