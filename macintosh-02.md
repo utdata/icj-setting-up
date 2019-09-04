@@ -16,27 +16,27 @@ You should get a path in return. Something like "/Library/Developer/CommandLineT
 
 ### NVM
 
-* We will use NVM to install Node.js. Again, follow the prompts and you should be fine:
+- We will use NVM to install Node.js. Again, follow the prompts and you should be fine:
 
 ``` bash
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 ```
 
-* **Test**: Close and reopen a terminal and do `nvm list` to make sure you don't get an error.
+- **Test**: Close and reopen a terminal and do `nvm list` to make sure you don't get an error.
 
 ### Node
 
-* Use NVM to install Node:
+- Use NVM to install Node:
 
 ``` bash
 nvm install 8.11.4
 ```
 
-* **Test**: Do `node --version` to make sure it worked. (It should give you back "v8.11.4", which was the current stable version when this was written.)
+- **Test**: Do `node --version` to make sure it worked. (It should give you back "v8.11.4", which was the current stable version when this was written.)
 
 ### npm
 
-* Now lets update npm:
+- Now lets update npm:
 
 ```bash
 npm install -g npm
@@ -63,4 +63,4 @@ If you installed Node.js from the website, it will suck and you'll probably need
 
 ## If we get into Python
 
-* Install [miniconda](https://conda.io/miniconda.html). Use the Python 3.6 version. Miniconda is python package manager. You are welcome to install the full [Anaconda](https://conda.io/docs/user-guide/install/index.html), but it takes more space on your computer.
+- Install [miniconda](https://conda.io/miniconda.html). Use the Python 3.6 version. Miniconda is python package manager. You are welcome to install the full [Anaconda](https://conda.io/docs/user-guide/install/index.html), but it takes more space on your computer.
