@@ -17,11 +17,12 @@ Some of those that I have used (and I'm finding more every day):
 The way preferences worked changed in the middle of the semester. There is a user interface to change some settings, but in the end it just edits a JSON file. I have a set of useful settings that you can add to your own preferences by following these steps.
 
 - Go to the Code > Preferences > Settings.
-- At the top right of the code editor are a series of icons, including `{}`. If you click on the `{}` it will open the JSON verson of the settings.
-- In the new pane that opens on the right, make sure you are on the "User settings".
-- In the pane on the left, you can search through the different settings that are possible to change. You essentially copy the code and add it to your settings on the right. HOWEVER, you might instead copy all the settings I have below and paste them into the pane on the right.
+- At the top right of the code editor are a series of icons, including this one:
 
-The user settings I used to set up:
+![vs-code-setting-as-code](images/vs-code-setting-as-code.png)
+
+- In the new file that opens, copy and paste the code below and replace what is there.
+- Save and close the file.
 
 ```javascript
 
@@ -53,9 +54,9 @@ The user settings I used to set up:
 
 If you look through the JSON, you might be able to figure out what some of these do. This isn't a full description of them, but ...
 
-- I set default size of text in the editor. I'm old, so I make it bigger so it's easier to read.
+- I set default size of text in the editor. I'm old, so I make it bigger so it's easier to read. If that is too big, you can change it later.
 - I set make the text in the terminal window bigger. Still old.
-- I set the editor to show spaces that aren't between words. This makes intending code easier to see.
+- I set the editor to show spaces that aren't between words. This makes intended code easier to see.
 - I set the tab character to insert two spaces. This is a common coding default.
 - I remove the minimap thing that shows by default at the right side of an open file. I find it more of a hassle than useful.
 
