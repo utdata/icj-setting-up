@@ -2,6 +2,8 @@
 
 Hold off on this until we get to this part later in the semester.
 
+If you've reached that point, then fire up your Terminal.
+
 ## Checking xcode
 
 See if you already have the XCode command-line tools installed.
@@ -44,7 +46,7 @@ npm install -g npm
 
 - **Test**: Do `npm -v` and it should return with a version number.
 
-## First Graphics App setup
+## ICJ project setup
 
 There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools. Do each of these, one line at a time.
 
