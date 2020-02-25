@@ -11,7 +11,8 @@ Everything listed here is free.
 ## Version control system
 
 - Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't worry about the Git GUI clients.
-- [Set your user.name and user.email](https://help.github.com/articles/setting-your-username-in-git/) in Git. You only need to do the first set "for _every_ repository".
+- [Set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git) in Git. You only need to do the first part "for _every_ repository".
+- [Set your user.email](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git).
 - **TEST**: In your Terminal, do `git config user.name` and you should get a response that is your name.
 - **TEST**: Do `git config user.email` and you should get back your email address.
 
@@ -25,16 +26,17 @@ If you don't already have a Github account, go to [github.com/](http://github.co
 
 ### Saving your Github credentials
 
-There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. It appears complicated, but it isn't too bad and you only have to do it once.
+There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. It appears complicated, but it isn't too bad and you only have to do it once. Do read my tips carefully, though.
 
-- I use these directions to create [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
-  - During this process, you'll be asked to save the location of the rsa_id. Just hit return to save the default location.
-  - You'll be asked to set a password for the file. JUST LEAVE THE PASSWORD BLANK and hit return. It may ask you a couple of times.
-  - At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.
+- If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense, you haven't.)
+  - [Start here](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
+    - During this process, you'll be asked to save the location of the rsa_id. Just hit return to save the default location.
+    - You'll be asked to set a password for the file. JUST LEAVE THE PASSWORD BLANK and hit return. It may ask you a couple of times.
+  - Stop after the 4th step  about passphrases (which you leave blank!)
 
 ### Add the SSH key to Github
 
-- Follow [these directions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add your key to Github.
+- Follow [these directions](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) to add your key to Github.
 - TEST: From your Terminal, do `ssh -T git@github.com` to test the SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
 
 ### Alternative to SSH keys
