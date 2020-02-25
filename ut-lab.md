@@ -25,7 +25,7 @@ git config --global user.name "Your Name"
 And then set your email (with your actual email):
 
 ```bash
-git config --glboal user.email youremail@yourdomain.com
+git config --global user.email youremail@yourdomain.com
 ```
 
 Next, set the computer to save your credentials after the first time you enter them.
