@@ -7,7 +7,7 @@ We don't do this until later in the semester, when we start using Node-based too
 
 Node is a Javascript runtime environment we will use to build news applications. This is where things get really dicey with my Windows experience.
 
-* Install Node.js [using the installer](https://nodejs.org/en/download/) or maybe, just MAYBE, it's better to use [NVM for Window](https://danielarancibia.wordpress.com/2017/03/28/install-or-upgrade-nodejs-with-nvm-for-windows/), but I don't know for sure. (Another option is to use the Windows package manager [Chocolatey](https://nodejs.org/en/download/package-manager/#windows).)
+* Install Node.js [using the installer](https://nodejs.org/en/download/)
 * Do `node --version` to make sure it worked. (v8.11.4 was the current stable version when this was written.)
 * Now lets update npm:
 
@@ -15,7 +15,7 @@ Node is a Javascript runtime environment we will use to build news applications.
 npm install -g npm
 ```
 
-## First Graphics App setup
+## ICJ template setup
 
 There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools. Do each of these, one line at a time.
 
@@ -26,7 +26,16 @@ npm install -g degit
 
 These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding tool [Degit](https://www.npmjs.com/package/degit).
 
+## Alternate installing of Node
+
+> Don't do this unless specifically asked.
+
+* An alternate method to install Node might be to use [NVM for Window](https://danielarancibia.wordpress.com/2017/03/28/install-or-upgrade-nodejs-with-nvm-for-windows/), but I don't know for sure.
+* Yet Another option is to use the Windows package manager [Chocolatey](https://nodejs.org/en/download/package-manager/#windows).)
+
 ## Python 3
+
+> Don't do this unless specifically asked.
 
 If we get into Python scripting, use Miniconda.
 
