@@ -22,3 +22,13 @@ I've switched back to Github, but in case this is useful later.
 ### generator-politico-interactives
 
 * I've installed node and yarn, but my first attempt complained that I didn't have gulp.
+
+## Resources for Uninstalling node
+
+I used this [yoember](https://yoember.com/nodejs/the-best-way-to-install-node-js/) and this [medium post]((https://medium.com/@itsromiljain/the-best-way-to-install-node-js-npm-and-yarn-on-mac-osx-4d8a8544987a)) to come up with the script above.
+
+If you installed Node.js from the website, it will suck and you'll probably need to uninstall it and try again using NVM. This [post was very helpful](http://stackabuse.com/how-to-uninstall-node-js-from-mac-osx/). Especially `which node`.
+
+## If we get into Python
+
+- Install [miniconda](https://conda.io/miniconda.html). Use the Python 3.6 version. Miniconda is python package manager. You are welcome to install the full [Anaconda](https://conda.io/docs/user-guide/install/index.html), but it takes more space on your computer.

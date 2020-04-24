@@ -10,7 +10,7 @@ Pay attention to verbal details given, as not all things may be installed or at 
 
 - [Macintosh Part 1](macintosh-01.md)
 - [Windows Part 1](windows-01.md)
-- [Linux](https://giphy.com/gifs/lol-laughing-muttley-3oEjHAUOqG3lSS0f1C)
+- [Linux/Ubuntu](https://giphy.com/gifs/lol-laughing-muttley-3oEjHAUOqG3lSS0f1C)
 
 ## Part 2: Node.js and npm
 
