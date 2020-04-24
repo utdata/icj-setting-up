@@ -74,6 +74,60 @@ In addition to adding some commands to help you with git, we also added somethin
 
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
+## VS Code extensions
+
+If you look on the left-menu, there is a square looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
+
+- In VS Code, click on the Extensions icon.
+- In the search box, type in `Nunjucks template`. Click on the return for Nunjucks Template.
+- Click the Install button.
+
+We'll need this toward the end of the semester.
+
+- Now search for **markdownlint** and install it in the same way. This one tells you when your Markdown syntax is incorrect.
+
+## VS Code preferences
+
+I have some helpful user preferences for VS Code that you might find useful.
+
+- Go to the Code > Preferences > Settings.
+- At the top right of the code editor are a series of icons, including this one:
+
+![vs-code-setting-as-code](images/vs-code-setting-as-code.png)
+
+- In the new file that opens, copy and paste the code below and replace what is there.
+
+```js
+{
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 12,
+    "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 2,
+    "[md]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+    },
+    "editor.renderControlCharacters": true,
+    "highlight-matching-tag.style": {
+        "backgroundColor": "rgba(63, 191, 63, 0.20)"
+    },
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "files.associations": {
+        "*.html": "html"
+    },
+    "emmet.includeLanguages": {
+        "njk": "html",
+        "nunjucks": "html"
+    },
+}
+```
+
+- Save and close the file.
+
+This sets the default text size, line wrapping, tab stops and other useful things we will need.
+
 ## Testing Part 1 setup
 
 We need to make sure everything is set correctly before moving on. So here is how to check:
