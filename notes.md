@@ -17,6 +17,13 @@ I've switched back to Github, but in case this is useful later.
 * I'd like to find something equivalent to git-bash-prompt, but those features may already be baked into Git Bash.
 * We might consider [Chocolatey](https://chocolatey.org/) package manager.
 
+## Alternate installing of Node on Windows
+
+> Don't do this unless specifically asked.
+
+* An alternate method to install Node might be to use [NVM for Windows](https://danielarancibia.wordpress.com/2017/03/28/install-or-upgrade-nodejs-with-nvm-for-windows/), but I don't know for sure.
+* Yet Another option is to use the Windows package manager [Chocolatey](https://nodejs.org/en/download/package-manager/#windows).)
+
 ## Scaffold managers
 
 ### generator-politico-interactives
