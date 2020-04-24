@@ -59,7 +59,7 @@ These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding too
 
 There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we'll create a file to save on your computer that includes a secret key that works only for you.
 
-### Creating a service account
+### Creating a service account key
 
 **Make sure you're logged into a personal gmail account** for this part. If you try to use your utexas.edu email, you won't have permission to do what we need to do.
 

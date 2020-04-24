@@ -38,31 +38,23 @@ Be prepared to enter your github username and password.
 
 ### Install bash-git-prompt
 
-From your Terminal, in your home directory, download bash-git-prompt:
+When you launch Terminal, it should put you in your home directory. If not, do `cd ~`.
+
+- Do the following command to download bash-git-prompt:
 
 ```bash
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 ```
 
-### Download the lab bash_profile
+## Installing node
 
-From your Terminal, in your home directory, download the stock `.bash_profile` I have saved.
-
-```bash
-curl https://raw.githubusercontent.com/utdata/setting-up/master/.bash_profile-lab > .bash_profile
-```
-
-Close and restart your terminal. You should be good for the day (or week).
-
-## Checking if Node is installed
-
-- Check the Node version
+- First, check if Node is already installed:
 
 ```bash
 node -v
 ```
 
-Should give you back a version number, like "v8.11.4". If it does, you can probably stop here.
+If Node is already installed, you should get back a version number, like "v8.11.4". If it does, you can probably stop here.
 
 ### Install NVM, Node, npm
 
@@ -93,7 +85,27 @@ npm install -g npm
 npm install -g gulp degit
 ```
 
+## Google Drive authentication
+
+When using the icj-project-template we use a secret key file to authenticate to Google Drive.
+
+- If you haven't already, follow the directions in [macintosh-02.md](macintosh-02.md) for **Creating a service account key**.
+  - If you have created the file already but don't have a copy of the file saved, you can go to [Google Cloud Platform > APIs & Services > Credentials](https://console.cloud.google.com/apis/credentials), edit your existing key and click **Create key** to download the file.
+- Rename the downloaded file as `google_drive_fetch_token.json` and save it in a safe place where you can pull it onto a lab computer each time you set up.
+- Move a copy of the file to the Desktop of your lab computer.
+
+Now that you have created the file and save it somewhere, you only need to download it to your Desktop in the future.
+
+### Download .bash_profile for lab computers
+
+I have a copy of a `.bash_profile` file that you can download onto your computer with the following command.
+
+```bash
+curl https://raw.githubusercontent.com/utdata/setting-up/master/.bash_profile-lab > .bash_profile
+```
+
+Close and restart your Terminal. You should be good for the day (or week).
+
 ### Visual Studio Code preferences
 
-You might also consider setting up some [VS code goodies](vscode-goodies.md).
-
+You might also consider getting the VS Code preferences I have here: [VS code goodies](vscode-goodies.md).

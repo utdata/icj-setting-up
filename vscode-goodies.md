@@ -8,13 +8,16 @@ If you look on the left-menu, there is a square looking icon that gives you a li
 
 Some of those that I have used (and I'm finding more every day):
 
-- **markdownlint**: tells you when your Markdown syntax is incorrect.
 - **Nunjucks Templates**: gives you syntax highlighting for Nunjucks pages. Needs a little configuration to work with our First Graphics App pages. See Preferences below.
+- **markdownlint**: tells you when your Markdown syntax is incorrect.
+
+### Optional
+
 - **Excel Viewer**: is something to help preview csv files. Not essential, but helpful when working with data.
 
 ## Preferences
 
-The way preferences worked changed in the middle of the semester. There is a user interface to change some settings, but in the end it just edits a JSON file. I have a set of useful settings that you can add to your own preferences by following these steps.
+I have some helpful user preferences for VS Code that you might find useful.
 
 - Go to the Code > Preferences > Settings.
 - At the top right of the code editor are a series of icons, including this one:
@@ -25,10 +28,9 @@ The way preferences worked changed in the middle of the semester. There is a use
 - Save and close the file.
 
 ```javascript
-
 {
-    "editor.fontSize": 16,
-    "terminal.integrated.fontSize": 14,
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 12,
     "editor.renderWhitespace": "boundary",
     "editor.tabSize": 2,
     "[md]": {
