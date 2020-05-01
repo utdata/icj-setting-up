@@ -80,7 +80,7 @@ There is a point in class when your computer will need access to your Google Dri
 
 We are setting this environment variable to authenticate ourselves to Google using the information in the json file you just created.
 
-- In a Terminal, do `code ~/.bash_profile` to your ".bash_profile" file in VS Code. You should see some stuff there already from other configurations. (Hollar if you don't as that means you are likely in the wrong file.)
+- In a Terminal, do `code ~/.bash_profile` to open your ".bash_profile" file in VS Code. You should see some stuff there already from other configurations. (Hollar if you don't as that means you are likely in the wrong file.)
 - Add the text below to this file, but with your own path and file name.
 
 ```bash
