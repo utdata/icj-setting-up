@@ -1,13 +1,12 @@
 # Windows
 
-We are working through some of the Windows set up, so Windows users may need a little extra care and feeding.
+I am a little less familiar with Windows, especially as it relates to One Drive, so it's possible we'll run into issues.
 
 Everything listed here is free.
 
 ## Text editor
 
 - Install [VS Code](https://code.visualstudio.com/docs/setup/windows).
-- Once you have installed, use the Command Pallete and select `Select Default Shell` to set your editor as "Git Bash Shell". [Reference](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). (We _may_ have to set this up after Git is installed?)
 
 ## Version control system
 
@@ -18,7 +17,7 @@ There is one point in the installation process where you need to set "Use Git fr
 ![git-setup-windows](images/git-setup-windows.png)
 
 - Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) . You only need to do the first set "for _every_ repository".
-- After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Pallete and type in `Select Default Shell` and find it, but I haven't tried it.
+- After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Palette and type in `Select Default Shell` and find it, but I haven't tried it.
 
 ### Set up Github
 
@@ -49,13 +48,14 @@ If you can't set SSH keys, you can at least reduce the number of times you have 
 - Open a new Git Bash window to install the `git-bash-prompt` and do the following, one line at at time:
 
 ```bash
-cd ~
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 code .bash_profile
 ```
 
-- This should install the software you need to your home directory, then open (or create) the `.bash_profile` file.
-- Add this to the bottom of the file `.bash_profile` file:
+This should install the software you need to your home directory.
+
+- Do `code .bash_profile` to open or create your `.bash_profile` file.
+- Add this to the bottom of the file:
 
 ``` text
 GIT_PROMPT_ONLY_IN_REPO=1
@@ -72,7 +72,6 @@ We need to make sure everything is set correctly before moving on. So here is ho
 
 Before doing this, open a new Git Bash window:
 
-- Do `cd ~` to make sure you are in your home directory.
 - Do `git config user.name` and you should get a response that is your name.
 - Do `git config user.email` and you should get back your email address.
 - Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
@@ -80,7 +79,7 @@ Before doing this, open a new Git Bash window:
 
 In the list of Documents, there should be two things:
 
-1. A folder called `bash-git-promopt`.
+1. A folder called `bash-git-prompt`.
 
 ![git-bash-prompt](images/git-bash-prompt-installed.png)
 

@@ -8,7 +8,7 @@ We don't do this until later in the semester, when we start using Node-based too
 Node is a Javascript runtime environment we will use to build news applications. This is where things get kinda dicey with my (lack of) Windows experience.
 
 - Install Node.js [using the installer](https://nodejs.org/en/download/)
-- In Git Bash, do `node --version` to make sure it worked. (v8.11.4 was the current stable version when this was written.)
+- In Git Bash, do `node --version` to make sure it worked. (v10.19.0 was the current stable version when this was written.)
 - Now lets update npm:
 
 ```bash
@@ -54,8 +54,9 @@ The instructions for how to create a service account on Google are [here](https:
 
 We are setting this environment variable to authenticate ourselves to Google using the information in the json file you just created.
 
-- In a Terminal, do `code ~/.bash_profile` to open your ".bash_profile" file in VS Code. You should see some stuff there already from other configurations. (Hollar if you don't as that means you are likely in the wrong file.)
-- Add the text below to this file, but with your own path and file name.
+- Open a new Git Bash prompt
+- Do `code .bash_profile` to open your ".bash_profile" file in VS Code. You should see some stuff there already from other configurations. (Hollar if you don't as that means you are likely in the wrong file.)
+- Add the text below to this file, but **with your own path and file name**.
 
 ```bash
 # Google Auth

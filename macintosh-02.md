@@ -10,7 +10,9 @@ See if you already have the XCode command-line tools installed.
 
 `xcode-select -p`
 
-You should get a path in return. Something like "/Library/Developer/CommandLineTools". If you don't, you need to install it: `xcode-select --install`. **But only if you did NOT get a path in the above command.**
+You should get a path in return. Something like "/Library/Developer/CommandLineTools".
+
+If you don't **AND ONLY IF YOU DON'T**, you need to install it: `xcode-select --install`. It can take a long while to download and install.
 
 ## Setting up a Node environment
 
@@ -29,10 +31,10 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 - Use NVM to install Node:
 
 ``` bash
-nvm install 8.11.4
+nvm install 10.19.0
 ```
 
-- **Test**: Do `node --version` to make sure it worked. (It should give you back "v8.11.4", which was the current stable version when this was written.)
+- **Test**: Do `node -v` to make sure it worked. (It should give you back "v10.19.0", which was the current stable version when this was written.)
 
 ### npm
 
@@ -73,7 +75,7 @@ There is a point in class when your computer will need access to your Google Dri
 - Click on **Library** in the left navigation to go to the [API Library](https://console.developers.google.com/apis/library)
 - Use the search to find the **Google Docs API** and select it.
   - Make sure `icj-project` is selected in the top nav near the Google Cloud Services logo.
-  - Then click on the **Enable** buttton to activate it.
+  - Then click on the **Enable** button to activate it.
 - Use the search bar to find **Google Sheets API** and choose it and **Enable** it.
 
 ### Setting up the environment variable
