@@ -5,9 +5,10 @@ We don't do this until later in the semester, when we start using Node-based too
 
 ## Node.js
 
-Node is a Javascript runtime environment we will use to build news applications. This is where things get kinda dicey with my (lack of) Windows experience.
+Node is a Javascript runtime environment we will use to build news applications. This is where things get kinda dicey with my (lack of) Windows experience. Microsoft recommends using nvm-windows to install node, so let's go with that.
 
-- Install Node.js [using the installer](https://nodejs.org/en/download/)
+- Follow [these directions to install nvm-windows](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows). Use it to install the current LTS version.
+- Be sure to run the `nvm use <version>` they suggest.
 - In Git Bash, do `node --version` to make sure it worked. (v10.19.0 was the current stable version when this was written.)
 - Now lets update npm:
 
