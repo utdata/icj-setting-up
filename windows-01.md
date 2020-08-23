@@ -48,12 +48,12 @@ If you can't set SSH keys, you can at least reduce the number of times you have 
 
 ```bash
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
-code .bash_profile
 ```
 
 This should install the software you need to your home directory.
 
 - Do `code .bash_profile` to open or create your `.bash_profile` file.
+  - Hollar at me if this doesn't open VS Code and create the file.
 - Add this to the bottom of the file:
 
 ``` text
