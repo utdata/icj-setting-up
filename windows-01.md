@@ -21,10 +21,9 @@ There is one point in the installation process where you need to set "Use Git fr
 
 ### Set up Github
 
-If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account. Two important things to note:
+If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account.
 
-- Choose your username carefully. Don't use upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal Github profile FOREVER.
-- USE YOUR UNIVERSITY EMAIL IF YOU HAVE ONE. You might want to apply for the [Student developer pack](https://help.github.com/articles/applying-for-a-student-developer-pack/), which will get you private repositories.
+- Choose your username carefully. Avoid using upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal Github profile FOREVER.
 
 ### Saving your Github credentials
 
