@@ -30,13 +30,11 @@ And then set your email (with your actual email):
 git config --global user.email youremail@yourdomain.com
 ```
 
-Next, set the computer to save your credentials after the first time you enter them.
+Next, set the computer to save your credentials after the first time you enter them. **Be prepared to enter your github username and password.**
 
 ```bash
 git config --global credential.helper osxkeychain
 ```
-
-Be prepared to enter your github username and password.
 
 ## Installing node
 
@@ -46,7 +44,7 @@ Be prepared to enter your github username and password.
 node -v
 ```
 
-If Node is already installed, you should get back a version number, like "v8.11.4". If it does, you can probably stop here.
+If Node is already installed, you should get back a version number, like "v10.19.0". If it does, you can probably stop here.
 
 ### Install NVM, Node, npm
 
@@ -62,7 +60,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 - Now install the version of Node we wll use:
 
 ```bash
-nvm install 8.11.4
+nvm install 10.19.0
 ```
 
 - Now install node package manager:
@@ -86,12 +84,13 @@ Let's say you have been working on a project that is stored on Github, but when 
 - Launch Terminal
 - Go into the Documents folder: `cd Documents`
 - Do `ls` just to make sure your project isn't already there. (If it is, stop as you can likely launch VS Code and get to work).
-- Go to your repo in Github.
+- In your browser, go to your repo on Github.com.
+- Click on the green **Code** button.
 - Make sure it is on HTTPS and copy the link.
 
 ![Get git](images/get-git.png)
 
-- In your Terminal, do `git clone` and then past the link and run it.
+- In your Terminal, do `git clone` and then paste the link and run it.
 - This will download AND connect you to the repo.
 - Now you can go to Visual Studio Code and open the project folder and work as you normally would. It should be in your `Documents` folder.
 - DON'T FORGET TO PUSH YOUR CODE so you don't lose it.

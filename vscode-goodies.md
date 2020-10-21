@@ -58,7 +58,7 @@ If you look through the JSON, you might be able to figure out what some of these
 
 - I set default size of text in the editor. I'm old, so I make it bigger so it's easier to read. If that is too big, you can change it later.
 - I set make the text in the terminal window bigger. Still old.
-- I set the editor to show spaces that aren't between words. This makes intended code easier to see.
+- I set the editor to show spaces that aren't between words. This makes indented code easier to see.
 - I set the tab character to insert two spaces. This is a common coding default.
 - I remove the minimap thing that shows by default at the right side of an open file. I find it more of a hassle than useful.
 
