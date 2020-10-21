@@ -21,7 +21,8 @@ This part we will do later in the year, once we start using it.
 
 ## UT Lab machines
 
-- Dealing with [UT lab machines](ut-lab.md)
+- [Fall 2020 lab machine setup](ut-lab-short.md)
+- ~~Dealing with [UT lab machines](ut-lab.md)~~
 
 ## Other resources
 
