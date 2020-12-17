@@ -8,16 +8,17 @@ You'll be using your Terminal, which is a program that allows you to talk to you
 
 Be sure to read all the directions for a particular section before diving in as there are hints that you'll need as you install and configure.
 
-## Code editor
+## Install Git
 
-- Install the code editor [Visual Studio Code](https://code.visualstudio.com/download) on your machine. It's normal kind of application install that shouldn't give you any trouble. There are other good code editors out there ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
-- Follow these instructions to add the `code` command [to your path](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line).
-- **TEST**: Close your Terminal and restart it. Type `code ./` and see it opens VS Code. Hollar if it doesn't.
-
-## Version control system
+> This needs update to use homebrew
 
 - Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't install the Git GUI clients. There isn't an "app" for Git, it just lives inside your computer.
-- Follow these step to [Set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) for _every repository_ in Git. You only need to do the first part "for _every_ repository".
+
+### Set up your git user and email
+
+> This needs update to write out the steps. No need to go to git help.
+
+- Follow these steps to [Set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) for _every repository_ in Git. You only need to do the first part "for _every_ repository".
 - [Set your commit user.email](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git).
 - **TEST**: In your Terminal, do `git config user.name` and you should get a response that is your name.
 - **TEST**: Do `git config user.email` and you should get back your email address.
@@ -48,6 +49,12 @@ There are a couple of ways you can tell your computer to save your Github userna
 If there is some reason you can't set up SSH, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). If you use a lab computer, you'll have to use this method.
 
 SSH keys don't work on the UT Guest wifi. If you are unable to use the official "utexas" wifi, then you will have to use this alternative.
+
+## Code editor
+
+- Install the code editor [Visual Studio Code](https://code.visualstudio.com/download) on your machine. It's normal kind of application install that shouldn't give you any trouble. There are other good code editors out there ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
+- Follow these "Launching from the command line" [instructions](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to add the `code` command to your path. This allows us to launch Visual Studio Code from a terminal.
+- **TEST**: Close your Terminal and restart it. Type `code ./` and see it opens VS Code. Hollar if it doesn't.
 
 ## Updating the bash_profile
 

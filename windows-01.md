@@ -4,17 +4,17 @@ I am a little less familiar with Windows, especially as it relates to One Drive,
 
 Everything listed here is free.
 
-## Text editor
+## Install git
 
-- Install [VS Code](https://code.visualstudio.com/docs/setup/windows).
-
-## Version control system
-
-- Install [Git](https://git-scm.com/download/win), our source code version control program. This will allow us to save our code in steps. This will also install Git Bash, which will be your terminal app.
+- Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. This will also install Git Bash, which will be your Terminal app.
 
 There is one point in the installation process where you need to set "Use Git from Git Bash only".
 
-![git-setup-windows](images/git-setup-windows.png)
+![git-setup-windows](../../images/git-setup-windows.png)
+
+- Use the default settings for everything else.
+
+If you were sent here from the Terminal lesson, it's time to go [back there](../bash/bash-01-terminal.md) now. You'll be sent back later.
 
 - Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) . You only need to do the first set "for _every_ repository".
 - After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Palette and type in `Select Default Shell` and find it, but I haven't tried it.
@@ -41,6 +41,12 @@ There are ways you can tell your computers to save your Github username/password
 ### Alternative to SSH keys
 
 If you can't set SSH keys, you can at least reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
+
+## Text editor
+
+We will use the code editor Visual Studio Code, made by Microsoft. It is free. We need to intall it now.
+
+- Install [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows).
 
 ## Installing bash-git-prompt
 
