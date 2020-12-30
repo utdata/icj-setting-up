@@ -7,8 +7,11 @@ We don't do this until later in the semester, when we start using Node-based too
 
 Node is a Javascript runtime environment we will use to build news applications. This is where things get kinda dicey with my (lack of) Windows experience. Microsoft recommends using nvm-windows to install node, so let's go with that.
 
-- Follow [these directions to install nvm-windows](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows). Use it to install the current LTS version.
-- Be sure to run the `nvm use <version>` they suggest.
+- Follow [these directions to install nvm-windows](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows) **BUT READ THE NEXT STEPS FIRST**.
+  - When they say Launch Powershell, you should use **Git Bash** instead.
+  - When it gets to installing Node.js **DON'T DO `nvm install latest`**.
+  - Instead follow the steps to do `nvm list available` and pick a the LTS version.
+  - Be sure to run the `nvm use <version>` they suggest from the LTS list.
 - In Git Bash, do `node --version` to make sure it worked. (v10.19.0 was the current stable version when this was written.)
 - Now lets update npm:
 
@@ -61,10 +64,17 @@ We are setting this environment variable to authenticate ourselves to Google usi
 
 ```bash
 # Google Auth
-export GOOGLE_APPLICATION_CREDENTIALS="/c/Users/christian/Documents/icj/google_drive_fetch_token.json"
+set GOOGLE_APPLICATION_CREDENTIALS="%userprofile%/Documents/icj/google_drive_fetch_token.json"
 ```
 
-We'll test this with the icj-project-template when the time comes.
+If you have and use Microsoft OneDrive, then you might need to modify that path just a bit:
+
+```bash
+# Google Auth
+set GOOGLE_APPLICATION_CREDENTIALS="%userprofile%/OneDrive/Documents/icj/google_drive_fetch_token.json"
+```
+
+We'll test this with the icj-project-template when the time comes. If you use OneDrive, you might have to use **Git Bash** for some steps instead of the terminal within VS Code.
 
 ----
 

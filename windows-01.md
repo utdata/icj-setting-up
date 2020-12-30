@@ -1,20 +1,23 @@
 # Windows
 
-I am a little less familiar with Windows, especially as it relates to One Drive, so it's possible we'll run into issues.
+I am a little less familiar with Windows, especially as it relates to OneDrive, so it's possible we'll run into issues.
 
 Everything listed here is free.
 
 ## Install git
 
-- Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. This will also install Git Bash, which will be your Terminal app.
+> Windows users have to install Git and Git Bash before doing the [Command-line interface tools lesson](https://github.com/utdata/icj-cli-tools). These next few steps do that.
+
+- Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. This will also install **Git Bash**, which will be your Terminal app.
 
 There is one point in the installation process where you need to set "Use Git from Git Bash only".
 
 ![git-setup-windows](../../images/git-setup-windows.png)
 
 - Use the default settings for everything else.
+- You should now be able to find **Git Bash** from your Windows Start menu.
 
-If you were sent here from the Terminal lesson, it's time to go [back there](../bash/bash-01-terminal.md) now. You'll be sent back later.
+> If you were sent here from the Command-line interface tools lesson, it's time to go back there now. You'll be sent back later.
 
 - Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) . You only need to do the first set "for _every_ repository".
 - After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Palette and type in `Select Default Shell` and find it, but I haven't tried it.
@@ -29,9 +32,9 @@ If you don't already have a Github account, go to [github.com/](http://github.co
 
 There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
 
-- I use these directions to create [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
+- I use [these directions to create SSH keys](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
   - During this process, you'll be asked to save the location of the rsa_id. Just hit return to save the default location.
-  - You'll be asked to set a password for the file. JUST LEAVE THE PASSWORD BLANK and hit return. It may ask you a couple of times.
+  - You'll also be asked to set a password for the file. **JUST LEAVE THE PASSWORD BLANK** and hit return. It will ask you a couple of times.
   - At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.
 
 ### Add the SSH key to Github
@@ -44,7 +47,7 @@ If you can't set SSH keys, you can at least reduce the number of times you have 
 
 ## Text editor
 
-We will use the code editor Visual Studio Code, made by Microsoft. It is free. We need to intall it now.
+We will use the code editor Visual Studio Code, made by Microsoft. It is free. We need to install it now.
 
 - Install [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows).
 

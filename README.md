@@ -1,10 +1,8 @@
 # Setting up your computer for development
 
-I really recommend that you use your own computer in my coding and data classes. I use a Macintosh, so I'm more familiar with them, but students can use Windows for all the lessons and programs I use.
+These lessons outline how to set up your computer for development using the technologies introduced in [Intro to Coding for Journalists](https://github.com/utdata/icj-class). This is written as basic **steps to accomplish** without much explanation of what you are doing and why. If you are new to coding or the class, I suggest you start with the [command-line interface tools lesson](https://github.com/utdata/icj-cli-tools) instead.
 
-If you are using a lab computer, most (but perhaps not all) of this will be done already.
-
-Pay attention to verbal details given, as not all things may be installed or at the same time.
+If you are using a UT lab computer it may not be set up. Please check with me.
 
 ## Part 1: VS Code, Git & Github
 

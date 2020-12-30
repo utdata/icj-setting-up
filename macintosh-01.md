@@ -8,51 +8,72 @@ You'll be using your Terminal, which is a program that allows you to talk to you
 
 Be sure to read all the directions for a particular section before diving in as there are hints that you'll need as you install and configure.
 
-## Install Git
+## Install Homebrew and Git
 
-> This needs update to use homebrew
+Homebrew is a "package manager", meaning it helps you install programs that are not in the Apple app store. Git is a version control manager, which will learn about soon.
 
-- Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. Don't install the Git GUI clients. There isn't an "app" for Git, it just lives inside your computer.
+- Install [Homebrew](https://brew.sh/). Just run the first command noted on that page and then come back here.
+- Install [Git](https://git-scm.com/downloads) using this homebrew command: `brew install git`.
+
+Don't install the Git GUI clients. There isn't an "app" for Git, it just lives inside your computer.
 
 ### Set up your git user and email
 
-> This needs update to write out the steps. No need to go to git help.
+Next we'll set [set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) so Git knows who you are.
 
-- Follow these steps to [Set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) for _every repository_ in Git. You only need to do the first part "for _every_ repository".
-- [Set your commit user.email](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git).
-- **TEST**: In your Terminal, do `git config user.name` and you should get a response that is your name.
-- **TEST**: Do `git config user.email` and you should get back your email address.
+In your Terminal, do this but use _your_ name instead of Mona Lisa:
+
+```bash
+$ git config --global user.name "Mona Lisa"
+```
+
+Now we'll [set your user.email](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git).
+
+In your Terminal do this but use your email:
+
+```bash
+$ git config --global user.email "email@example.com"
+```
+
+You will want to use the same email when you create your Github account.
 
 ## Set up Github
 
 If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account.
 
-- Choose your username carefully and don't make the name specific to this class. This is your personal Github profile FOREVER. I would avoid upper case characters as a matter of convention. Your name becomes part of a URL for your projects when we publish them.
+- Choose your username carefully and **don't make the name specific to this class**. This is your personal Github profile FOREVER. I would avoid upper case characters as a matter of convention. Your name becomes part of a URL for your projects when we publish them.
 
 ### Saving your Github credentials
 
-There are a couple of ways you can tell your computer to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. This creates a file on your computer with a secret key that only you have. It looks complicated, but it isn't too bad and you only have to do it once for your machine. **Do read my tips carefully, though.**
+There are a couple of ways you can tell your computer to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. This creates a file on your computer with a secret key that only you have. It looks complicated, but it isn't too bad and you only have to do it once for your machine. The steps [are here](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), but I walk you through it below.
 
-- If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense, you haven't.)
-  - [Start here](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
-    - During this process, you'll be asked to save the location of the rsa_id. **Just hit return to save the default location**.
-    - You'll be asked to set a password for the file. **JUST LEAVE THE PASSWORD BLANK** and hit return. It may ask you a couple of times.
-  - Stop after the 4th step about passphrases (which you leave blank!)
+> If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense to you, you likely haven't.)
+
+- Before you do this next step, know it will ask you to supply a location and password: **Leave it blank and just hit enter in both cases**.
+- In your terminal, copy/paste and run the following command:
+
+`$ ssh-keygen -t ed25519 -C "your_email@example.com"`
+
+Remember, just hit return when prompted for a location or password.
 
 ### Add the SSH key to Github
 
 - Follow [these directions](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) to add your key to Github.
-- TEST: From your Terminal, do `ssh -T git@github.com` to test the SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
+- **TEST:**From your Terminal, do `ssh -T git@github.com` to test the SSH keys.
+  - If you are asked about "RSA key fingerprint", type **yes**.
+  - In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
 
 ### Alternative to SSH keys
 
-If there is some reason you can't set up SSH, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). If you use a lab computer, you'll have to use this method.
+If there is some reason you can't set up SSH, you can reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). If you use a lab computer, you'll have to use this method. **Read all the tips and directions carefully.**
 
-SSH keys don't work on the UT Guest wifi. If you are unable to use the official "utexas" wifi, then you will have to use this alternative.
+SSH keys don't work on UT's Guest wifi service. If you are unable to use the official "utexas" wifi, then you will have to use this alternative.
+
+That is also the first thing to check if your `git push` times out ... make sure you are NOT on UT's Guest wifi.
 
 ## Code editor
 
-- Install the code editor [Visual Studio Code](https://code.visualstudio.com/download) on your machine. It's normal kind of application install that shouldn't give you any trouble. There are other good code editors out there ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class.
+- Install the code editor [Visual Studio Code](https://code.visualstudio.com/download) on your machine. It's normal kind of application install that shouldn't give you any trouble. (There are other good code editors out there ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class and I suggest you do, too.)
 - Follow these "Launching from the command line" [instructions](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to add the `code` command to your path. This allows us to launch Visual Studio Code from a terminal.
 - **TEST**: Close your Terminal and restart it. Type `code ./` and see it opens VS Code. Hollar if it doesn't.
 
@@ -60,16 +81,23 @@ SSH keys don't work on the UT Guest wifi. If you are unable to use the official 
 
 We are adding some software to adjust your Terminal prompt to show your git "state" when in a tracked folder.
 
-- Open a new Terminal window and do the following, one line at at time:
+- Open a new Terminal window and do the following:
 
 ```bash
 $ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+```
+
+This should install the software you need to your home directory.
+
+- Now open (or create) the `.bash_profile` file.
+
+```bash
 $ code .bash_profile
 ```
 
-This should install the software you need to your home directory, then open (or create) the `.bash_profile` file. (If it doesn't open the file in VS Code then you didn't set the `code` command in the first section. Go back and do that and try again.)
+>  If the above command doesn't open the file in VS Code then you didn't set the `code` command in the first section. First quit/relaunch Terminal and try again. If that doesn't work, go back to "Launching from the command line" and do that again.)
 
-- Copy and paste this to the bottom of the file `.bash_profile` file:
+- Once your `.bash_profile` opens in VS Code, copy and paste this to the bottom of the file:
 
 ``` bash
 # initiates the git bash prompt

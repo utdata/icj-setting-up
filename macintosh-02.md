@@ -12,7 +12,7 @@ See if you already have the XCode command-line tools installed.
 
 You should get a path in return. Something like "/Library/Developer/CommandLineTools".
 
-If you don't **AND ONLY IF YOU DON'T**, you need to install it: `xcode-select --install`. It can take a long while to download and install.
+If you don't **AND ONLY IF YOU DON'T**, you need to install it: `xcode-select --install`. It can take a long while to download and install. If you get an error on this install, let me know as I have a copy I can give you.
 
 ## Setting up a Node environment
 
@@ -21,10 +21,10 @@ If you don't **AND ONLY IF YOU DON'T**, you need to install it: `xcode-select --
 - We will use NVM to install Node.js. Again, follow the prompts and you should be fine:
 
 ``` bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 ```
 
-- **Test**: Close and reopen a terminal and do `nvm list` to make sure you don't get an error.
+- **Test**: _Close and reopen a terminal_ and do `nvm list` to make sure you don't get an error.
 
 ### Node
 
@@ -63,7 +63,7 @@ There is a point in class when your computer will need access to your Google Dri
 
 ### Creating a service account key
 
-**Make sure you're logged into a personal gmail account** for this part. If you try to use your utexas.edu email, you won't have permission to do what we need to do.
+Log out of Google entirely and then **make sure you're logged into a personal gmail account only** for this part. If you try to use your utexas.edu email, you won't have permission to do what we need to do.
 
 - The instructions for how to create a service account on Google are [here](https://cloud.google.com/docs/authentication/getting-started). Follow that link and click on `Go to the Service Account Key page`.
 - Create a project. The term "project" is a little misleading because you do not need to do this for each project. You only need to do this once per email address. Name your project `icj-project`.
