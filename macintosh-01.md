@@ -106,11 +106,14 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 # sets shorter prompt name
 PS1='\u:\W\$ '
+
+# hides zsh prompt
+export BASH_SILENCE_DEPRECATION_WARNING=1
 ```
 
 - Close and restart your terminal to take the new settings.
 
-In addition to adding some commands to help you with git, we also added something to shorten your terminal prompt.
+In addition to adding some commands to help you with git, we also added something to shorten your terminal prompt. We also added a command to stop asking you to change to zsh.
 
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
