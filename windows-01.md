@@ -12,7 +12,7 @@ Everything listed here is free.
 
 There is one point in the installation process where you need to set "Use Git from Git Bash only".
 
-![git-setup-windows](../../images/git-setup-windows.png)
+![git-setup-windows](images/git-setup-windows.png)
 
 - Use the default settings for everything else.
 - You should now be able to find **Git Bash** from your Windows Start menu.
@@ -94,3 +94,9 @@ In the list of Documents, there should be two things:
 2. A file called `.bash_profile` with the bash-git-prompt info:
 
 ![git-bash-prompt](images/bash_profile-example.png)
+
+---
+
+**Next**: If you are in Intro to Coding, next up is learning more about version control using [Git and Github](https://github.com/utdata/icj-cli-tools#using-git-and-github).
+
+We'll handle Part 2 of the computer setup later in the semester.

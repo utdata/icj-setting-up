@@ -186,3 +186,9 @@ Before doing this, open a new Terminal window:
 - Do `code ~/.bash_profile` and it should open your bash_profile, which should have (at least):
 
 ![git-bash-prompt](images/bash_profile-example.png)
+
+---
+
+**Next**: If you are in Intro to Coding, next up is learning more about version control using [Git and Github](https://github.com/utdata/icj-cli-tools#using-git-and-github).
+
+We'll handle Part 2 of the computer setup later in the semester.
