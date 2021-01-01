@@ -101,7 +101,7 @@ Now that you have created the file and save it somewhere, you only need to downl
 I have a copy of a `.bash_profile` file that you can download onto your computer with the following command.
 
 ```bash
-curl https://raw.githubusercontent.com/utdata/setting-up/master/.bash_profile-lab > .bash_profile
+curl https://raw.githubusercontent.com/utdata/setting-up/main/.bash_profile-lab > .bash_profile
 ```
 
 Close and restart your Terminal. You should be good for the day (or week).
