@@ -20,7 +20,6 @@ There is one point in the installation process where you need to set "Use Git fr
 > If you were sent here from the Command-line interface tools lesson, it's time to go back there now. You'll be sent back later.
 
 - Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) . You only need to do the first set "for _every_ repository".
-- After setting up Git Bash, you [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows). I _think_ the easiest way is to go to View > Command Palette and type in `Select Default Shell` and find it, but I haven't tried it.
 
 ### Set up Github
 
@@ -50,16 +49,19 @@ If you can't set SSH keys, you can at least reduce the number of times you have 
 We will use the code editor Visual Studio Code, made by Microsoft. It is free. We need to install it now.
 
 - Install [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows).
+- After installing, we need to [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows) to use Git Bash. I _think_ the easiest way is to go to View > Command Palette and type in `Select Default Shell` and find it, but I haven't tried it.
 
 ## Installing bash-git-prompt
 
-- Open a new Git Bash window to install the `git-bash-prompt` and do the following, one line at at time:
+- Open a new Git Bash window to install the `git-bash-prompt` and do the following:
 
 ```bash
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 ```
 
 This should install the software you need to your home directory.
+
+Now we need to create your bash profile.
 
 - Do `code .bash_profile` to open or create your `.bash_profile` file.
   - Hollar at me if this doesn't open VS Code and create the file.
