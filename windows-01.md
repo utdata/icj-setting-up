@@ -17,9 +17,27 @@ There is one point in the installation process where you need to set "Use Git fr
 - Use the default settings for everything else.
 - You should now be able to find **Git Bash** from your Windows Start menu.
 
-> If you were sent here from the Command-line interface tools lesson, it's time to go back there now. You'll be sent back later.
+> If you were sent here from the Command-line interface tools lesson, it's time to [go back there now](https://github.com/utdata/icj-cli-tools#using-bash-and-a-terminal). You'll be sent back here to finish the rest later.
 
-- Configure your [Git profile](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) . You only need to do the first set "for _every_ repository".
+### Set up your git user and email
+
+Next we'll set [set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) so Git knows who you are.
+
+- In your Git Bash program, do this but use _your_ name instead of Mona Lisa:
+
+```bash
+$ git config --global user.name "Mona Lisa"
+```
+
+Now we'll [set your user.email](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git).
+
+- In Git Bash do this but use your email:
+
+```bash
+$ git config --global user.email "email@example.com"
+```
+
+You will want to use the same email to create your Github account next.
 
 ### Set up Github
 
@@ -31,14 +49,17 @@ If you don't already have a Github account, go to [github.com/](http://github.co
 
 There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
 
-- I use [these directions to create SSH keys](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on my machine so I'm never asked for a password. It is not as scary as it looks, though there is some command-line foo to execute.
-  - During this process, you'll be asked to save the location of the rsa_id. Just hit return to save the default location.
-  - You'll also be asked to set a password for the file. **JUST LEAVE THE PASSWORD BLANK** and hit return. It will ask you a couple of times.
-  - At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.
+I use [these directions to create SSH keys](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on my machine so I'm never asked for a password. But heed this advice:
+
+- During this process, you'll be asked to save the location of the rsa_id. **Just hit return to save the default location.**
+- You'll also be asked to set a password for the file. **JUST LEAVE THE PASSWORD BLANK** and hit return. It will ask you a couple of times.
+- At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.
+
+The last step of this links you to adding your SSH key to github.
 
 ### Add the SSH key to Github
 
-- Follow [these directions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/).
+- Follow [these directions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/). They explain it pretty well. Make sure you are on the Windows version.
 
 ### Alternative to SSH keys
 
@@ -53,7 +74,7 @@ We will use the code editor Visual Studio Code, made by Microsoft. It is free. W
 
 ## Installing bash-git-prompt
 
-- Open a new Git Bash window to install the `git-bash-prompt` and do the following:
+- Open a **new** Git Bash window to install the `git-bash-prompt` and do the following:
 
 ```bash
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
