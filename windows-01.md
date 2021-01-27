@@ -12,7 +12,7 @@ Everything listed here is free.
 
 There is one point in the installation process where you need to set "Use Git from Git Bash only".
 
-![git-setup-windows](images/git-setup-windows.png)
+<img src="images/git-setup-windows.png" width="300px">
 
 - Use the default settings for everything else.
 - You should now be able to find **Git Bash** from your Windows Start menu.
@@ -70,7 +70,12 @@ If you can't set SSH keys, you can at least reduce the number of times you have 
 We will use the code editor Visual Studio Code, made by Microsoft. It is free. We need to install it now.
 
 - Install [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows).
-- After installing, we need to [configure your VS Code integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_windows) to use Git Bash. I _think_ the easiest way is to go to View > Command Palette and type in `Select Default Shell` and find it, but I haven't tried it.
+- After installing, we need to configure your VS Code integrated terminal to use Git Bash. Go to View > Command Palette and type in `>Terminal: Select Default Shell` and choose it. When it prompts you with choices, choose **git bash**.
+- Open your Command Palette again (Cmd+Shift+p or View > Command Palette) and type in `>shell command` and look for the return **Shell Command: Install 'code' command in PATH. Choose that.
+
+![Add code to path](images/shell-command.png)
+
+- Quit both VS Code and Git Bash for this to take affect.
 
 ## Installing bash-git-prompt
 
@@ -106,17 +111,12 @@ Before doing this, open a new Git Bash window:
 - Do `git config user.name` and you should get a response that is your name.
 - Do `git config user.email` and you should get back your email address.
 - Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
-- Do `code ./` and it should launch VS Code in your home directory.
+- Do `ls -a | grep bash` and you should get a list that includes at least ".bash-git-prompt" and ".bash_profile".
+- Do `code ~/.bash_profile` and it should open your bash_profile, which should have (at least):
 
-In the list of Documents, there should be two things:
+![git-bash-prompt](images/bash_profile-windows.png)
 
-1. A folder called `bash-git-prompt`.
-
-![git-bash-prompt](images/git-bash-prompt-installed.png)
-
-2. A file called `.bash_profile` with the bash-git-prompt info:
-
-![git-bash-prompt](images/bash_profile-example.png)
+If this last test does not work, try restarting Git Bash and try again. If that doesn't work, go back up to [try these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line), then restart Git Bash and try again.
 
 ---
 

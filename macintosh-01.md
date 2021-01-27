@@ -95,7 +95,7 @@ This should install the software you need to your home directory.
 $ code .bash_profile
 ```
 
->  If the above command doesn't open the file in VS Code then you didn't set the `code` command in the first section. First quit/relaunch Terminal and try again. If that doesn't work, go back to "Launching from the command line" and do that again.)
+> If the above command doesn't open the file in VS Code then you didn't set the `code` command in the first section. First quit/relaunch Terminal and try again. If that doesn't work, go back to "Launching from the command line" and do that again.)
 
 - Once your `.bash_profile` opens in VS Code, copy and paste this to the bottom of the file:
 
@@ -185,7 +185,7 @@ Before doing this, open a new Terminal window:
 - Do `ls -a | grep bash` and you should get a list that includes at least ".bash-git-prompt" and ".bash_profile".
 - Do `code ~/.bash_profile` and it should open your bash_profile, which should have (at least):
 
-![git-bash-prompt](images/bash_profile-example.png)
+![git-bash-prompt](images/bash_profile-mac.png)
 
 ---
 
