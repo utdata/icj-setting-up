@@ -90,6 +90,14 @@ We are setting this environment variable to authenticate ourselves to Google usi
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/christian/Documents/icj/google_drive_fetch_token.json"
 ```
 
+### Possible test scenario
+
+- Create a new folder on your computer
+- Ope that folder in a new VS Code window
+- In the terminal, run `degit icj-project-rig`
+- Run `npm install`
+- Run `gulp fetch` ... if you get two files in return, it worked. If you get an error, let me know.
+
 ----
 
 You should be done!

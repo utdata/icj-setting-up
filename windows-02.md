@@ -76,6 +76,22 @@ set GOOGLE_APPLICATION_CREDENTIALS="%userprofile%/OneDrive/Documents/icj/google_
 
 We'll test this with the icj-project-template when the time comes. If you use OneDrive, you might have to use **Git Bash** for some steps instead of the terminal within VS Code.
 
+### Possible test scenario
+
+- Create a new folder on your computer
+- Ope that folder in a new VS Code window
+- In the terminal, run `degit icj-project-rig`
+- Run `npm install`
+- Run `gulp fetch` ... if you get two files in return, it worked.
+
+If you get an error, try this before reaching out to me:
+
+- Open Git Bash
+- Use `cd` to get into your test folder. Make sure you are there using `pwd`.
+- run `gulp fetch` to see if it downloads two files
+
+Let me know if it works or not.
+
 ----
 
 You should be done!
