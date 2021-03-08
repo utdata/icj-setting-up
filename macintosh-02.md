@@ -90,14 +90,39 @@ We are setting this environment variable to authenticate ourselves to Google usi
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/christian/Documents/icj/google_drive_fetch_token.json"
 ```
 
-### Possible test scenario
+### Test these settings
 
-- Create a new folder on your computer
-- Ope that folder in a new VS Code window
-- In the terminal, run `degit utdata/icj-project-rig`
-- Run `npm install`
-- Run `gulp fetch` ... if you get two files in return, it worked. If you get an error, let me know.
+- Create a folder in your icj folder called `yourname-test`.
+- Open that folder in Visual Studio Code.
+- Open a VS Code Terminal and run:
 
+```bash
+$ degit utdata/icj-google-fetch-test#main
+```
+
+You should get this in return:
+
+```bash
+> cloned utdata/icj-google-fetch-test#main
+```
+
+And it will download a bunch of files into your folder.
+
+- Run `npm install`. This will also download a bunch of files. It might take a couple of minutes to run.
+- Run `gulp fetch`.
+
+If everything works, you should have a return like this:
+
+```bash
+$ gulp fetch
+[14:38:53] Using gulpfile ~/Documents/icj/icj-fetch-test/gulpfile.js
+[14:38:53] Starting 'fetch'...
+[14:38:53] Finished 'fetch' after 8.61 ms
+Downloaded `library` (1RgMhjtkXlbbf9uzSzy_xPRKwxcVZIZqVytgM_JoU4E4)
+Downloaded `bookstores` (1gDwO-32cgpBDn_0niV0iu6TqQTaRDr4nmSqnT53magY)
+```
+
+Your path might differ for "Using gulpfile", but what you are looking for is **"Downloaded \`library\`"** and **"Downloaded \`bookstores\`**. If you didn't get BOTH of those, then reach out to me to troubleshoot the errors.
 ----
 
 You should be done!

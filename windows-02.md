@@ -78,19 +78,45 @@ We'll test this with the icj-project-template when the time comes. If you use On
 
 ### Possible test scenario
 
-- Create a new folder on your computer
-- Ope that folder in a new VS Code window
-- In the terminal, run `degit utdata/icj-project-rig`
-- Run `npm install`
-- Run `gulp fetch` ... if you get two files in return, it worked.
+- Create a folder in your icj folder called `yourname-test`.
+- Open that folder in Visual Studio Code.
+- Open a VS Code Terminal and run:
+
+```bash
+$ degit utdata/icj-google-fetch-test#main
+```
+
+You should get this in return:
+
+```bash
+> cloned utdata/icj-google-fetch-test#main
+```
+
+And it will download a bunch of files into your folder.
+
+- Run `npm install`. This will also download a bunch of files. It might take a couple of minutes to run.
+- Run `gulp fetch`.
+
+If everything works, you should have a return like this:
+
+```bash
+$ gulp fetch
+[14:38:53] Using gulpfile ~/Documents/icj/icj-fetch-test/gulpfile.js
+[14:38:53] Starting 'fetch'...
+[14:38:53] Finished 'fetch' after 8.61 ms
+Downloaded `library` (1RgMhjtkXlbbf9uzSzy_xPRKwxcVZIZqVytgM_JoU4E4)
+Downloaded `bookstores` (1gDwO-32cgpBDn_0niV0iu6TqQTaRDr4nmSqnT53magY)
+```
+
+Your path might differ for "Using gulpfile", but what you are looking for is **"Downloaded \`library\`"** and **"Downloaded \`bookstores\`**. If you didn't get BOTH of those then something isn't right.
 
 If you get an error, try this before reaching out to me:
 
 - Open Git Bash
 - Use `cd` to get into your test folder. Make sure you are there using `pwd`.
-- run `gulp fetch` to see if it downloads two files
+- run `gulp fetch` to see if it downloads two files.
 
-Let me know if it works or not.
+If that also doesn't work, reach out to me to troubleshoot.
 
 ----
 
