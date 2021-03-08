@@ -80,7 +80,7 @@ We'll test this with the icj-project-template when the time comes. If you use On
 
 - Create a new folder on your computer
 - Ope that folder in a new VS Code window
-- In the terminal, run `degit icj-project-rig`
+- In the terminal, run `degit utdata/icj-project-rig`
 - Run `npm install`
 - Run `gulp fetch` ... if you get two files in return, it worked.
 
