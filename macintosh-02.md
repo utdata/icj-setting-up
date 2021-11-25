@@ -10,7 +10,9 @@ See if you already have the XCode command-line tools installed.
 
 1. Run this in your Terminal:
 
-`xcode-select -p`
+```bash
+xcode-select -p
+```
 
 You should get a path in return. Something like "/Library/Developer/CommandLineTools".
 
@@ -20,7 +22,9 @@ If you don't **AND ONLY IF YOU DON'T**, you need to install it.
 
 1. In your Terminal run this:
 
- `xcode-select --install`
+``` bash
+xcode-select --install
+```
 
 2. A software update popup window will appear that asks: "The xcode-select command requires the command line developer tools. Would you like to install the tools now?" choose to confirm this by clicking **Install**, then agree to the Terms of Service when requested (feel free to read them thoroughly, we’ll be here).
 
