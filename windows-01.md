@@ -1,6 +1,6 @@
 # Windows
 
-I am a little less familiar with Windows, especially as it relates to OneDrive, so it's possible we'll run into issues.
+I am a little less familiar with Windows, especially as it relates to OneDrive, so it's possible we'll run into issues. We'll solve them.
 
 Everything listed here is free.
 
