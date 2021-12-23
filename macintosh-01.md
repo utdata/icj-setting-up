@@ -113,17 +113,15 @@ In addition to adding some commands to help you with git, we also added somethin
 
 ## VS Code extensions
 
-If you look on the left-menu, there is a square looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
+If you look on the left-menu of Visual Studio code, there is a square puzzle looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
 
 1. In VS Code, click on the Extensions icon.
-2. In the search box, type in `Nunjucks template`. Click on the return for Nunjucks Template.
-1. Click the Install button.
+1. In the search box, type in **Live Server** and find the one created by **Ritwick Dey**.
+1. Click the Install button on that page.
+1. Do the same for **markdownlint** by **David Anson**.
+1. Do tne same for **Nunjucks**  by **ronnidc**.
 
-We'll need this toward the end of the semester.
-
-1. Now search for **markdownlint** and install it in the same way.
-
-This one tells you when your Markdown syntax is incorrect.
+These all make Visual Studio Code more awesomer in different ways.
 
 ## VS Code preferences
 

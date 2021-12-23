@@ -12,7 +12,7 @@ Everything listed here is free.
 
 There is one point in the installation process where you need to set "Use Git from Git Bash only".
 
-<img src="images/git-setup-windows.png" width="300px">
+![git setup](images/git-setup-windows.png)
 
 - Use the default settings for everything else.
 - You should now be able to find **Git Bash** from your Windows Start menu.
@@ -101,6 +101,60 @@ source ~/.bash-git-prompt/gitprompt.sh
 - Close and restart your terminal to take the new settings.
 
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
+
+## VS Code extensions
+
+If you look on the left-menu of Visual Studio code, there is a square puzzle looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
+
+1. In VS Code, click on the Extensions icon.
+1. In the search box, type in **Live Server** and find the one created by **Ritwick Dey**.
+1. Click the Install button on that page.
+1. Do the same for **markdownlint** by **David Anson**.
+1. Do tne same for **Nunjucks**  by **ronnidc**.
+
+These all make Visual Studio Code more awesomer in different ways.
+
+## VS Code preferences
+
+I have some helpful user preferences for VS Code that you might find useful.
+
+1. Go to the Code > Preferences > Settings.
+1. At the top right of the code editor are a series of icons, including this one:
+
+![vs-code-setting-as-code](images/vs-code-setting-as-code.png)
+
+1. In the new file that opens, copy and paste the code below and replace what is there.
+
+```js
+{
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 12,
+    "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 2,
+    "[md]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+    },
+    "editor.renderControlCharacters": true,
+    "highlight-matching-tag.style": {
+        "backgroundColor": "rgba(63, 191, 63, 0.20)"
+    },
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "files.associations": {
+        "*.html": "html"
+    },
+    "emmet.includeLanguages": {
+        "njk": "html",
+        "nunjucks": "html"
+    },
+}
+```
+
+1. Save and close the file.
+
+This sets the default text size, line wrapping, tab stops and other useful things we will need.
 
 ## Testing Part 1 setup
 
