@@ -94,16 +94,16 @@ There is a point in class when your computer will need access to your Google Dri
 
 Log out of Google entirely and then **make sure you're logged into a personal gmail account only** for this part. If you try to use your utexas.edu email, you won't have permission to do what we need to do.
 
-1. The instructions for how to create a service account on Google are [here](https://cloud.google.com/docs/authentication/getting-started). Follow that link and click on `Go to the Service Account Key page`.
+1. The instructions for how to create a service account on Google are [here](https://cloud.google.com/docs/authentication/getting-started). Follow that link and click on `Go to Create service account`.
 2. Create a project. The term "project" is a little misleading because you do not need to do this for each project. You only need to do this once per email address. Name your project `icj-project`.
-3. You are next directed to create a "service account key".
+3. You are next directed to create a service account for that project.
   - For **Service account**, choose "New service account"
   - For the **Service account name**, use `icj`. The **Service account ID** will get filled out for you.
   - For Role, use the **Select a role** dropdown and go to `Project --> Owner` and select it.
-4. Once you hit **Create key**, a file will be saved on your machine. _This file is important_ and you need to keep it on your machine! I renamed my file `google_drive_fetch_token.json` and put it in same folder with all of my other icj class projects, for example: `/Users/christian/Documents/icj/google_drive_fetch_token.json`. Put this where you can find it and won't throw it away on accident.
-5. Click on **Library** in the left navigation to go to the [API Library](https://console.developers.google.com/apis/library)
+4. You will be directed to a list of your service accounts. Open the account you just created and hit the `Key` tab at the top. Then click `Add Key` -> `Create New Key` and choose JSON. Once you hit **Create key**, a file will be saved on your machine. _This file is important_ and you need to keep it on your machine! I renamed my file `google_drive_fetch_token.json` and put it in same folder with all of my other icj class projects, for example: `/Users/christian/Documents/icj/google_drive_fetch_token.json`. Put this where you can find it and won't throw it away on accident.
+5. Click on the left navigation (hamburger menu) -> **API & Services** -> **Library** to go to the [API Library](https://console.developers.google.com/apis/library)
 6. Use the search to find the **Google Docs API** and select it.
-  - Make sure `icj-project` is selected in the top nav near the Google Cloud Services logo.
+  - Make sure `icj-project` is selected in the top nav near the Google Cloud Platform logo.
   - Then click on the **Enable** button to activate it.
 8. Use the search bar to find **Google Sheets API** and choose it and **Enable** it.
 
