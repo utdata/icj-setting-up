@@ -60,33 +60,39 @@ We're going to create a special file on your computer so that your machine can c
 1. When it prompts you about a location, **JUST HIT RETURN** to accept the default.
 1. when it prompts you for a passphrase, **JUST HIT RETURN** to leave it blank.
 
-These steps create a file of random characters on your computer.
+You should get a nice little art looking return on your terminal, eventually.
 
-1. Once you are through that, do the following command:
+What those steps did is create a file on your computer and put inside of it a bunch of random characters.
+
+1. Once you are through the steps above, do the following command:
 
 `pbcopy < ~/.ssh/id_ed25519.pub`
 
 This copies the contents of that file you created to your clipboard. It's like opening the file and copying the contents.
 
 1. To to [github.com](https://github.com/) and click your user icon and choose **Settings**.
-1. In the user settings sidebar on the left, click SSH and GPG keys.
+1. In the user settings sidebar on the left, click **SSH and GPG keys**.
 1. Click **New SSH key** or **Add SSH key**.
-1. In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".
-1. Paste your key into the "Key" field.
+1. In the "Title" field, add a descriptive label for the new key. Name it after your computer, like "Personal MacBook Air" or something.
+1. In the "Key" field, so Command-V to paste your key into the box.
 
 It will look something like this:
 
 ![key](https://docs.github.com/assets/cb-24835/images/help/settings/ssh-key-paste.png)
+
+Almost done!
 
 1. Click Add SSH key.
 1. If prompted, confirm your GitHub password.
 
 ### Test
 
-1. Follow [these directions](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) to add your key to Github.
-    - If you are asked about "RSA key fingerprint", type **yes**.
-2. **TEST:**From your Terminal, do `ssh -T git@github.com` to test the SSH keys.
-    - In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
+1. From your Terminal, do the following command:
+
+`ssh -T git@github.com`
+
+- If you are asked about "RSA key fingerprint", type **yes** and hit return.
+- In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access." If you get that message, you are good!
 
 ## Code editor
 
