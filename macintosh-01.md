@@ -47,18 +47,41 @@ If you don't already have a Github account, go to [github.com/](http://github.co
 
 ### Saving your Github credentials
 
-There are a couple of ways you can tell your computer to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. This creates a file on your computer with a secret key that only you have. It looks complicated, but it isn't too bad and you only have to do it once for your machine. The steps [are here](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), but I walk you through it below.
+We're going to create a special file on your computer so that your machine can connect to your Github account. (Github doens't like sending your password around). It will seem complicated, but it's not really.
 
 > If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense to you, you likely haven't.)
 
-1. Before you do this next step, know it will ask you to supply a location and password: **Leave it blank and just hit enter in both cases**.
-2. In your terminal, copy/paste and run the following command:
+**Before you do this next step**, know it will ask you to supply a location and password: **Leave it blank and just hit enter in both cases**.
+
+1. In your terminal, run the following command **but with your email**:
 
 `ssh-keygen -t ed25519 -C "your_email@example.com"`
 
-Remember, just hit return when prompted for a location or password.
+1. When it prompts you about a location, **JUST HIT RETURN** to accept the default.
+1. when it prompts you for a passphrase, **JUST HIT RETURN** to leave it blank.
 
-### Add the SSH key to Github
+These steps create a file of random characters on your computer.
+
+1. Once you are through that, do the following command:
+
+`pbcopy < ~/.ssh/id_ed25519.pub`
+
+This copies the contents of that file you created to your clipboard. It's like opening the file and copying the contents.
+
+1. To to [github.com](https://github.com/) and click your user icon and choose **Settings**.
+1. In the user settings sidebar on the left, click SSH and GPG keys.
+1. Click **New SSH key** or **Add SSH key**.
+1. In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".
+1. Paste your key into the "Key" field.
+
+It will look something like this:
+
+![key](https://docs.github.com/assets/cb-24835/images/help/settings/ssh-key-paste.png)
+
+1. Click Add SSH key.
+1. If prompted, confirm your GitHub password.
+
+### Test
 
 1. Follow [these directions](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) to add your key to Github.
     - If you are asked about "RSA key fingerprint", type **yes**.
