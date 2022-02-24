@@ -90,22 +90,33 @@ These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding too
 
 There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we'll create a file to save on your computer that includes a secret key that works only for you.
 
-### Creating a service account key
+### Creating a service account
 
-Log out of Google entirely and then **make sure you're logged into a personal gmail account only** for this part. If you try to use your utexas.edu email, you won't have permission to do what we need to do.
+**Make sure you're logged into a _personal_ gmail account for this part**. If you use your utexas.edu email, you won't have permission to do what we need to do.
 
-1. The instructions for how to create a service account on Google are [here](https://cloud.google.com/docs/authentication/getting-started). Follow that link and click on `Go to the Service Account Key page`.
-2. Create a project. The term "project" is a little misleading because you do not need to do this for each project. You only need to do this once per email address. Name your project `icj-project`.
-3. You are next directed to create a "service account key".
-  - For **Service account**, choose "New service account"
+The instructions for how to create a service account on Google are [here](https://cloud.google.com/docs/authentication/getting-started). Follow that link and click on `Go to the Service Account Key page`.
+
+- First, you must create a project. The term "project" is a little misleading because you do not need to do this for each project. You only need to do this once per email address. Name your project `icj-project`.
+- You are next directed to create a "service account key".
+  - For **Service account**, choose "New service account".
   - For the **Service account name**, use `icj`. The **Service account ID** will get filled out for you.
   - For Role, use the **Select a role** dropdown and go to `Project --> Owner` and select it.
-4. Once you hit **Create key**, a file will be saved on your machine. _This file is important_ and you need to keep it on your machine! I renamed my file `google_drive_fetch_token.json` and put it in same folder with all of my other icj class projects, for example: `/Users/christian/Documents/icj/google_drive_fetch_token.json`. Put this where you can find it and won't throw it away on accident.
-5. Click on **Library** in the left navigation to go to the [API Library](https://console.developers.google.com/apis/library)
-6. Use the search to find the **Google Docs API** and select it.
+- At this point you should be taken to a page that shows your "Service Accounts". There is a row that shows something like this:
+
+![Service accounts](images/serviceaccount.png)
+
+- Click on the link noted above
+- You'll be taken to a Service Account Details page, where there are some tabs. Click on the one called **Keys**.
+
+![Create key](images/createkey.png)
+
+- Use the **ADD KEY** button then **Create new key** option, choose the **JSON** option and click **CREATE**.
+- A file will be saved on your machine. _This file is important_ and you need to keep it on your machine! I renamed my file `google_drive_fetch_token.json` and put it in same folder with all of my other icj class projects, for example: `/c/Users/christian/Documents/icj/google_drive_fetch_token.json`.
+- Next go the [API Library page](https://console.cloud.google.com/apis/library).
+- Use the search to find the **Google Docs API** and select it.
   - Make sure `icj-project` is selected in the top nav near the Google Cloud Services logo.
-  - Then click on the **Enable** button to activate it.
-8. Use the search bar to find **Google Sheets API** and choose it and **Enable** it.
+  - Then click on the **Enable** buttton to activate it.
+- Use the search bar to find **Google Sheets API** and choose it and **Enable** it.
 
 ### Setting up the environment variable
 

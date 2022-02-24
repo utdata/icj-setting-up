@@ -45,8 +45,18 @@ The instructions for how to create a service account on Google are [here](https:
   - For **Service account**, choose "New service account".
   - For the **Service account name**, use `icj`. The **Service account ID** will get filled out for you.
   - For Role, use the **Select a role** dropdown and go to `Project --> Owner` and select it.
-- Once you hit **Create key**, a file will be saved on your machine. _This file is important_ and you need to keep it on your machine! I renamed my file `google_drive_fetch_token.json` and put it in same folder with all of my other icj class projects, for example: `/c/Users/christian/Documents/icj/google_drive_fetch_token.json`.
-- Click on **Library** in the left navigation to go to the [API Library](https://console.developers.google.com/apis/library).
+- At this point you should be taken to a page that shows your "Service Accounts". There is a row that shows something like this:
+
+![Service accounts](images/serviceaccount.png)
+
+- Click on the link noted above
+- You'll be taken to a Service Account Details page, where there are some tabs. Click on the one called **Keys**.
+
+![Create key](images/createkey.png)
+
+- Use the **ADD KEY** button then **Create new key** option, choose the **JSON** option and click **CREATE**.
+- A file will be saved on your machine. _This file is important_ and you need to keep it on your machine! I renamed my file `google_drive_fetch_token.json` and put it in same folder with all of my other icj class projects, for example: `/c/Users/christian/Documents/icj/google_drive_fetch_token.json`.
+- Next go the [API Library page](https://console.cloud.google.com/apis/library).
 - Use the search to find the **Google Docs API** and select it.
   - Make sure `icj-project` is selected in the top nav near the Google Cloud Services logo.
   - Then click on the **Enable** buttton to activate it.
@@ -60,18 +70,18 @@ We are setting this environment variable to authenticate ourselves to Google usi
 
 - Open a new Git Bash prompt
 - Do `code .bash_profile` to open your ".bash_profile" file in VS Code. You should see some stuff there already from other configurations. (Hollar if you don't as that means you are likely in the wrong file.)
-- Add the text below to this file, but **with your own path and file name**.
+- Add the text below to this file, but **with your home directory name as `your_username`**.
 
 ```bash
 # Google Auth
-set GOOGLE_APPLICATION_CREDENTIALS="%userprofile%/Documents/icj/google_drive_fetch_token.json"
+export GOOGLE_APPLICATION_CREDENTIALS="C:/Users/your_username/Documents/icj/google_drive_fetch_token.json"
 ```
 
 If you have and use Microsoft OneDrive, then you might need to modify that path just a bit:
 
 ```bash
 # Google Auth
-set GOOGLE_APPLICATION_CREDENTIALS="%userprofile%/OneDrive/Documents/icj/google_drive_fetch_token.json"
+set GOOGLE_APPLICATION_CREDENTIALS="C:/Users/your_username/OneDrive/Documents/icj/google_drive_fetch_token.json"
 ```
 
 We'll test this with the icj-project-template when the time comes. If you use OneDrive, you might have to use **Git Bash** for some steps instead of the terminal within VS Code.
@@ -121,3 +131,5 @@ If that also doesn't work, reach out to me to troubleshoot.
 ----
 
 You should be done!
+
+> Note for Crit: Might be able to use `%userprofile%` instead of `C:/Users/your_username/`.
