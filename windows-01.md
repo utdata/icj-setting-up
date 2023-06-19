@@ -37,17 +37,17 @@ Now we'll [set your user.email](https://help.github.com/en/github/setting-up-and
 $ git config --global user.email "email@example.com"
 ```
 
-You will want to use the same email to create your Github account next.
+You will want to use the same email to create your GitHub account next.
 
-### Set up Github
+### Set up GitHub
 
-If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account.
+If you don't already have a GitHub account, go to [github.com/](http://github.com/) and create an account.
 
-- Choose your username carefully. Avoid using upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal Github profile FOREVER.
+- Choose your username carefully. Avoid using upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal GitHub profile FOREVER.
 
-### Saving your Github credentials
+### Saving your GitHub credentials
 
-There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
+There are ways you can tell your computers to save your GitHub username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
 
 I use [these directions to create SSH keys](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on my machine so I'm never asked for a password. But heed this advice:
 
@@ -57,9 +57,9 @@ I use [these directions to create SSH keys](https://docs.github.com/en/free-pro-
 
 The last step of this links you to adding your SSH key to github.
 
-### Saving your Github credentials
+### Saving your GitHub credentials
 
-We're going to create a special file on your computer so that your machine can connect to your Github account. (Github doens't like sending your password around). It will seem complicated, but it's not really.
+We're going to create a special file on your computer so that your machine can connect to your GitHub account. (GitHub doens't like sending your password around). It will seem complicated, but it's not really.
 
 > If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense to you, you likely haven't.)
 
@@ -108,7 +108,7 @@ Almost done!
 
 ### Alternative to SSH keys
 
-If you can't set SSH keys, you can at least reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
+If you can't set SSH keys, you can at least reduce the number of times you have to enter your GitHub name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
 
 ## Text editor
 
@@ -219,6 +219,6 @@ If this last test does not work, try restarting Git Bash and try again. If that 
 
 ---
 
-**Next**: If you are in Intro to Coding, next up is learning more about version control using [Git and Github](https://github.com/utdata/icj-cli-tools#using-git-and-github).
+**Next**: If you are in Intro to Coding, next up is learning more about version control using [Git and GitHub](https://github.com/utdata/icj-cli-tools#using-git-and-github).
 
 We'll handle Part 2 of the computer setup later in the semester.

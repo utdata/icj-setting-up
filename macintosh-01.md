@@ -37,17 +37,17 @@ Now we'll [set your user.email](https://help.github.com/en/github/setting-up-and
 git config --global user.email "email@example.com"
 ```
 
-You will want to use the same email when you create your Github account.
+You will want to use the same email when you create your GitHub account.
 
-## Set up Github
+## Set up GitHub
 
-If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account.
+If you don't already have a GitHub account, go to [github.com/](http://github.com/) and create an account.
 
-> **IMPORTANT:** Choose your username carefully and **don't make the name specific to this class**. This is your personal Github profile FOREVER. I would avoid upper case characters as a matter of convention. Your name becomes part of a URL for your projects when we publish them.
+> **IMPORTANT:** Choose your username carefully and **don't make the name specific to this class**. This is your personal GitHub profile FOREVER. I would avoid upper case characters as a matter of convention. Your name becomes part of a URL for your projects when we publish them.
 
-### Saving your Github credentials
+### Saving your GitHub credentials
 
-We're going to create a special file on your computer so that your machine can connect to your Github account. (Github doens't like sending your password around). It will seem complicated, but it's not really.
+We're going to create a special file on your computer so that your machine can connect to your GitHub account. (GitHub doens't like sending your password around). It will seem complicated, but it's not really.
 
 > If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense to you, you likely haven't.)
 
@@ -210,6 +210,6 @@ Before doing this, open a new Terminal window:
 
 ---
 
-**Next**: If you are in Intro to Coding, next up is learning more about version control using [Git and Github](https://github.com/utdata/icj-cli-tools#using-git-and-github).
+**Next**: If you are in Intro to Coding, next up is learning more about version control using [Git and GitHub](https://github.com/utdata/icj-cli-tools#using-git-and-github).
 
 We'll handle Part 2 of the computer setup later in the semester.

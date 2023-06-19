@@ -4,7 +4,7 @@ These lessons outline how to set up your computer for development using the tech
 
 If you are using a UT lab computer it may not be set up. Please check with me.
 
-## Part 1: VS Code, Git & Github
+## Part 1: VS Code, Git & GitHub
 
 - [Macintosh Part 1](macintosh-01.md)
 - [Windows Part 1](windows-01.md)
