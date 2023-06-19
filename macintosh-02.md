@@ -123,7 +123,21 @@ Click `Allow` and you will have given your computer access to manage files on yo
 4. Now we are going to [create the project](https://cloud.google.com/sdk/gcloud/reference/projects/create) that we are going to work with in this class via the command `gcloud projects create icj-project --set-as-default`.
 This command creates our new project called `icj-project` on the Google Cloud Platform and sets it as our default project.
 
+Once this process is done, enter the command `gcloud auth application-default login` into your terminal, follow the browser prompts, and you should be able to see what project you are logged into.
+```bash
+name@computer icj-project-rig % gcloud auth application-default login
+Your browser has been opened to visit:
 
+    https://accounts.google.com/o/oauth2/auth?[VERY_LARGE_STRING]
+
+
+Credentials saved to file: [/Users/PATH/TO/FOLDER/.config/gcloud/application_default_credentials.json]
+
+These credentials will be used by any library that requests Application Default Credentials (ADC).
+
+Quota project "[RECENTLY_CREATED_PROJECT_ID]" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.
+name@computer icj-project-rig % 
+```
 
 ## Test these settings
 
