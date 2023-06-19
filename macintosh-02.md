@@ -86,7 +86,7 @@ These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding too
 There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we'll need specific credentials that work only for you. We will use the Google Cloud Project's command line interface tool to do this.
 Otherwise known as the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud).
 
-### Steps to save our credentials and access our project
+### Steps to save our Google credentials and access our project
 1. To make the installation of packages simple, we are going to use the MacOS package manager [brew](https://brew.sh/). 
 Click on the brew link, copy the text beginning with `/brew/bash`, and then paste it into your terminal. 
 This may take a minute and put out a lot of information on your terminal, but just wait until it is done.
