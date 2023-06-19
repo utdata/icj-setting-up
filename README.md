@@ -25,4 +25,3 @@ This part we will do later in the year, once we start using it.
 ## Other resources
 
 - [VS Code Goodies](vscode-goodies.md)
-
