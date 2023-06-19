@@ -63,14 +63,14 @@ If you didn't get a version number above, you need to install stuff.
 - From your Terminal, in your home directory, install NVM:
 
 ```bash
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
 - Close and restart your Terminal window.
 - Now install the version of Node we wll use:
 
 ```bash
-nvm install 8.11.4
+nvm install v16.13.0
 ```
 
 - Now install node package manager:

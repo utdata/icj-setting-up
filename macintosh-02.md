@@ -90,9 +90,9 @@ These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding too
 
 There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we'll create a file to save on your computer that includes a secret key that works only for you.
 
-### Creating a service account key
+### Creating a service account
 
-Log out of Google entirely and then **make sure you're logged into a personal gmail account only** for this part. If you try to use your utexas.edu email, you won't have permission to do what we need to do.
+**Make sure you're logged into a _personal_ gmail account for this part**. If you use your utexas.edu email, you won't have permission to do what we need to do.
 
 1. The instructions for how to create a service account on Google are [here](https://cloud.google.com/docs/authentication/getting-started). Follow that link and click on `Go to Create service account`.
 2. Create a project. The term "project" is a little misleading because you do not need to do this for each project. You only need to do this once per email address. Name your project `icj-project`.
