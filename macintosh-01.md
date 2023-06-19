@@ -1,5 +1,4 @@
 # Setting up your Macintosh, Part 1
-
 Everything listed here is free.
 
 > If you have a new "M1 Apple Silicon" Mac (built 2021 or later) then pay special attention to directions when installing and look for "Apple Silicon" versions.
@@ -15,13 +14,12 @@ Be sure to read all the directions for a particular section before diving in as 
 Homebrew is a "package manager", meaning it helps you install programs that are not in the Apple app store. Git is a version control manager, which will learn about soon.
 
 1. Install [Homebrew](https://brew.sh/). Just run the first command noted on that page and then come back here.
-1. Install [Git](https://git-scm.com/downloads) using this homebrew command: `brew install git`.
+2. Install [Git](https://git-scm.com/downloads) using this homebrew command: `brew install git`.
 
 Don't install the Git GUI clients. There isn't an "app" for Git, it just lives inside your computer.
 
 ### Set up your git user and email
-
-Next we'll set [set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) so Git knows who you are.
+Next we'll [set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) so Git knows who you are.
 
 1. In your Terminal, do this but use _your_ name instead of Mona Lisa:
 
@@ -31,7 +29,7 @@ git config --global user.name "Mona Lisa"
 
 Now we'll [set your user.email](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git).
 
-1. In your Terminal do this but use your email:
+2. In your Terminal do this but use your email:
 
 ```bash
 git config --global user.email "email@example.com"
@@ -46,7 +44,6 @@ If you don't already have a GitHub account, go to [github.com/](http://github.co
 > **IMPORTANT:** Choose your username carefully and **don't make the name specific to this class**. This is your personal GitHub profile FOREVER. I would avoid upper case characters as a matter of convention. Your name becomes part of a URL for your projects when we publish them.
 
 ### Saving your GitHub credentials
-
 We're going to create a special file on your computer so that your machine can connect to your GitHub account. (GitHub doens't like sending your password around). It will seem complicated, but it's not really.
 
 > If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense to you, you likely haven't.)
@@ -57,24 +54,24 @@ We're going to create a special file on your computer so that your machine can c
 
 `ssh-keygen -t ed25519 -C "your_email@example.com"`
 
-1. When it prompts you about a location, **JUST HIT RETURN** to accept the default.
-1. when it prompts you for a passphrase, **JUST HIT RETURN** to leave it blank.
+2. When it prompts you about a location, **JUST HIT RETURN** to accept the default.
+3. when it prompts you for a passphrase, **JUST HIT RETURN** to leave it blank.
 
 You should get a nice little art looking return on your terminal, eventually.
 
 What those steps did is create a file on your computer and put inside of it a bunch of random characters.
 
-1. Once you are through the steps above, do the following command:
+4. Once you are through the steps above, do the following command:
 
 `pbcopy < ~/.ssh/id_ed25519.pub`
 
 This copies the contents of that file you created to your clipboard. It's like opening the file and copying the contents.
 
-1. To to [github.com](https://github.com/) and click your user icon and choose **Settings**.
-1. In the user settings sidebar on the left, click **SSH and GPG keys**.
-1. Click **New SSH key** or **Add SSH key**.
-1. In the "Title" field, add a descriptive label for the new key. Name it after your computer, like "Personal MacBook Air" or something.
-1. In the "Key" field, so Command-V to paste your key into the box.
+1. Go to [github.com](https://github.com/) and click your user icon and choose **Settings**.
+2. In the user settings sidebar on the left, click **SSH and GPG keys**.
+3. Click **New SSH key** or **Add SSH key**.
+4. In the "Title" field, add a descriptive label for the new key. Name it after your computer, like "Personal MacBook Air" or something.
+5. In the "Key" field, so Command-V to paste your key into the box.
 
 It will look something like this:
 
@@ -83,10 +80,9 @@ It will look something like this:
 Almost done!
 
 1. Click Add SSH key.
-1. If prompted, confirm your GitHub password.
+2. If prompted, confirm your GitHub password.
 
 ### Test
-
 1. From your Terminal, do the following command:
 
 `ssh -T git@github.com`
@@ -95,13 +91,11 @@ Almost done!
 - In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access." If you get that message, you are good!
 
 ## Code editor
-
 1. Install the code editor [Visual Studio Code](https://code.visualstudio.com/download) on your machine. (There is an Apple Silicon version for those with a new M1 Mac!) It's normal kind of application install that shouldn't give you any trouble. (There are other good code editors out there ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class and I suggest you do, too.)
-1. Follow these "Launching from the command line" [instructions](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to add the `code` command to your path. This allows us to launch Visual Studio Code from a terminal.
-1. **TEST**: Close your Terminal and restart it. Type `code ./` and see it opens VS Code. Hollar if it doesn't.
+2. Follow these "Launching from the command line" [instructions](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to add the `code` command to your path. This allows us to launch Visual Studio Code from a terminal.
+3. **TEST**: Close your Terminal and restart it. Type `code ./` and see it opens VS Code. Hollar if it doesn't.
 
 ## Updating the bash_profile
-
 We are adding some software to adjust your Terminal prompt to show your git "state" when in a tracked folder.
 
 1. Open a _new_ Terminal window and do the following:
@@ -112,7 +106,7 @@ git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --d
 
 This should install the software you need to your home directory.
 
-1. Now open (or create) the `.bash_profile` file.
+2. Now open (or create) the `.bash_profile` file.
 
 ```bash
 code .bash_profile
@@ -120,7 +114,7 @@ code .bash_profile
 
 > If the above command doesn't open the file in VS Code then you didn't set the `code` command in the "Code Editor" section. First quit/relaunch Terminal and try again. If that doesn't work, go back to "[Launching from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)" and do that again.)
 
-1. Once your `.bash_profile` opens in VS Code, copy and paste this to the bottom of the file:
+3. Once your `.bash_profile` opens in VS Code, copy and paste this to the bottom of the file:
 
 ``` bash
 # initiates the git bash prompt
@@ -141,29 +135,27 @@ In addition to adding some commands to help you with git, we also added somethin
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
 ## VS Code extensions
-
 If you look on the left-menu of Visual Studio code, there is a square puzzle looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
 
 1. In VS Code, click on the Extensions icon.
-1. In the search box, type in **Live Server** and find the one created by **Ritwick Dey**.
-1. Click the Install button on that page.
-1. Do the same for **markdownlint** by **David Anson**.
-1. Do tne same for **Nunjucks**  by **ronnidc**.
+2. In the search box, type in **Live Server** and find the one created by **Ritwick Dey**.
+3. Click the Install button on that page.
+4. Do the same for **markdownlint** by **David Anson**.
+5. Do tne same for **Nunjucks**  by **ronnidc**.
 
 These all make Visual Studio Code more awesomer in different ways.
 
 ## VS Code preferences
-
 I have some helpful user preferences for VS Code that you might find useful.
 
 1. Go to the Code > Preferences > Settings.
-1. At the top right of the code editor are a series of icons, including this one:
+2. At the top right of the code editor are a series of icons, including this one:
 
 ![vs-code-setting-as-code](images/vs-code-setting-as-code.png)
 
-1. In the new file that opens, copy and paste the code below and replace what is there.
+3. In the new file that opens, copy and paste the code below and replace what is there.
 
-```js
+```json
 {
     "editor.fontSize": 14,
     "terminal.integrated.fontSize": 12,
@@ -190,21 +182,20 @@ I have some helpful user preferences for VS Code that you might find useful.
 }
 ```
 
-1. Save and close the file.
+4. Save and close the file.
 
 This sets the default text size, line wrapping, tab stops and other useful things we will need.
 
 ## Testing Part 1 setup
-
 We need to make sure everything is set correctly before moving on. So here is how to check:
 
 Before doing this, open a new Terminal window:
 
 1. Do `git config user.name` and you should get a response that is your name.
-1. Do `git config user.email` and you should get back your email address.
-1. Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
-1. Do `ls -a | grep bash` and you should get a list that includes at least ".bash-git-prompt" and ".bash_profile".
-1. Do `code ~/.bash_profile` and it should open your bash_profile, which should have (at least):
+2. Do `git config user.email` and you should get back your email address.
+3. Do `ssh -T git@github.com` to test SSH keys. If you are asked about "RSA key fingerprint", say yes. In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access."
+4. Do `ls -a | grep bash` and you should get a list that includes at least ".bash-git-prompt" and ".bash_profile".
+5. Do `code ~/.bash_profile` and it should open your bash_profile, which should have (at least):
 
 ![git-bash-prompt](images/bash_profile-mac.png)
 
