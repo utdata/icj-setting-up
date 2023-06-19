@@ -160,7 +160,7 @@ I have some helpful user preferences for VS Code that you might find useful.
 
 3. In the new file that opens, copy and paste the code below and replace what is there.
 
-```js
+```json
 {
     "editor.fontSize": 14,
     "terminal.integrated.fontSize": 12,
