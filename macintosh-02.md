@@ -43,25 +43,25 @@ We will use NVM to install Node.js. Again, follow the prompts and you should be 
 ### Node
 Use NVM to install Node.
 
-1. Run this in your Terminal:
+1. Install `v16.18.0` of Node via the next two commands:
 
-``` bash
-nvm install 16.18.0
+```bash
+name@computer icj-project-rig % nvm install 16.18.0
+...
+name@computer icj-project-rig % nvm use 16.18.0    
+Now using node v16.18.0 (npm v8.19.2)
 ```
 
-After it installs, then do:
+2. **Test**: Do `node -v` to make sure it worked. It should give you back "v16.18.0".
 
-``` bash
-nvm use 16.18.0
+```bash
+name@computer icj-project-rig % node -v 
+v16.18.0
 ```
-
-2. **Test**: Do `node -v` to make sure it worked. (It should give you back "v16.18.0" as of this writing.)
 
 ### npm
 
-Now lets update npm:
-
-1. Run this:
+1. To update npm, run this:
 
 ```bash
 npm install -g npm
