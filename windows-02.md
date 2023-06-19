@@ -1,18 +1,15 @@
-
 # Setting up for Node
-
 We don't do this until later in the semester, when we start using Node-based tools.
 
 ## Node.js
-
 Node is a Javascript runtime environment we will use to build news applications. This is where things get kinda dicey with my (lack of) Windows experience. Microsoft recommends using nvm-windows to install node, so let's go with that.
 
 - Follow [these directions to install nvm-windows](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows) **BUT READ THE NEXT STEPS FIRST**.
   - When they say Launch Powershell, you should use **Git Bash** instead.
   - When it gets to installing Node.js **DON'T DO `nvm install latest`**.
-  - Instead follow the steps to do `nvm list available` and pick a the LTS version.
-  - Be sure to run the `nvm use <version>` they suggest from the LTS list.
-- In Git Bash, do `node --version` to make sure it worked. (v10.19.0 was the current stable version when this was written.)
+  - Instead, use this command: `nvm install v16.18.0`
+- In Git Bash, use the command `node --version` to make sure it worked.
+  - You should get a response that says you are using `v16.18.0`.
 - Now lets update npm:
 
 ```bash
@@ -20,7 +17,6 @@ npm install -g npm
 ```
 
 ## ICJ template setup
-
 There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools. Do each of these, one line at a time.
 
 ```bash
@@ -31,63 +27,49 @@ npm install -g degit
 These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding tool [Degit](https://www.npmjs.com/package/degit).
 
 ## Google Drive authentication
-
-There is a point in class when your computer will need access to your Google Drive account. Much like we did with ssh keys, we'll create a file to save on your computer that includes a secret key that works only for you.
-
-### Creating a service account
-
-**Make sure you're logged into a _personal_ gmail account for this part**. If you use your utexas.edu email, you won't have permission to do what we need to do.
-
-The instructions for how to create a service account on Google are [here](https://cloud.google.com/docs/authentication/getting-started). Follow that link and click on `Go to the Service Account Key page`.
-
-- First, you must create a project. The term "project" is a little misleading because you do not need to do this for each project. You only need to do this once per email address. Name your project `icj-project`.
-- You are next directed to create a "service account key".
-  - For **Service account**, choose "New service account".
-  - For the **Service account name**, use `icj`. The **Service account ID** will get filled out for you.
-  - For Role, use the **Select a role** dropdown and go to `Project --> Owner` and select it.
-- At this point you should be taken to a page that shows your "Service Accounts". There is a row that shows something like this:
-
-![Service accounts](images/serviceaccount.png)
-
-- Click on the link noted above
-- You'll be taken to a Service Account Details page, where there are some tabs. Click on the one called **Keys**.
-
-![Create key](images/createkey.png)
-
-- Use the **ADD KEY** button then **Create new key** option, choose the **JSON** option and click **CREATE**.
-- A file will be saved on your machine. _This file is important_ and you need to keep it on your machine! I renamed my file `google_drive_fetch_token.json` and put it in same folder with all of my other icj class projects, for example: `/c/Users/christian/Documents/icj/google_drive_fetch_token.json`.
-- Next go the [API Library page](https://console.cloud.google.com/apis/library).
-- Use the search to find the **Google Docs API** and select it.
-  - Make sure `icj-project` is selected in the top nav near the Google Cloud Services logo.
-  - Then click on the **Enable** buttton to activate it.
-- Use the search bar to find **Google Sheets API** and choose it and **Enable** it.
-
-### Setting up the environment variable
-
-> There _may_ be some issues setting this up on Windows machines that use OneDrive. It has been successfully installed on a non-OneDrive setup using this method.
-
-We are setting this environment variable to authenticate ourselves to Google using the information in the json file you just created.
-
-- Open a new Git Bash prompt
-- Do `code .bash_profile` to open your ".bash_profile" file in VS Code. You should see some stuff there already from other configurations. (Hollar if you don't as that means you are likely in the wrong file.)
-- Add the text below to this file, but **with your home directory name as `your_username`**.
-
+1. Follow the instructions found in [this link](https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows) to download and install the `gcloud` CLI tool.
+   Once the installation has finished, run the command `gcloud --version` in your terminal, and you should get some output similar to this:
 ```bash
-# Google Auth
-export GOOGLE_APPLICATION_CREDENTIALS="C:/Users/your_username/Documents/icj/google_drive_fetch_token.json"
+% gcloud --version
+Google Cloud SDK 428.0.0
+bq 2.0.91
+core 2023.04.25
+gcloud-crc32c 1.0.0
+gsutil 5.23
+Updates are available for some Google Cloud CLI components.  To install them,
+please run:
+  $ gcloud components update
+% 
 ```
 
-If you have and use Microsoft OneDrive, then you might need to modify that path just a bit:
+2. We are now going to authenticate our Google credentials on our local machine, using the following command `gcloud auth login --brief --enable-gdrive-access`.
+   This will open a browser where it will show you all of your available Google names.
+   **Make sure to select your _personal_ gmail account for this part**. If you use your `utexas.edu` email, you won't have permission to do what we need to do.
+   After you select your _personal_ gmail account, you will be sent to a permissions screen that will look something like this:
+   <img src='images/gcloud_cli_permissions.png' height='500'> \
+   Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
+3. Now we are going to [create the project](https://cloud.google.com/sdk/gcloud/reference/projects/create) that we are going to work with in this class via the command `gcloud projects create icj-project --set-as-default`.
+   This command creates our new project called `icj-project` on the Google Cloud Platform and sets it as our default project.
 
+Once this process is done, enter the command `gcloud auth application-default login` into your terminal, follow the browser prompts, and you should be able to see what project you are logged into.
 ```bash
-# Google Auth
-set GOOGLE_APPLICATION_CREDENTIALS="C:/Users/your_username/OneDrive/Documents/icj/google_drive_fetch_token.json"
+% gcloud auth application-default login
+Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?[VERY_LARGE_STRING]
+
+
+Credentials saved to file: [/PATH/TO/FOLDER/.config/gcloud/application_default_credentials.json]
+
+These credentials will be used by any library that requests Application Default Credentials (ADC).
+
+Quota project "[RECENTLY_CREATED_PROJECT_ID]" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.
+% 
 ```
 
 We'll test this with the icj-project-template when the time comes. If you use OneDrive, you might have to use **Git Bash** for some steps instead of the terminal within VS Code.
 
-### Possible test scenario
-
+## Possible test scenario
 - Create a folder in your icj folder called `yourname-test`.
 - Open that folder in Visual Studio Code.
 - Open a VS Code Terminal and run:
