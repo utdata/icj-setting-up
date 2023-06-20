@@ -88,7 +88,7 @@ Otherwise known as the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud).
 
 ### Steps to save our Google credentials and access our project
 1. To make the installation of packages simple, we are going to use the MacOS package manager [brew](https://brew.sh/). 
-Click on the brew link, copy the text beginning with `/brew/bash`, and then paste it into your terminal. 
+Click on the brew link, copy the text beginning with `/bin/bash`, and then paste it into your terminal. 
 This may take a minute and put out a lot of information on your terminal, but just wait until it is done.
 Once the installation has finished, run the command `brew --version` in your console, and you should get output similar to this:
 ```bash
