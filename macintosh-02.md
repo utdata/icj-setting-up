@@ -157,7 +157,7 @@ You should get this in return:
 
 And it will download a bunch of files into your folder.
 
-1. Run `npm install`. This will also download a bunch of files. It might take a couple of minutes to run.
+1. Run `npm ci`. This will also download a bunch of files. It might take a couple of minutes to run.
 2. Run `gulp fetch`.
 
 If everything works, you should have a return like this:
