@@ -59,7 +59,7 @@ Your browser has been opened to visit:
     https://accounts.google.com/o/oauth2/auth?[VERY_LARGE_STRING]
 
 
-Credentials saved to file: [/PATH/TO/FOLDER/.config/gcloud/application_default_credentials.json]
+Credentials saved to file: [%APPDATA%\gcloud\application_default_credentials.json]
 
 These credentials will be used by any library that requests Application Default Credentials (ADC).
 
@@ -68,6 +68,18 @@ Quota project "[RECENTLY_CREATED_PROJECT_ID]" was added to ADC which can be used
 ```
 
 We'll test this with the icj-project-template when the time comes. If you use OneDrive, you might have to use **Git Bash** for some steps instead of the terminal within VS Code.
+
+### Setting up the environment variable
+> There _may_ be some issues setting this up on Windows machines that use OneDrive. It has been successfully installed on a non-OneDrive setup using this method.
+
+We are setting this environment variable to authenticate ourselves to Google using the information in the json file you just created.
+
+1. Open a new Git Bash prompt.
+2. Enter `code .bash_profile` to open your `.bash_profile` file in VS Code. You should see some stuff there already from other configurations. (Holler if you don't as that means you are likely in the wrong file.)
+```bash
+# Google Auth
+export GOOGLE_APPLICATION_CREDENTIALS="$APPDATA\gcloud\application_default_credentials.json"
+```
 
 ## Possible test scenario
 - Create a folder in your icj folder called `yourname-test`.
