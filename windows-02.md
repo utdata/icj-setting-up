@@ -78,7 +78,7 @@ We are setting this environment variable to authenticate ourselves to Google usi
 2. Enter `code .bash_profile` to open your `.bash_profile` file in VS Code. You should see some stuff there already from other configurations. (Holler if you don't as that means you are likely in the wrong file.)
 ```bash
 # Google Auth
-export GOOGLE_APPLICATION_CREDENTIALS="$APPDATA\gcloud\application_default_credentials.json"
+set GOOGLE_APPLICATION_CREDENTIALS="$APPDATA\gcloud\application_default_credentials.json"
 ```
 
 ## Possible test scenario
