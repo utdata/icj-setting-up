@@ -143,7 +143,7 @@ name@computer icj-project-rig %
 This environment variable will be used when you are accessing this project through [GitHub Codespaces](https://github.com/features/codespaces).
 To create the environment variable, make sure that you logged in using the `gcloud` command above.
 
-1. In a Terminal, do `code ~/.bash_profile` to open your ".bash_profile" file in VS Code. In there, you should see some stuff there already from other configurations. (Holler if you don't as that means you are likely in the wrong file.)
+1. In a Terminal, enter `code ~/.bash_profile` to open your ".bash_profile" file in VS Code. In there, you should see some stuff there already from other configurations. (Holler if you don't as that means you are likely in the wrong file.)
 2. Add the text below to the `~./bash_profile` file, save, and exit the file.
 ```bash
 # Google Auth
