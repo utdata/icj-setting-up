@@ -1,9 +1,7 @@
 # VS Code Goodies
-
 VS Code is a pretty awesome code editor. It can save you a $4!t-ton of time.
 
 ## Extensions
-
 If you look on the left-menu, there is a square looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
 
 Some of those that I have used (and I'm finding more every day):
@@ -12,11 +10,9 @@ Some of those that I have used (and I'm finding more every day):
 - **markdownlint**: tells you when your Markdown syntax is incorrect.
 
 ### Optional
-
 - **Excel Viewer**: is something to help preview csv files. Not essential, but helpful when working with data.
 
 ## Preferences
-
 I have some helpful user preferences for VS Code that you might find useful.
 
 - Go to the Code > Preferences > Settings.
@@ -27,7 +23,7 @@ I have some helpful user preferences for VS Code that you might find useful.
 - In the new file that opens, copy and paste the code below and replace what is there.
 - Save and close the file.
 
-```javascript
+```json
 {
     "editor.fontSize": 14,
     "terminal.integrated.fontSize": 12,
@@ -35,7 +31,7 @@ I have some helpful user preferences for VS Code that you might find useful.
     "editor.tabSize": 2,
     "[md]": {
         "editor.insertSpaces": true,
-        "editor.tabSize": 2,
+        "editor.tabSize": 2
     },
     "editor.renderControlCharacters": true,
     "highlight-matching-tag.style": {
@@ -50,7 +46,7 @@ I have some helpful user preferences for VS Code that you might find useful.
     "emmet.includeLanguages": {
         "njk": "html",
         "nunjucks": "html"
-    },
+    }
 }
 ```
 

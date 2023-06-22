@@ -1,11 +1,9 @@
 # Windows
-
 I am a little less familiar with Windows, especially as it relates to OneDrive, so it's possible we'll run into issues. We'll solve them.
 
 Everything listed here is free.
 
 ## Install git
-
 > Windows users have to install Git and Git Bash before doing the [Command-line interface tools lesson](https://github.com/utdata/icj-cli-tools). These next few steps do that.
 
 - Install [Git](https://git-scm.com/downloads), our source code version control program. This will allow us to save our code in steps. This will also install **Git Bash**, which will be your Terminal app.
@@ -21,7 +19,7 @@ There is one point in the installation process where you need to set "Use Git fr
 
 ### Set up your git user and email
 
-Next we'll set [set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) so Git knows who you are.
+Next we'll [set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) so Git knows who you are.
 
 - In your Git Bash program, do this but use _your_ name instead of Mona Lisa:
 
@@ -37,17 +35,15 @@ Now we'll [set your user.email](https://help.github.com/en/github/setting-up-and
 $ git config --global user.email "email@example.com"
 ```
 
-You will want to use the same email to create your Github account next.
+You will want to use the same email to create your GitHub account next.
 
-### Set up Github
+### Set up GitHub
+If you don't already have a GitHub account, go to [github.com/](http://github.com/) and create an account.
 
-If you don't already have a Github account, go to [github.com/](http://github.com/) and create an account.
+- Choose your username carefully. Avoid using upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal GitHub profile FOREVER.
 
-- Choose your username carefully. Avoid using upper case characters or special characters because this will become part of a URL later. Don't make the name specific to this class. This is your personal Github profile FOREVER.
-
-### Saving your Github credentials
-
-There are ways you can tell your computers to save your Github username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
+### Saving your GitHub credentials
+There are ways you can tell your computers to save your GitHub username/password. If you are using your own machine, I suggest this first one, setting up SSH keys. If that proves difficult, try the second option.
 
 I use [these directions to create SSH keys](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on my machine so I'm never asked for a password. But heed this advice:
 
@@ -57,9 +53,8 @@ I use [these directions to create SSH keys](https://docs.github.com/en/free-pro-
 
 The last step of this links you to adding your SSH key to github.
 
-### Saving your Github credentials
-
-We're going to create a special file on your computer so that your machine can connect to your Github account. (Github doens't like sending your password around). It will seem complicated, but it's not really.
+### Saving your GitHub credentials
+We're going to create a special file on your computer so that your machine can connect to your GitHub account. (GitHub doens't like sending your password around). It will seem complicated, but it's not really.
 
 > If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense to you, you likely haven't.)
 
@@ -70,7 +65,7 @@ We're going to create a special file on your computer so that your machine can c
 `ssh-keygen -t ed25519 -C "your_email@example.com"`
 
 1. When it prompts you about a location, **JUST HIT RETURN** to accept the default.
-1. when it prompts you for a passphrase, **JUST HIT RETURN** to leave it blank.
+2. when it prompts you for a passphrase, **JUST HIT RETURN** to leave it blank.
 
 You should get a nice little art looking return on your terminal, eventually.
 
@@ -82,11 +77,11 @@ What those steps did is create a file on your computer and put inside of it a bu
 
 This copies the contents of that file you created to your clipboard. It's like opening the file and copying the contents.
 
-1. To to [github.com](https://github.com/) and click your user icon and choose **Settings**.
-1. In the user settings sidebar on the left, click **SSH and GPG keys**.
-1. Click **New SSH key** or **Add SSH key**.
-1. In the "Title" field, add a descriptive label for the new key. Name it after your computer, like "Personal MacBook Air" or something.
-1. In the "Key" field, so Command-V to paste your key into the box.
+1. Go to [github.com](https://github.com/) and click your user icon and choose **Settings**.
+2. In the user settings sidebar on the left, click **SSH and GPG keys**.
+3. Click **New SSH key** or **Add SSH key**.
+4. In the "Title" field, add a descriptive label for the new key. Name it after your computer, like "Personal MacBook Air" or something.
+5. In the "Key" field, so Command-V to paste your key into the box.
 
 It will look something like this:
 
@@ -95,7 +90,7 @@ It will look something like this:
 Almost done!
 
 1. Click Add SSH key.
-1. If prompted, confirm your GitHub password.
+2. If prompted, confirm your GitHub password.
 
 ### Test
 
@@ -107,11 +102,9 @@ Almost done!
 - In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access." If you get that message, you are good!
 
 ### Alternative to SSH keys
-
-If you can't set SSH keys, you can at least reduce the number of times you have to enter your Github name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
+If you can't set SSH keys, you can at least reduce the number of times you have to enter your GitHub name/password by [caching your password](https://help.github.com/articles/caching-your-github-password-in-git/). We'll have to use this method for lab computers.
 
 ## Text editor
-
 We will use the code editor Visual Studio Code, made by Microsoft. It is free. We need to install it now.
 
 - Install [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows).
@@ -123,7 +116,6 @@ We will use the code editor Visual Studio Code, made by Microsoft. It is free. W
 - Quit both VS Code and Git Bash for this to take affect.
 
 ## Installing bash-git-prompt
-
 - Open a **new** Git Bash window to install the `git-bash-prompt` and do the following:
 
 ```bash
@@ -148,29 +140,27 @@ source ~/.bash-git-prompt/gitprompt.sh
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
 ## VS Code extensions
-
 If you look on the left-menu of Visual Studio code, there is a square puzzle looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
 
 1. In VS Code, click on the Extensions icon.
-1. In the search box, type in **Live Server** and find the one created by **Ritwick Dey**.
-1. Click the Install button on that page.
-1. Do the same for **markdownlint** by **David Anson**.
-1. Do tne same for **Nunjucks**  by **ronnidc**.
+2. In the search box, type in **Live Server** and find the one created by **Ritwick Dey**.
+3. Click the Install button on that page.
+4. Do the same for **markdownlint** by **David Anson**.
+5. Do tne same for **Nunjucks**  by **ronnidc**.
 
 These all make Visual Studio Code more awesomer in different ways.
 
 ## VS Code preferences
-
 I have some helpful user preferences for VS Code that you might find useful.
 
 1. Go to the Code > Preferences > Settings.
-1. At the top right of the code editor are a series of icons, including this one:
+2. At the top right of the code editor are a series of icons, including this one:
 
 ![vs-code-setting-as-code](images/vs-code-setting-as-code.png)
 
-1. In the new file that opens, copy and paste the code below and replace what is there.
+3. In the new file that opens, copy and paste the code below and replace what is there.
 
-```js
+```json
 {
     "editor.fontSize": 14,
     "terminal.integrated.fontSize": 12,
@@ -197,12 +187,11 @@ I have some helpful user preferences for VS Code that you might find useful.
 }
 ```
 
-1. Save and close the file.
+4. Save and close the file.
 
 This sets the default text size, line wrapping, tab stops and other useful things we will need.
 
 ## Testing Part 1 setup
-
 We need to make sure everything is set correctly before moving on. So here is how to check:
 
 Before doing this, open a new Git Bash window:
@@ -219,6 +208,6 @@ If this last test does not work, try restarting Git Bash and try again. If that 
 
 ---
 
-**Next**: If you are in Intro to Coding, next up is learning more about version control using [Git and Github](https://github.com/utdata/icj-cli-tools#using-git-and-github).
+**Next**: If you are in Intro to Coding, next up is learning more about version control using [Git and GitHub](https://github.com/utdata/icj-cli-tools#using-git-and-github).
 
 We'll handle Part 2 of the computer setup later in the semester.

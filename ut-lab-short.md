@@ -77,14 +77,14 @@ npm install -g gulp degit
 
 For good measure restart Terminal and Visual Studio Code.
 
-## To pull an existing project from Github
+## To pull an existing project from GitHub
 
-Let's say you have been working on a project that is stored on Github, but when you come to the lab machine your repo is not on it. Here is how I suggest you get it.
+Let's say you have been working on a project that is stored on GitHub, but when you come to the lab machine your repo is not on it. Here is how I suggest you get it.
 
 - Launch Terminal
 - Go into the Documents folder: `cd Documents`
 - Do `ls` just to make sure your project isn't already there. (If it is, stop as you can likely launch VS Code and get to work).
-- In your browser, go to your repo on Github.com.
+- In your browser, go to your repo on GitHub.com.
 - Click on the green **Code** button.
 - Make sure it is on HTTPS and copy the link.
 
