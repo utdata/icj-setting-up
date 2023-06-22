@@ -131,12 +131,23 @@ Your browser has been opened to visit:
     https://accounts.google.com/o/oauth2/auth?[VERY_LARGE_STRING]
 
 
-Credentials saved to file: [/Users/PATH/TO/FOLDER/.config/gcloud/application_default_credentials.json]
+Credentials saved to file: [$HOME/.config/gcloud/application_default_credentials.json]
 
 These credentials will be used by any library that requests Application Default Credentials (ADC).
 
 Quota project "[RECENTLY_CREATED_PROJECT_ID]" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.
 name@computer icj-project-rig % 
+```
+
+### Setting up the environment variable
+This environment variable will be used when you are accessing this project through [GitHub Codespaces](https://github.com/features/codespaces).
+To create the environment variable, make sure that you logged in using the `gcloud` command above.
+
+1. In a Terminal, do `code ~/.bash_profile` to open your ".bash_profile" file in VS Code. In there, you should see some stuff there already from other configurations. (Holler if you don't as that means you are likely in the wrong file.)
+2. Add the text below to the `~./bash_profile` file, save, and exit the file.
+```bash
+# Google Auth
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
 ```
 
 ## Test these settings
