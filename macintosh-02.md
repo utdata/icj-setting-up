@@ -132,7 +132,7 @@ No project id provided.
 Use [icj-project-390720] as project id (Y/n)?  y
 
 Create in progress for [https://cloudresourcemanager.googleapis.com/v1/projects/icj-project-390720].
-Waiting for [operations/cp.7750740892332052334] to finish...done.                                                                                                                            
+Waiting for [operations/VERY_LARGE_STRING] to finish...done.                                                                                                                            
 Enabling service [cloudapis.googleapis.com] on project [icj-project-390720]...
 Operation "operations/acat.p2-379330608294-a07db4fa-06c4-4da3-babc-7c44f5dd168d" finished successfully.
 Updated property [core/project] to [icj-project-390720].
@@ -184,7 +184,7 @@ name@computer current-folder %
 Enables the Google Docs and Sheets API for your project.
 ```bash
 name@computer current-folder % gcloud services enable docs.googleapis.com sheets.googleapis.com
-Operation "operations/acat.p2-486343904898-f2a645cc-8c3d-4998-bdb5-3bcb2e3cae26" finished successfully.
+Operation "operations/[VERY_LARGE_STRING]" finished successfully.
 name@computer current-folder %
 ```
 
@@ -192,7 +192,7 @@ Create the service account authorization keys.
 ```bash
 name@computer current-folder % gcloud iam service-accounts keys create "$HOME/.config/gcloud/service_account_key.json" \
     --iam-account=generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com
-created key [101b317f623e04d2f76e22d4da030ad3aa1633a0] of type [json] as [$HOME/.config/gcloud/service_account_key.json] for [generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com]
+created key [VERY_LARGE_STRING] of type [json] as [$HOME/.config/gcloud/service_account_key.json] for [generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com]
 name@computer current-folder %
 ```
 
