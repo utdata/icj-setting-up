@@ -100,6 +100,7 @@ Homebrew/homebrew-core (git revision 6fb14ad0d84; last commit 2023-03-20)
 Homebrew/homebrew-cask (git revision d15dfcc577; last commit 2023-03-20)
 name@computer current-folder % 
 ```
+
 2. Click on [this link](https://formulae.brew.sh/cask/google-cloud-sdk) to download the `gcloud` CLI tool. 
 Just like the above command this may take a second, but wait until it says it is finished.
 Once the installation has finished, run the command `gcloud --version` in your terminal, and you should get some output similar to this:
@@ -122,6 +123,7 @@ This will open a browser where it will show you all of your available Google nam
 After you select your _personal_ gmail account, you will be sent to a permissions screen that will look something like this:
 <img src='images/gcloud_cli_permissions.png' height='500'> \
 Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
+
 4. Now we are going to [create the project](https://cloud.google.com/sdk/gcloud/reference/projects/create) that we are going to work with in this class via the command `gcloud projects create icj-project --set-as-default --name="ICJ Project"`.
 This command creates our new project called something similar to `icj-project-[Random Numbers]` on the Google Cloud Platform and sets it as our default project.
 
@@ -196,7 +198,7 @@ created key [VERY_LARGE_STRING] of type [json] as [$HOME/.config/gcloud/service_
 name@computer current-folder %
 ```
 
-Add the key to your `~/.bash_profile` through the command line.
+Add the key to your `.bash_profile` through the command line.
 ```bash
 name@computer current-folder % echo 'export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/service_account_key.json"' >>~/.bash_profile
 name@computer current-folder %
