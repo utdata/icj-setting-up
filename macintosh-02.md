@@ -212,6 +212,8 @@ name@computer current-folder %
 This environment variable will be used when you are accessing this project through [GitHub Codespaces](https://github.com/features/codespaces).
 We will be following the process shown [here](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret).
 
+**NOTE:** It is absolutely imperative that you DO NOT save the contents of `service_account_key.json` in your repository or check it in at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities.
+
 Step-specific information:
 4. The "Name" of the secret will be `GOOGLE_APPLICATION_CREDENTIALS`.
 5. The "Value" of the secret will be the contents of the `$HOME/.config/gcloud/service_account_key.json` file.
