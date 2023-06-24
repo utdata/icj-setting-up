@@ -224,7 +224,7 @@ Step-specific information:
 
 When you open your Codespace, you will run the following command, and you should be able to get to work quickly:
 ```bash
-$ printenv GOOGLE_CREDENTIALS > service_account_key.json && export GOOGLE_APPLICATION_CREDENTIALS=service_account_key.json
+$ npm run codespace-google-auth
 ```
 
 ## Test these settings
