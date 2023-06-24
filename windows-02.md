@@ -45,13 +45,24 @@ please run:
 2. We are now going to authenticate our Google credentials on our local machine, using the following command `gcloud auth login --brief --enable-gdrive-access`.
    This will open a browser where it will show you all of your available Google names.
    **Make sure to select your _personal_ gmail account for this part**. If you use your `utexas.edu` email, you won't have permission to do what we need to do.
-   After you select your _personal_ gmail account, you will be sent to a permissions screen that will look something like this:
+   After you select your _personal_ gmail account, you will be sent to a permissions screen that will look something like this: \
    <img src='images/gcloud_cli_permissions.png' height='500'> \
    Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
-3. Now we are going to [create the project](https://cloud.google.com/sdk/gcloud/reference/projects/create) that we are going to work with in this class via the command `gcloud projects create icj-project --set-as-default`.
-   This command creates our new project called `icj-project` on the Google Cloud Platform and sets it as our default project.
+```bash
+% gcloud projects create --set-as-default --name="ICJ Project"
+No project id provided.
 
-Once this process is done, enter the command `gcloud auth application-default login` into your terminal, follow the browser prompts, and you should be able to see what project you are logged into.
+Use [icj-project-390720] as project id (Y/n)?  y
+
+Create in progress for [https://cloudresourcemanager.googleapis.com/v1/projects/icj-project-390720].
+Waiting for [operations/VERY_LARGE_STRING] to finish...done.                                                                                                                            
+Enabling service [cloudapis.googleapis.com] on project [icj-project-390720]...
+Operation "operations/acat.p2-379330608294-a07db4fa-06c4-4da3-babc-7c44f5dd168d" finished successfully.
+Updated property [core/project] to [icj-project-390720].
+%
+```
+
+3. Enter the command `gcloud auth application-default login` into your terminal, follow the browser prompts, and you should be able to see what project you are logged into.
 ```bash
 % gcloud auth application-default login
 Your browser has been opened to visit:
@@ -67,18 +78,75 @@ Quota project "[RECENTLY_CREATED_PROJECT_ID]" was added to ADC which can be used
 % 
 ```
 
+4. Take the project ID, `icj-project-390720` in this example, and enter the following commands, and you should see similar outputs.
+
+Creates a service account called `generic-service-account`.
+```bash
+% gcloud iam service-accounts create generic-service-account
+Created service account [generic-service-account].
+%
+```
+
+Binds the `generic-service-account` to the editor role for the specified project.
+```bash
+name@computercurrent-folder % gcloud projects add-iam-policy-binding [YOUR PROJECT ID] --member='serviceAccount:generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com' --role='roles/editor'
+Updated IAM policy for project [[YOUR PROJECT ID]].
+bindings:
+- members:
+  - serviceAccount:generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com
+  role: roles/editor
+- members:
+  - user:emailAddress@gmail.com
+  role: roles/owner
+etag: BwX-xm7Obo4=
+version: 1
+%
+```
+
+Enables the Google Docs and Sheets API for your project.
+```bash
+% gcloud services enable docs.googleapis.com sheets.googleapis.com
+Operation "operations/[VERY_LARGE_STRING]" finished successfully.
+%
+```
+
+Create the service account authorization keys.
+```bash
+% gcloud iam service-accounts keys create "%APPDATA%\gcloud\service_account_key.json" \
+    --iam-account=generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com
+created key [VERY_LARGE_STRING] of type [json] as [$HOME/.config/gcloud/service_account_key.json] for [generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com]
+%
+```
+
+Add the key to your `.bash_profile` through the command line.
+```bash
+% echo 'export GOOGLE_APPLICATION_CREDENTIALS="$APPDATA\gcloud\service_account_key.json"' >>~\.bash_profile
+%
+```
+
+Sync your terminal with the current state of your `.bash_profile`.
+```bash
+% source ~\.bash_profile
+%
+```
+
 We'll test this with the icj-project-template when the time comes. If you use OneDrive, you might have to use **Git Bash** for some steps instead of the terminal within VS Code.
 
-### Setting up the environment variable
-> There _may_ be some issues setting this up on Windows machines that use OneDrive. It has been successfully installed on a non-OneDrive setup using this method.
+### Setting up the environment variable for GitHub Codespaces
+This environment variable will be used when you are accessing this project through [GitHub Codespaces](https://github.com/features/codespaces).
+We will be following the process shown [here](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret).
 
-We are setting this environment variable to authenticate ourselves to Google using the information in the json file you just created.
+**NOTE:** It is absolutely imperative that you DO NOT commit the contents of `service_account_key.json` to your repository at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities.
+Since `service_account_key.json` is in the `.gitignore` file, you should not be able to check it in, but it is important to remember that for the sake of transparency.
 
-1. Open a new Git Bash prompt.
-2. Enter `code .bash_profile` to open your `.bash_profile` file in VS Code. You should see some stuff there already from other configurations. (Holler if you don't as that means you are likely in the wrong file.)
+Step-specific information:
+4. The "Name" of the secret will be `GOOGLE_CREDENTIALS`.
+5. The "Value" of the secret will be the contents of the `$APPDATA\gcloud\service_account_key.json` file.
+6. The repository that you will give access to it will be the name of the repository you are using in the Codespace, presumably `icj-project-rig`.
+
+When you open your Codespace, you will run the following command, and you should be able to get to work quickly:
 ```bash
-# Google Auth
-set GOOGLE_APPLICATION_CREDENTIALS="$APPDATA\gcloud\application_default_credentials.json"
+$ npm run codespace-google-auth
 ```
 
 ## Possible test scenario
