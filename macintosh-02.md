@@ -214,12 +214,18 @@ name@computer current-folder %
 This environment variable will be used when you are accessing this project through [GitHub Codespaces](https://github.com/features/codespaces).
 We will be following the process shown [here](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret).
 
-**NOTE:** It is absolutely imperative that you DO NOT save the contents of `service_account_key.json` in your repository or check it in at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities.
+**NOTE:** It is absolutely imperative that you DO NOT commit the contents of `service_account_key.json` to your repository at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities.
+Since `service_account_key.json` is in the `.gitignore` file, you should not be able to check it in, but it is important to remember that for the sake of transparency.
 
 Step-specific information:
-4. The "Name" of the secret will be `GOOGLE_APPLICATION_CREDENTIALS`.
+4. The "Name" of the secret will be `GOOGLE_CREDENTIALS`.
 5. The "Value" of the secret will be the contents of the `$HOME/.config/gcloud/service_account_key.json` file.
-6. The repository that you will give access to it will be the name of the repository you are using in the Codespace.
+6. The repository that you will give access to it will be the name of the repository you are using in the Codespace, presumably `icj-project-rig`.
+
+When you open your Codespace, you will run the following command, and you should be able to get to work quickly:
+```bash
+$ printenv GOOGLE_CREDENTIALS > service_account_key.json && export GOOGLE_APPLICATION_CREDENTIALS=service_account_key.json
+```
 
 ## Test these settings
 1. Create a folder in your icj folder called `yourname-test`.
