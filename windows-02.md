@@ -1,182 +1,164 @@
 # Setting up for Node
-We don't do this until later in the semester, when we start using Node-based tools.
+
+Hold off on this until we get to this part later in the semester.
+
+If we have reached that point, then fire up Git Bash.
+
+(If you ever see reference to "Terminal", I mean Git Bash for Windows users.)
 
 ## Node.js
+
 Node is a Javascript runtime environment we will use to build news applications. This is where things get kinda dicey with my (lack of) Windows experience. Microsoft recommends using nvm-windows to install node, so let's go with that.
 
-- Follow [these directions to install nvm-windows](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows) **BUT READ THE NEXT STEPS FIRST**.
-  - When they say Launch Powershell, you should use **Git Bash** instead.
-  - When it gets to installing Node.js **DON'T DO `nvm install latest`**.
-  - Instead, use this command: `nvm install v16.18.0`
-- In Git Bash, use the command `node --version` to make sure it worked.
-  - You should get a response that says you are using `v16.18.0`.
-- Now lets update npm:
+1. Follow [these directions to install nvm-windows](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows) **BUT READ THE NEXT STEPS FIRST**.
+    - When they say Launch Powershell, you should use **Git Bash** instead.
+    - When it gets to installing Node.js **DON'T DO** `nvm install latest`. Instead, use this command:
 
-```bash
-npm install -g npm
-```
+      ```bash
+      nvm install v16.18.0
+      ```
+
+2. To make sure it worked, in Git Bash do:
+
+      ```bash
+      node --version
+      ```
+
+    - You should get a response that says you are using `v16.18.0`.
+3. Now lets update npm:
+
+    ```bash
+    npm install -g npm
+    ```
 
 ## ICJ template setup
-There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools. Do each of these, one line at a time.
+
+There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools.
+
+1. Run the following in your Git Bash:
 
 ```bash
-npm install -g gulp
-npm install -g degit
+npm install -g gulp degit
 ```
 
 These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding tool [Degit](https://www.npmjs.com/package/degit).
 
 ## Google Drive authentication
+
+There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we'll need specific credentials that work only for you. We will use the Google Cloud Project's command line interface tool to do this.
+Otherwise known as the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud).
+
+> IMPORTANT: You must have and use a **PERSONAL** Gmail/Google account for this process. Your **UTMail Google account will not work**.
+
+### Install Google Cloud tools
+
 1. Follow the instructions found in [this link](https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows) to download and install the `gcloud` CLI tool.
-   Once the installation has finished, run the command `gcloud --version` in your terminal, and you should get some output similar to this:
-```bash
-% gcloud --version
-Google Cloud SDK 428.0.0
-bq 2.0.91
-core 2023.04.25
-gcloud-crc32c 1.0.0
-gsutil 5.23
-Updates are available for some Google Cloud CLI components.  To install them,
-please run:
-  $ gcloud components update
-% 
-```
+   - Once the installation has finished, run the command `gcloud --version` in your terminal, and you should get some output similar to this: `Google Cloud SDK 428.0.0`
 
-2. We are now going to authenticate our Google credentials on our local machine, using the following command `gcloud auth login --brief --enable-gdrive-access`.
-   This will open a browser where it will show you all of your available Google names.
-   **Make sure to select your _personal_ gmail account for this part**. If you use your `utexas.edu` email, you won't have permission to do what we need to do.
-   After you select your _personal_ gmail account, you will be sent to a permissions screen that will look something like this: \
-   <img src='images/gcloud_cli_permissions.png' height='500'> \
-   Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
-```bash
-% gcloud projects create --set-as-default --name="ICJ Project"
-No project id provided.
+### Authenticate our session
 
-Use [icj-project-390720] as project id (Y/n)?  y
+We are now going to authenticate our Google credentials on our local machine. **Make sure to select your _personal_ gmail account for this part**. If you use your `utexas.edu` email, you won't have permission to do what we need to do.
 
-Create in progress for [https://cloudresourcemanager.googleapis.com/v1/projects/icj-project-390720].
-Waiting for [operations/VERY_LARGE_STRING] to finish...done.                                                                                                                            
-Enabling service [cloudapis.googleapis.com] on project [icj-project-390720]...
-Operation "operations/acat.p2-379330608294-a07db4fa-06c4-4da3-babc-7c44f5dd168d" finished successfully.
-Updated property [core/project] to [icj-project-390720].
-%
-```
+1. In a web browser, make sure you are logged into your **PERSONAL** Google account.
+1. In a Terminal, use the following command:
 
-3. Enter the command `gcloud auth application-default login` into your terminal, follow the browser prompts, and you should be able to see what project you are logged into.
-```bash
-% gcloud auth application-default login
-Your browser has been opened to visit:
+    ```bash
+    gcloud auth login --brief --enable-gdrive-access
+    ```
 
-    https://accounts.google.com/o/oauth2/auth?[VERY_LARGE_STRING]
+This will open a browser where it will show you all of your available Google names. After you select your _personal_ gmail account, you will be sent to a permissions screen that will look something like this:
 
+![gcloud auth](images/gcloud_cli_permissions.png)
 
-Credentials saved to file: [%APPDATA%\gcloud\application_default_credentials.json]
+Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
 
-These credentials will be used by any library that requests Application Default Credentials (ADC).
+### Create and configure project
 
-Quota project "[RECENTLY_CREATED_PROJECT_ID]" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.
-% 
-```
+Again, be in your personal Google account as you will have to authenticate again.
 
-4. Take the project ID, `icj-project-390720` in this example, and enter the following commands, and you should see similar outputs.
+We are going to run through several `gcloud` commands to set you computer to access Google Docs and Google sheets through programing. It's a lot of ecsoteric steps and things could go wrong at each step. I don't outline the output you get in return, but there can be a little or a lot.
 
-Creates a service account called `generic-service-account`.
-```bash
-% gcloud iam service-accounts create generic-service-account
-Created service account [generic-service-account].
-%
-```
+You may be asked some questions during installation. You should be able to answer with the default answer (usually capitalized). If you try these steps more than once you might be errors that a project exists. Ask for help.
 
-Binds the `generic-service-account` to the editor role for the specified project.
-```bash
-name@computercurrent-folder % gcloud projects add-iam-policy-binding [YOUR PROJECT ID] --member='serviceAccount:generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com' --role='roles/editor'
-Updated IAM policy for project [[YOUR PROJECT ID]].
-bindings:
-- members:
-  - serviceAccount:generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com
-  role: roles/editor
-- members:
-  - user:emailAddress@gmail.com
-  role: roles/owner
-etag: BwX-xm7Obo4=
-version: 1
-%
-```
+Just keep an eye out for `ERROR` or `can't find [whatever]` and hollar if that happens.
 
-Enables the Google Docs and Sheets API for your project.
-```bash
-% gcloud services enable docs.googleapis.com sheets.googleapis.com
-Operation "operations/[VERY_LARGE_STRING]" finished successfully.
-%
-```
+Launch a fresh Terminal for this.
 
-Create the service account authorization keys.
-```bash
-% gcloud iam service-accounts keys create "%APPDATA%\gcloud\service_account_key.json" \
-    --iam-account=generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com
-created key [VERY_LARGE_STRING] of type [json] as [$HOME/.config/gcloud/service_account_key.json] for [generic-service-account@[YOUR PROJECT ID].iam.gserviceaccount.com]
-%
-```
+> After you run the first command below, take note of the last line of the return. Does it say `Updated property [core/project] to [icj-project]`? If not, it probably added random letters and numbers at the end of `icj-project` and you might need that string later. PLEASE ASK FOR HELP IF SO.
 
-Add the key to your `.bash_profile` through the command line.
-```bash
-% echo 'export GOOGLE_APPLICATION_CREDENTIALS="$APPDATA\gcloud\service_account_key.json"' >>~\.bash_profile
-%
-```
+1. Do this command to create the project:
 
-Sync your terminal with the current state of your `.bash_profile`.
-```bash
-% source ~\.bash_profile
-%
-```
+    ```bash
+    gcloud projects create icj-project --set-as-default --name="ICJ Project"
+    ```
 
-We'll test this with the icj-project-template when the time comes. If you use OneDrive, you might have to use **Git Bash** for some steps instead of the terminal within VS Code.
+1. Do this to log in and set your project as a default:
 
-### Setting up the environment variable for GitHub Codespaces
-These environment variables will be used when you are accessing this project through [GitHub Codespaces](https://github.com/features/codespaces).
-We will be following the process shown [here](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret).
+    ```bash
+    gcloud auth application-default login
+    ```
 
-**NOTE:** It is absolutely imperative that you DO NOT commit the contents of `service_account_key.json` to your branch at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities.
-Since `service_account_key.json` is in the `.gitignore` file, you should not be able to check it in, but it is important to remember that for the sake of transparency.
+1. Next, we'll create a Google service account:
 
-Step-specific information for the first environment variable:<br>
-4. The "Name" of the secret will be `GOOGLE_CREDENTIALS`.<br>
-5. The "Value" of the secret will be the contents of the `$HOME/.config/gcloud/service_account_key.json` file.<br>
-6. The repository that you will give access to it will be the name of the repository you are using in the Codespace, presumably `icj-project-rig`.
+    ```bash
+    gcloud iam service-accounts create generic-service-account
+    ```
 
-Step-specific information for the first environment variable:<br>
-4. The "Name" of the secret will be `GOOGLE_APPLICATION_CREDENTIALS`.<br>
-5. The "Value" of the secret will be `service_account_key.json`.<br>
-6. The repository that you will give access to it will be the name of the repository you are using in the Codespace, presumably `icj-project-rig`.
+1. Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (This is where we might need to make adjustments if your project id has random letters/numbers.)
 
-When you open your Codespace, you will run the following command, and you should be able to get to work quickly:
-```bash
-$ npm run codespace-google-auth
-```
+    ```bash
+    gcloud projects add-iam-policy-binding icj-project --member='serviceAccount:generic-service-account@icj-project.iam.gserviceaccount.com' --role='roles/editor'
+    ```
 
-## Possible test scenario
-- Create a folder in your icj folder called `yourname-test`.
-- Open that folder in Visual Studio Code.
-- Open a VS Code Terminal and run:
+1. Then we enable the Google Docs and Sheets API for your project:
+
+    ```bash
+    gcloud services enable docs.googleapis.com sheets.googleapis.com
+    ```
+
+1. Now we'll create a service account authorization key. This is similar to ssh key above, but for Google:
+
+    ```bash
+    gcloud iam service-accounts keys create "$HOME/.config/gcloud/service_account_key.json" \
+        --iam-account=generic-service-account@icj-project.iam.gserviceaccount.com
+    ```
+
+1. Then add the key to your `.bash_profile` with this commaned:
+
+    ```bash
+    echo 'export GOOGLE_APPLICATION_CREDENTIALS="$APPDATA\gcloud\service_account_key.json"' >>~\.bash_profile
+    ```
+
+1. Sync your terminal with the updated bash profile:
+
+    ```bash
+    source ~/.bash_profile
+    ```
+
+Yes, that was a lot. Hopefuly it worked. We're about to find out.
+
+## Test these settings
+
+1. Create a folder in your icj folder called `yourname-test`.
+2. Open that folder in Visual Studio Code.
+3. Open a VS Code Terminal and run:
 
 ```bash
-$ degit utdata/icj-google-fetch-test#main
+degit utdata/icj-google-fetch-test#main
 ```
 
 You should get this in return:
 
-```bash
-> cloned utdata/icj-google-fetch-test#main
-```
+`> cloned utdata/icj-google-fetch-test#main`
 
 And it will download a bunch of files into your folder.
 
-- Run `npm ci`. This will also download a bunch of files. It might take a couple of minutes to run.
-- Run `gulp fetch`.
+1. Run `npm ci`. This will also download a bunch of files. It might take a couple of minutes to run.
+2. Run `gulp fetch`.
 
 If everything works, you should have a return like this:
 
-```bash
+``` bash
 $ gulp fetch
 [14:38:53] Using gulpfile ~/Documents/icj/icj-fetch-test/gulpfile.js
 [14:38:53] Starting 'fetch'...
@@ -185,18 +167,8 @@ Downloaded `library` (1RgMhjtkXlbbf9uzSzy_xPRKwxcVZIZqVytgM_JoU4E4)
 Downloaded `bookstores` (1gDwO-32cgpBDn_0niV0iu6TqQTaRDr4nmSqnT53magY)
 ```
 
-Your path might differ for "Using gulpfile", but what you are looking for is **"Downloaded \`library\`"** and **"Downloaded \`bookstores\`**. If you didn't get BOTH of those then something isn't right.
-
-If you get an error, try this before reaching out to me:
-
-- Open Git Bash
-- Use `cd` to get into your test folder. Make sure you are there using `pwd`.
-- run `gulp fetch` to see if it downloads two files.
-
-If that also doesn't work, reach out to me to troubleshoot.
+Your path might differ for "Using gulpfile", but what you are looking for is that two files were downloaded, one called `library` and one called `bookstores`.
 
 ----
 
 You should be done!
-
-> Note for Crit: Might be able to use `%userprofile%` instead of `C:/Users/your_username/`.

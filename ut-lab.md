@@ -1,5 +1,7 @@
 # Starting up a UT Lab computer
 
+> VERY OUT OF DATE
+
 Lab machines could get wiped on Monday mornings, so you might have to reset everything. You definitely will have to set this up for the first time.
 
 ## Test git setups
