@@ -217,14 +217,14 @@ We will be following the process shown [here](https://docs.github.com/en/codespa
 **NOTE:** It is absolutely imperative that you DO NOT commit the contents of `service_account_key.json` to your branch at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities.
 Since `service_account_key.json` is in the `.gitignore` file, you should not be able to check it in, but it is important to remember that for the sake of transparency.
 
-Step-specific information for the first environment variable:
-4. The "Name" of the secret will be `GOOGLE_CREDENTIALS`.
-5. The "Value" of the secret will be the contents of the `$HOME/.config/gcloud/service_account_key.json` file.
+Step-specific information for the first environment variable:<br>
+4. The "Name" of the secret will be `GOOGLE_CREDENTIALS`.<br>
+5. The "Value" of the secret will be the contents of the `$HOME/.config/gcloud/service_account_key.json` file.<br>
 6. The repository that you will give access to it will be the name of the repository you are using in the Codespace, presumably `icj-project-rig`.
 
-Step-specific information for the first environment variable:
-4. The "Name" of the secret will be `GOOGLE_APPLICATION_CREDENTIALS`.
-5. The "Value" of the secret will be `service_account_key.json`.
+Step-specific information for the first environment variable:<br>
+4. The "Name" of the secret will be `GOOGLE_APPLICATION_CREDENTIALS`.<br>
+5. The "Value" of the secret will be `service_account_key.json`.<br>
 6. The repository that you will give access to it will be the name of the repository you are using in the Codespace, presumably `icj-project-rig`.
 
 When you open your Codespace, you will run the following command, and you should be able to get to work quickly:
