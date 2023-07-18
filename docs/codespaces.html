@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ICJ Setting Up</title>
+<title>ICJ Setting Up – codespaces</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -94,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Part 2</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./codespaces.html" rel="" target="">
+    <a class="nav-link active" href="./codespaces.html" rel="" target="" aria-current="page">
  <span class="menu-text">Codespaces</span></a>
   </li>  
   <li class="nav-item">
@@ -121,7 +155,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setting-up-your-computer-for-development" id="toc-setting-up-your-computer-for-development" class="nav-link active" data-scroll-target="#setting-up-your-computer-for-development">Setting up your computer for development</a></li>
+  <li><a href="#codespaces" id="toc-codespaces" class="nav-link active" data-scroll-target="#codespaces">Codespaces</a>
+  <ul class="collapse">
+  <li><a href="#install-gulp" id="toc-install-gulp" class="nav-link" data-scroll-target="#install-gulp">Install gulp</a></li>
+  <li><a href="#google-auth-access" id="toc-google-auth-access" class="nav-link" data-scroll-target="#google-auth-access">Google auth access</a>
+  <ul class="collapse">
+  <li><a href="#credential-path" id="toc-credential-path" class="nav-link" data-scroll-target="#credential-path">Credential path</a></li>
+  <li><a href="#credential-contents" id="toc-credential-contents" class="nav-link" data-scroll-target="#credential-contents">Credential contents</a></li>
+  </ul></li>
+  <li><a href="#load-the-secrets" id="toc-load-the-secrets" class="nav-link" data-scroll-target="#load-the-secrets">Load the secrets</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -130,21 +173,57 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="setting-up-your-computer-for-development" class="level1">
-<h1>Setting up your computer for development</h1>
-<p>Find the published version of this material here:</p>
-<div class="d-grid gap-2">
-<p><a href="https://utdata.github.io/icj-setting-up"><button class="btn btn-lg btn-primary" type="button">ICJ Setting Up</button></a></p>
-</div>
-<hr>
-<p>These lessons outline how to set up your computer for development using the technologies introduced in <a href="https://utdata.github.io/icj-class">Intro to Coding for Journalists</a>. If you are new to coding or the class, I suggest you start with the <a href="https://utdata.github.io/icj-class/start-00-intro.html">Getting Started</a> chapter there.</p>
-<p>If you are using a UT lab computer you’ll have to learn about some setup. Get with your instructor.</p>
+<section id="codespaces" class="level1">
+<h1>Codespaces</h1>
+<p>The icj-project-rig can be used in <a href="https://github.com/features/codespaces">GitHub Codespaces</a>, a free virtual machine environment. This might be helpful if you have trouble with your own computer.</p>
+<p>This isn’t a tutorial on using Codespaces, but it does provide some necessary information if you explore the option. This assumes you already have your own copy of the project and it is pushed to Github. You work out of your own project.</p>
+<section id="install-gulp" class="level2">
+<h2 class="anchored" data-anchor-id="install-gulp">Install gulp</h2>
+<p>Once you launch a codespace it will recognize you are in a Node environment but you still need to install some packages the first time you launch it:</p>
+<ol type="1">
+<li>Once the container is up and running, do <code>npm install -g gulp</code> to install gulp.</li>
+<li>Run <code>npm ci</code> to do a clean install on all the other packages in the project.</li>
+</ol>
+<p>If you come back to an existing Codespace you should not have to run those again.</p>
+</section>
+<section id="google-auth-access" class="level2">
+<h2 class="anchored" data-anchor-id="google-auth-access">Google auth access</h2>
+<p>There is one <code>gulp</code> command that will not work in Codespaces unless you jump through some extra hoops.</p>
+<p><code>gulp fetch</code> is the command that downloads Google Docs and Sheets documents as JSON, as outlined in <code>project.config.json</code>. The process expects to find an authorization file on your own computer that we set up in <a href="https://github.com/utdata/icj-setting-up#readme">icj-setting-up Part 2</a>, but that file doesn’t exist on the Codespaces virtual machine.</p>
+<p>You’ll need to set up two environment variables to make it work.</p>
+<blockquote class="blockquote">
+<p><strong>NOTE:</strong> It is absolutely imperative that you DO NOT commit the contents of <code>service_account_key.json</code> to your branch at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since <code>service_account_key.json</code> is in the <code>.gitignore</code> file, you should not be able to check it in, but it is important to remember that for the sake of transparency.</p>
+</blockquote>
+<p>We will be following the process shown <a href="https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret">here</a></p>
+<p>As you follow those steps you’ll need the information below.</p>
+<section id="credential-path" class="level3">
+<h3 class="anchored" data-anchor-id="credential-path">Credential path</h3>
 <ul>
-<li><a href="./setup-part-1.html">Setup part 1</a></li>
-<li><a href="./setup-part-2.html">Setup part 2</a></li>
+<li>The “Name” of the secret will be <code>GOOGLE_CREDENTIALS</code>.</li>
+<li>The “Value” of the secret will be: <code>$HOME/.config/gcloud/service_account_key.json</code></li>
 </ul>
+</section>
+<section id="credential-contents" class="level3">
+<h3 class="anchored" data-anchor-id="credential-contents">Credential contents</h3>
+<ul>
+<li>The “Name” of the secret will be <code>GOOGLE_APPLICATION_CREDENTIALS</code></li>
+<li>For the “Value” of the secret you need to copy the contents of a file on your local machine. Follow the steps below:</li>
+</ul>
+<ol type="1">
+<li><p>Run this command on your local machine, which will copy needed the file to your clipboard:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pbcopy</span> <span class="op">&lt;</span> <span class="va">$HOME</span>/.config/gcloud/service_account_key.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Return to your web browser and for the “Value” do <em>Cmd-v</em> to paste the contents of your clipboard.</p></li>
+</ol>
+</section>
+</section>
+<section id="load-the-secrets" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-secrets">Load the secrets</h2>
+<p>When you open your Codespace, you will run the following command.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run codespace-google-auth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After doing that, you should be able to run <code>gulp fetch</code> to update the data JSON files.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

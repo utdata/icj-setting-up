@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>readme</title>
+<title>ICJ Setting Up – gcloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,47 +23,129 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="README_files/libs/clipboard/clipboard.min.js"></script>
-<script src="README_files/libs/quarto-html/quarto.js"></script>
-<script src="README_files/libs/quarto-html/popper.min.js"></script>
-<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="README_files/libs/quarto-html/anchor.min.js"></script>
-<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ICJ Setting Up</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./setup-part-1.html" rel="" target="">
+ <span class="menu-text">Part 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./setup-part-2.html" rel="" target="">
+ <span class="menu-text">Part 2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./codespaces.html" rel="" target="">
+ <span class="menu-text">Codespaces</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./gcloud.html" rel="" target="" aria-current="page">
+ <span class="menu-text">gcloud cli</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./vscode-goodies.html" rel="" target="">
+ <span class="menu-text">VS Code Goodies</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#gcloud-cli" id="toc-gcloud-cli" class="nav-link active" data-scroll-target="#gcloud-cli">gcloud cli</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<section id="setting-up-your-computer-for-development" class="level1">
-<h1>Setting up your computer for development</h1>
-<p>Find the published version of this material here:</p>
-<div class="d-grid gap-2">
-<p><a href="https://utdata.github.io/icj-setting-up"><button class="btn btn-lg btn-primary" type="button">ICJ Setting Up</button></a></p>
-</div>
-<hr>
-<p>These lessons outline how to set up your computer for development using the technologies introduced in <a href="https://utdata.github.io/icj-class">Intro to Coding for Journalists</a>. If you are new to coding or the class, I suggest you start with the <a href="https://utdata.github.io/icj-class/start-00-intro.html">Getting Started</a> chapter there.</p>
-<p>If you are using a UT lab computer you’ll have to learn about some setup. Get with your instructor.</p>
+<section id="gcloud-cli" class="level1">
+<h1>gcloud cli</h1>
+<p>We end up using the Google Cloud SDK to set up authorization to allow programming access to Google Docs and Sheets. Some useful commands:</p>
 <ul>
-<li><a href="setup-part-1.qmd">Setup part 1</a></li>
-<li><a href="setup-part-2.qmd">Setup part 2</a></li>
+<li><code>gcloud auth list</code> tells you which account you are in and how to set a new active account.</li>
+<li><code>gcloud auth revoke</code> logs you out of your active account. <code>--all</code> flag logs you out of all accounts, I think.</li>
+<li><code>gcloud projects list</code> shows all the projects for the account.</li>
+<li><code>gcloud config get-value project</code> shows you which project you are in.</li>
+<li><code>gcloud config set project [project-id]</code> but replace <code>[project-id]</code> with the project name.</li>
 </ul>
-<hr>
-<p>There are some older files in the <code>_notes</code> folder I’m keeping around in case I missed something.</p>
+<p>See Setting Up Part 2 for commands to set up a project and enable the APIs.</p>
+
+
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

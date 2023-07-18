@@ -124,6 +124,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Part 1</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./setup-part-2.html" rel="" target="">
+ <span class="menu-text">Part 2</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./codespaces.html" rel="" target="">
  <span class="menu-text">Codespaces</span></a>
   </li>  
@@ -212,21 +216,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here we’ll update some settings within git on your machine.</p>
 <p>First we’ll <a href="https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer">set your user.name</a> so Git knows who you are.</p>
 <ol type="1">
-<li>In your Terminal, do this but use <em><strong>your name in quotes</strong></em> instead of “Mona Lisa”:</li>
-</ol>
+<li><p>In your Terminal, do this but use <em><strong>your name in quotes</strong></em> instead of “Mona Lisa”:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Mona Lisa"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now we’ll <a href="https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git">set your user.email</a>.</p>
-<ol start="2" type="1">
-<li>In your Terminal do this but <strong>use your email</strong>:</li>
-</ol>
+<p>Now we’ll <a href="https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git">set your user.email</a>.</p></li>
+<li><p>In your Terminal do this but <strong>use your email</strong>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will want to use the same email when you create your GitHub account.</p>
-<p>Lastly we’ll set git to name your default branch “main” instead of “master” as this is a <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">new standard</a>.</p>
-<ol start="3" type="1">
-<li>In your terminal, run this:</li>
-</ol>
+<p>Lastly we’ll set git to name your default branch “main” instead of “master” as this is a <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">new standard</a>.</p></li>
+<li><p>In your terminal, run this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You won’t get a reponse unless there was a problem.</p>
+<p>You won’t get a response unless there was a problem.</p></li>
+</ol>
 </section>
 <section id="set-up-github" class="level2">
 <h2 class="anchored" data-anchor-id="set-up-github">Set up GitHub</h2>
@@ -268,12 +268,10 @@ Important
 <li>At the end of the installation, it will give a path to the rsa_id file. We might need to open this file in the next step to copy it. Ask for help at this step.</li>
 </ul>
 <ol type="1">
-<li>In your terminal, run the following command <strong>but with your email</strong>:</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>When it prompts you about a location, <strong>JUST HIT RETURN</strong> to accept the default.</li>
-<li>when it prompts you for a passphrase, <strong>JUST HIT RETURN</strong> to leave it blank.</li>
+<li><p>In your terminal, run the following command <strong>but with your email</strong>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>When it prompts you about a location, <strong>JUST HIT RETURN</strong> to accept the default.</p></li>
+<li><p>when it prompts you for a passphrase, <strong>JUST HIT RETURN</strong> to leave it blank.</p></li>
 </ol>
 <p>You should get a nice little art looking return on your terminal, eventually.</p>
 <p>What those steps did is create a file on your computer and put inside of it a bunch of random characters.</p>

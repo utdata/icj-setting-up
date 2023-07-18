@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ICJ Setting Up</title>
+<title>ICJ Setting Up – vscode-goodies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -102,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">gcloud cli</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./vscode-goodies.html" rel="" target="">
+    <a class="nav-link active" href="./vscode-goodies.html" rel="" target="" aria-current="page">
  <span class="menu-text">VS Code Goodies</span></a>
   </li>  
 </ul>
@@ -121,7 +155,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setting-up-your-computer-for-development" id="toc-setting-up-your-computer-for-development" class="nav-link active" data-scroll-target="#setting-up-your-computer-for-development">Setting up your computer for development</a></li>
+  <li><a href="#vs-code-goodies" id="toc-vs-code-goodies" class="nav-link active" data-scroll-target="#vs-code-goodies">VS Code Goodies</a>
+  <ul class="collapse">
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a>
+  <ul class="collapse">
+  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  </ul></li>
+  <li><a href="#preferences" id="toc-preferences" class="nav-link" data-scroll-target="#preferences">Preferences</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -130,21 +171,77 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="setting-up-your-computer-for-development" class="level1">
-<h1>Setting up your computer for development</h1>
-<p>Find the published version of this material here:</p>
-<div class="d-grid gap-2">
-<p><a href="https://utdata.github.io/icj-setting-up"><button class="btn btn-lg btn-primary" type="button">ICJ Setting Up</button></a></p>
-</div>
-<hr>
-<p>These lessons outline how to set up your computer for development using the technologies introduced in <a href="https://utdata.github.io/icj-class">Intro to Coding for Journalists</a>. If you are new to coding or the class, I suggest you start with the <a href="https://utdata.github.io/icj-class/start-00-intro.html">Getting Started</a> chapter there.</p>
-<p>If you are using a UT lab computer you’ll have to learn about some setup. Get with your instructor.</p>
+<section id="vs-code-goodies" class="level1">
+<h1>VS Code Goodies</h1>
+<p>VS Code is a pretty awesome code editor. It can save you a $4!t-ton of time.</p>
+<section id="extensions" class="level2">
+<h2 class="anchored" data-anchor-id="extensions">Extensions</h2>
+<p>If you look on the left-menu, there is a square looking icon that gives you a list of extensions that you can search for an enable. See the <a href="https://code.visualstudio.com/docs/editor/extension-gallery">VS Code docs</a> for more info.</p>
+<p>Some of those that I have used (and I’m finding more every day):</p>
 <ul>
-<li><a href="./setup-part-1.html">Setup part 1</a></li>
-<li><a href="./setup-part-2.html">Setup part 2</a></li>
+<li><strong>Nunjucks Templates</strong>: gives you syntax highlighting for Nunjucks pages. Needs a little configuration to work with our First Graphics App pages. See Preferences below.</li>
+<li><strong>markdownlint</strong>: tells you when your Markdown syntax is incorrect.</li>
 </ul>
+<section id="optional" class="level3">
+<h3 class="anchored" data-anchor-id="optional">Optional</h3>
+<ul>
+<li><strong>Excel Viewer</strong>: is something to help preview csv files. Not essential, but helpful when working with data.</li>
+</ul>
+</section>
+</section>
+<section id="preferences" class="level2">
+<h2 class="anchored" data-anchor-id="preferences">Preferences</h2>
+<p>I have some helpful user preferences for VS Code that you might find useful.</p>
+<ul>
+<li>Go to the Code &gt; Settings &gt; Settings.</li>
+<li>At the top right of the code editor are a series of icons, including this one:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/vs-code-setting-as-code.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">vs-code-setting-as-code</figcaption>
+</figure>
+</div>
+<ul>
+<li>In the new file that opens, copy and paste the code below and replace what is there.</li>
+<li>Save and close the file.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.fontSize"</span><span class="fu">:</span> <span class="dv">14</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"terminal.integrated.fontSize"</span><span class="fu">:</span> <span class="dv">12</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.renderWhitespace"</span><span class="fu">:</span> <span class="st">"boundary"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.tabSize"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"[md]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.insertSpaces"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.tabSize"</span><span class="fu">:</span> <span class="dv">2</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.renderControlCharacters"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"highlight-matching-tag.style"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"backgroundColor"</span><span class="fu">:</span> <span class="st">"rgba(63, 191, 63, 0.20)"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.wordWrap"</span><span class="fu">:</span> <span class="st">"on"</span><span class="fu">,</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"window.zoomLevel"</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.minimap.enabled"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"files.associations"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"*.html"</span><span class="fu">:</span> <span class="st">"html"</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"emmet.includeLanguages"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"njk"</span><span class="fu">:</span> <span class="st">"html"</span><span class="fu">,</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"nunjucks"</span><span class="fu">:</span> <span class="st">"html"</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you look through the JSON, you might be able to figure out what some of these do. This isn’t a full description of them, but …</p>
+<ul>
+<li>I set default size of text in the editor. I’m old, so I make it bigger so it’s easier to read. If that is too big, you can change it later.</li>
+<li>I set make the text in the terminal window bigger. Still old.</li>
+<li>I set the editor to show spaces that aren’t between words. This makes indented code easier to see.</li>
+<li>I set the tab character to insert two spaces. This is a common coding default.</li>
+<li>I remove the minimap thing that shows by default at the right side of an open file. I find it more of a hassle than useful.</li>
+</ul>
+<p>There are more. They will be helpful.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
