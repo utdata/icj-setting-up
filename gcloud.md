@@ -1,4 +1,4 @@
-# Using gcloud cli
+# gcloud cli
 
 We end up using the Google Cloud SDK to set up authorization to allow programming access to Google Docs and Sheets. Some useful commands:
 

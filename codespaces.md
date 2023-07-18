@@ -1,4 +1,4 @@
-# Setting GitHub Codespaces
+# Codespaces
 
 The icj-project-rig can be used in [GitHub Codespaces](https://github.com/features/codespaces), a free virtual machine environment. This might be helpful if you have trouble with your own computer.
 

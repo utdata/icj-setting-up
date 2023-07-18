@@ -1,6 +1,18 @@
 # Setting up your computer for development
 
-> Updated for Fall 2023
+::: callout-important
+A refactoring project
+
+- Meld mac and windows
+- Figure out if we want separate or leave in [ICJ Class book](https://utdata.github.io/icj-class/)
+:::
+
+- [Setup part 1](setup-part-1.qmd)
+
+
+---
+
+> This is what came before
 
 These lessons outline how to set up your computer for development using the technologies introduced in [Intro to Coding for Journalists](https://github.com/utdata/icj-class). This is written as basic **steps to accomplish** without much explanation of what you are doing and why. If you are new to coding or the class, I suggest you start with the [command-line interface tools lesson](https://github.com/utdata/icj-cli-tools) instead. You'll get back here soon enough.
 
