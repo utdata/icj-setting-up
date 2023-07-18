@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ICJ Setting Up – setup-part-1</title>
+<title>ICJ Setting Up - 2&nbsp; Part 1: Git, VS Code</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./setup-part-2.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,11 +76,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -95,106 +97,149 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">ICJ Setting Up</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./setup-part-1.html" rel="" target="" aria-current="page">
- <span class="menu-text">Part 1</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./setup-part-2.html" rel="" target="">
- <span class="menu-text">Part 2</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./codespaces.html" rel="" target="">
- <span class="menu-text">Codespaces</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./gcloud.html" rel="" target="">
- <span class="menu-text">gcloud cli</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./vscode-goodies.html" rel="" target="">
- <span class="menu-text">VS Code Goodies</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup-part-1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Part 1: Git, VS Code</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ICJ Setting Up</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup-part-1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Part 1: Git, VS Code</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup-part-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup 2: Node, gcloud</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./codespaces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gcloud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">gcloud cli</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vscode-goodies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#setup-part-1" id="toc-setup-part-1" class="nav-link active" data-scroll-target="#setup-part-1">Setup: Part 1</a>
+  <li><a href="#install-git" id="toc-install-git" class="nav-link active" data-scroll-target="#install-git"><span class="header-section-number">2.1</span> Install Git</a></li>
+  <li><a href="#configure-git" id="toc-configure-git" class="nav-link" data-scroll-target="#configure-git"><span class="header-section-number">2.2</span> Configure git</a></li>
+  <li><a href="#set-up-github" id="toc-set-up-github" class="nav-link" data-scroll-target="#set-up-github"><span class="header-section-number">2.3</span> Set up GitHub</a></li>
+  <li><a href="#saving-your-github-credentials" id="toc-saving-your-github-credentials" class="nav-link" data-scroll-target="#saving-your-github-credentials"><span class="header-section-number">2.4</span> Saving your GitHub credentials</a></li>
+  <li><a href="#saving-ssh-key-in-github" id="toc-saving-ssh-key-in-github" class="nav-link" data-scroll-target="#saving-ssh-key-in-github"><span class="header-section-number">2.5</span> Saving SSH key in Github</a>
   <ul class="collapse">
-  <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git">Install Git</a></li>
-  <li><a href="#configure-git" id="toc-configure-git" class="nav-link" data-scroll-target="#configure-git">Configure git</a></li>
-  <li><a href="#set-up-github" id="toc-set-up-github" class="nav-link" data-scroll-target="#set-up-github">Set up GitHub</a></li>
-  <li><a href="#saving-your-github-credentials" id="toc-saving-your-github-credentials" class="nav-link" data-scroll-target="#saving-your-github-credentials">Saving your GitHub credentials</a></li>
-  <li><a href="#saving-ssh-key-in-github" id="toc-saving-ssh-key-in-github" class="nav-link" data-scroll-target="#saving-ssh-key-in-github">Saving SSH key in Github</a>
+  <li><a href="#test-github-connection" id="toc-test-github-connection" class="nav-link" data-scroll-target="#test-github-connection"><span class="header-section-number">2.5.1</span> Test Github connection</a></li>
+  <li><a href="#alternative-to-ssh-keys" id="toc-alternative-to-ssh-keys" class="nav-link" data-scroll-target="#alternative-to-ssh-keys"><span class="header-section-number">2.5.2</span> Alternative to SSH keys</a></li>
+  </ul></li>
+  <li><a href="#text-editor" id="toc-text-editor" class="nav-link" data-scroll-target="#text-editor"><span class="header-section-number">2.6</span> Text editor</a>
   <ul class="collapse">
-  <li><a href="#test-github-connection" id="toc-test-github-connection" class="nav-link" data-scroll-target="#test-github-connection">Test Github connection</a></li>
-  <li><a href="#alternative-to-ssh-keys" id="toc-alternative-to-ssh-keys" class="nav-link" data-scroll-target="#alternative-to-ssh-keys">Alternative to SSH keys</a></li>
+  <li><a href="#test-the-path" id="toc-test-the-path" class="nav-link" data-scroll-target="#test-the-path"><span class="header-section-number">2.6.1</span> Test the path</a></li>
   </ul></li>
-  <li><a href="#text-editor" id="toc-text-editor" class="nav-link" data-scroll-target="#text-editor">Text editor</a>
-  <ul class="collapse">
-  <li><a href="#test-the-path" id="toc-test-the-path" class="nav-link" data-scroll-target="#test-the-path">Test the path</a></li>
-  </ul></li>
-  <li><a href="#installing-bash-git-prompt" id="toc-installing-bash-git-prompt" class="nav-link" data-scroll-target="#installing-bash-git-prompt">Installing bash-git-prompt</a></li>
-  <li><a href="#vs-code-extensions" id="toc-vs-code-extensions" class="nav-link" data-scroll-target="#vs-code-extensions">VS Code extensions</a></li>
-  <li><a href="#vs-code-preferences" id="toc-vs-code-preferences" class="nav-link" data-scroll-target="#vs-code-preferences">VS Code preferences</a></li>
-  <li><a href="#use-google-chrome" id="toc-use-google-chrome" class="nav-link" data-scroll-target="#use-google-chrome">Use Google Chrome</a></li>
-  <li><a href="#testing-part-1-setup" id="toc-testing-part-1-setup" class="nav-link" data-scroll-target="#testing-part-1-setup">Testing Part 1 setup</a></li>
-  </ul></li>
+  <li><a href="#installing-bash-git-prompt" id="toc-installing-bash-git-prompt" class="nav-link" data-scroll-target="#installing-bash-git-prompt"><span class="header-section-number">2.7</span> Installing bash-git-prompt</a></li>
+  <li><a href="#vs-code-extensions" id="toc-vs-code-extensions" class="nav-link" data-scroll-target="#vs-code-extensions"><span class="header-section-number">2.8</span> VS Code extensions</a></li>
+  <li><a href="#vs-code-preferences" id="toc-vs-code-preferences" class="nav-link" data-scroll-target="#vs-code-preferences"><span class="header-section-number">2.9</span> VS Code preferences</a></li>
+  <li><a href="#use-google-chrome" id="toc-use-google-chrome" class="nav-link" data-scroll-target="#use-google-chrome"><span class="header-section-number">2.10</span> Use Google Chrome</a></li>
+  <li><a href="#testing-part-1-setup" id="toc-testing-part-1-setup" class="nav-link" data-scroll-target="#testing-part-1-setup"><span class="header-section-number">2.11</span> Testing Part 1 setup</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Part 1: Git, VS Code</span></h1>
+</div>
 
 
-<section id="setup-part-1" class="level1">
-<h1>Setup: Part 1</h1>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <p>Now that you have a little familiarity with you Terminal on your computer, we’re going to use it to install a bunch of stuff on you computer. During this setup you will be doing a bunch of steps on blind faith without much explanation, mostly downloading software and configuring it. I don’t go into a lot of details because these steps are typically only done once.xw</p>
 <p>You’ll be using your Terminal (or GitBash on Windows), which is a program that allows you to talk to your computer using text. It might seem scary at first but you’ll soon get used to it as you’ll be using your Terminal throughout this class (mostly from within Visual Studio Code).</p>
 <p>Be sure to read all the directions for a particular section before diving in as there are hints that you’ll need as you install and configure.</p>
 <p>There are some cases here where macOS and Windows differs greatly. I’ll try to make those differences clear.</p>
-<section id="install-git" class="level2">
-<h2 class="anchored" data-anchor-id="install-git">Install Git</h2>
+<section id="install-git" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="install-git"><span class="header-section-number">2.1</span> Install Git</h2>
 <p>Note there are some platform differences here …</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Homebrew is a “package manager”, meaning it is a program to help you install other programs that are not in Apple’s app store … usually geeky things. We’ll use Homebrew to install Git, which you will learn more about soon.</p>
@@ -211,8 +256,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="configure-git" class="level2">
-<h2 class="anchored" data-anchor-id="configure-git">Configure git</h2>
+<section id="configure-git" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="configure-git"><span class="header-section-number">2.2</span> Configure git</h2>
 <p>Here we’ll update some settings within git on your machine.</p>
 <p>First we’ll <a href="https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer">set your user.name</a> so Git knows who you are.</p>
 <ol type="1">
@@ -228,8 +273,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You won’t get a response unless there was a problem.</p></li>
 </ol>
 </section>
-<section id="set-up-github" class="level2">
-<h2 class="anchored" data-anchor-id="set-up-github">Set up GitHub</h2>
+<section id="set-up-github" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="set-up-github"><span class="header-section-number">2.3</span> Set up GitHub</h2>
 <p>If you don’t already have a GitHub account, go to <a href="http://github.com">github.com</a> and create an account.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -245,8 +290,8 @@ Important
 </div>
 </div>
 </section>
-<section id="saving-your-github-credentials" class="level2">
-<h2 class="anchored" data-anchor-id="saving-your-github-credentials">Saving your GitHub credentials</h2>
+<section id="saving-your-github-credentials" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="saving-your-github-credentials"><span class="header-section-number">2.4</span> Saving your GitHub credentials</h2>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -295,8 +340,8 @@ Important
 </div>
 <p>This copies the contents of that file you created to your clipboard. It’s like opening the file and copying the contents.</p>
 </section>
-<section id="saving-ssh-key-in-github" class="level2">
-<h2 class="anchored" data-anchor-id="saving-ssh-key-in-github">Saving SSH key in Github</h2>
+<section id="saving-ssh-key-in-github" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="saving-ssh-key-in-github"><span class="header-section-number">2.5</span> Saving SSH key in Github</h2>
 <p>Now we’ll save the contents of that secret file on your computer into your Github account so Github “knows” about your computer.</p>
 <ol type="1">
 <li>Go to <a href="https://github.com/">github.com</a> and click your user icon and choose <strong>Settings</strong>.</li>
@@ -317,8 +362,8 @@ Important
 <li>Click Add SSH key.</li>
 <li>If prompted, confirm your GitHub password.</li>
 </ol>
-<section id="test-github-connection" class="level3">
-<h3 class="anchored" data-anchor-id="test-github-connection">Test Github connection</h3>
+<section id="test-github-connection" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="test-github-connection"><span class="header-section-number">2.5.1</span> Test Github connection</h3>
 <ol type="1">
 <li>From your Terminal, do the following command:</li>
 </ol>
@@ -328,13 +373,13 @@ Important
 <li>In the end, you should have a success message like: “Hi username! You’ve successfully authenticated, but GitHub does not provide shell access.” If you get that message, you are good!</li>
 </ul>
 </section>
-<section id="alternative-to-ssh-keys" class="level3">
-<h3 class="anchored" data-anchor-id="alternative-to-ssh-keys">Alternative to SSH keys</h3>
+<section id="alternative-to-ssh-keys" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="alternative-to-ssh-keys"><span class="header-section-number">2.5.2</span> Alternative to SSH keys</h3>
 <p>If you can’t set SSH keys, you can at least reduce the number of times you have to enter your GitHub name/password by <a href="https://help.github.com/articles/caching-your-github-password-in-git/">caching your password</a>. We’ll have to use this method for lab computers.</p>
 </section>
 </section>
-<section id="text-editor" class="level2">
-<h2 class="anchored" data-anchor-id="text-editor">Text editor</h2>
+<section id="text-editor" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="text-editor"><span class="header-section-number">2.6</span> Text editor</h2>
 <p>We will use the code editor Visual Studio Code, made by Microsoft. It is free. We need to install it now.</p>
 <ol type="1">
 <li>Install the code editor <a href="https://code.visualstudio.com/download">Visual Studio Code</a> on your machine.</li>
@@ -365,8 +410,8 @@ Important
 </ol>
 </div>
 </div>
-<section id="test-the-path" class="level3">
-<h3 class="anchored" data-anchor-id="test-the-path">Test the path</h3>
+<section id="test-the-path" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="test-the-path"><span class="header-section-number">2.6.1</span> Test the path</h3>
 <ol type="1">
 <li>Close your Terminal and restart it.</li>
 <li>Type <code>code ./</code> and see it opens VS Code.</li>
@@ -374,8 +419,8 @@ Important
 <p>Hollar if it doesn’t. We need that to work before the next step.</p>
 </section>
 </section>
-<section id="installing-bash-git-prompt" class="level2">
-<h2 class="anchored" data-anchor-id="installing-bash-git-prompt">Installing bash-git-prompt</h2>
+<section id="installing-bash-git-prompt" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="installing-bash-git-prompt"><span class="header-section-number">2.7</span> Installing bash-git-prompt</h2>
 <p>This next tool gives us some feedback in our Terminal when we are using git.</p>
 <ol type="1">
 <li>Open a <strong>new</strong> Git Bash window to install the <code>git-bash-prompt</code> with the following command:</li>
@@ -439,8 +484,8 @@ Note
 </div>
 </div>
 </section>
-<section id="vs-code-extensions" class="level2">
-<h2 class="anchored" data-anchor-id="vs-code-extensions">VS Code extensions</h2>
+<section id="vs-code-extensions" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="vs-code-extensions"><span class="header-section-number">2.8</span> VS Code extensions</h2>
 <p>If you look on the left-menu of Visual Studio code, there is a square puzzle looking icon that gives you a list of extensions that you can search for an enable. See the <a href="https://code.visualstudio.com/docs/editor/extension-gallery">VS Code docs</a> for more info.</p>
 <ol type="1">
 <li>In VS Code, click on the Extensions icon.</li>
@@ -451,8 +496,8 @@ Note
 </ol>
 <p>These all make Visual Studio Code more awesomer in different ways.</p>
 </section>
-<section id="vs-code-preferences" class="level2">
-<h2 class="anchored" data-anchor-id="vs-code-preferences">VS Code preferences</h2>
+<section id="vs-code-preferences" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="vs-code-preferences"><span class="header-section-number">2.9</span> VS Code preferences</h2>
 <p>I have some helpful user preferences for VS Code that you might find useful.</p>
 <ol type="1">
 <li>Go to the Code &gt; Preferences &gt; Settings.</li>
@@ -496,12 +541,12 @@ Note
 </ol>
 <p>This sets the default text size, line wrapping, tab stops and other useful things we will need. If you find the text too big, you can change the number in the configuration.</p>
 </section>
-<section id="use-google-chrome" class="level2">
-<h2 class="anchored" data-anchor-id="use-google-chrome">Use Google Chrome</h2>
+<section id="use-google-chrome" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="use-google-chrome"><span class="header-section-number">2.10</span> Use Google Chrome</h2>
 <p>I recommend that you use Google Chrome as your browser for this class. It is what I’ll use in class and demonstrations, and it has lots of development tools built in that will come in handy.</p>
 </section>
-<section id="testing-part-1-setup" class="level2">
-<h2 class="anchored" data-anchor-id="testing-part-1-setup">Testing Part 1 setup</h2>
+<section id="testing-part-1-setup" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="testing-part-1-setup"><span class="header-section-number">2.11</span> Testing Part 1 setup</h2>
 <p>We need to make sure everything is set correctly before moving on. So here is how to check:</p>
 <p>Before doing this, open a new Terminal window:</p>
 <ol type="1">
@@ -534,7 +579,6 @@ Note
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -771,6 +815,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./setup-part-2.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup 2: Node, gcloud</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ICJ Setting Up – setup-part-2</title>
+<title>ICJ Setting Up - 3&nbsp; Setup 2: Node, gcloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./codespaces.html" rel="next">
+<link href="./setup-part-1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,11 +76,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -95,102 +97,145 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">ICJ Setting Up</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./setup-part-1.html" rel="" target="">
- <span class="menu-text">Part 1</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./setup-part-2.html" rel="" target="" aria-current="page">
- <span class="menu-text">Part 2</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./codespaces.html" rel="" target="">
- <span class="menu-text">Codespaces</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./gcloud.html" rel="" target="">
- <span class="menu-text">gcloud cli</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./vscode-goodies.html" rel="" target="">
- <span class="menu-text">VS Code Goodies</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup-part-2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup 2: Node, gcloud</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ICJ Setting Up</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup-part-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Part 1: Git, VS Code</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup-part-2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup 2: Node, gcloud</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./codespaces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gcloud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">gcloud cli</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vscode-goodies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#setup-part-1" id="toc-setup-part-1" class="nav-link active" data-scroll-target="#setup-part-1">Setup: Part 1</a>
+  <li><a href="#installing-node" id="toc-installing-node" class="nav-link active" data-scroll-target="#installing-node"><span class="header-section-number">3.1</span> Installing Node</a>
   <ul class="collapse">
-  <li><a href="#installing-node" id="toc-installing-node" class="nav-link" data-scroll-target="#installing-node">Installing Node</a>
+  <li><a href="#update-npm" id="toc-update-npm" class="nav-link" data-scroll-target="#update-npm"><span class="header-section-number">3.1.1</span> Update npm</a></li>
+  </ul></li>
+  <li><a href="#icj-project-setup" id="toc-icj-project-setup" class="nav-link" data-scroll-target="#icj-project-setup"><span class="header-section-number">3.2</span> ICJ project setup</a></li>
+  <li><a href="#google-drive-authentication" id="toc-google-drive-authentication" class="nav-link" data-scroll-target="#google-drive-authentication"><span class="header-section-number">3.3</span> Google Drive authentication</a>
   <ul class="collapse">
-  <li><a href="#update-npm" id="toc-update-npm" class="nav-link" data-scroll-target="#update-npm">Update npm</a></li>
+  <li><a href="#install-google-cloud-tools" id="toc-install-google-cloud-tools" class="nav-link" data-scroll-target="#install-google-cloud-tools"><span class="header-section-number">3.3.1</span> Install Google Cloud tools</a></li>
+  <li><a href="#authenticate-our-session" id="toc-authenticate-our-session" class="nav-link" data-scroll-target="#authenticate-our-session"><span class="header-section-number">3.3.2</span> Authenticate our session</a></li>
+  <li><a href="#create-and-configure-project" id="toc-create-and-configure-project" class="nav-link" data-scroll-target="#create-and-configure-project"><span class="header-section-number">3.3.3</span> Create and configure project</a></li>
   </ul></li>
-  <li><a href="#icj-project-setup" id="toc-icj-project-setup" class="nav-link" data-scroll-target="#icj-project-setup">ICJ project setup</a></li>
-  <li><a href="#google-drive-authentication" id="toc-google-drive-authentication" class="nav-link" data-scroll-target="#google-drive-authentication">Google Drive authentication</a>
-  <ul class="collapse">
-  <li><a href="#install-google-cloud-tools" id="toc-install-google-cloud-tools" class="nav-link" data-scroll-target="#install-google-cloud-tools">Install Google Cloud tools</a></li>
-  <li><a href="#authenticate-our-session" id="toc-authenticate-our-session" class="nav-link" data-scroll-target="#authenticate-our-session">Authenticate our session</a></li>
-  <li><a href="#create-and-configure-project" id="toc-create-and-configure-project" class="nav-link" data-scroll-target="#create-and-configure-project">Create and configure project</a></li>
-  </ul></li>
-  <li><a href="#test-these-settings" id="toc-test-these-settings" class="nav-link" data-scroll-target="#test-these-settings">Test these settings</a></li>
-  </ul></li>
+  <li><a href="#test-these-settings" id="toc-test-these-settings" class="nav-link" data-scroll-target="#test-these-settings"><span class="header-section-number">3.4</span> Test these settings</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Setup 2: Node, gcloud</span></h1>
+</div>
 
 
-<section id="setup-part-1" class="level1">
-<h1>Setup: Part 1</h1>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <p>These configurations are needed to run our Node-based development environments. This comes up about half-way through the semester.</p>
-<section id="installing-node" class="level2">
-<h2 class="anchored" data-anchor-id="installing-node">Installing Node</h2>
+<section id="installing-node" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="installing-node"><span class="header-section-number">3.1</span> Installing Node</h2>
 <p>Node is a Javascript runtime environment we will use to build news applications. Installation is different for Mac vs Windows.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>We need to make sure you have xcode tools first.</p>
-<section id="checking-xcode" class="level4">
-<h4 class="anchored" data-anchor-id="checking-xcode">Checking xcode</h4>
+<section id="checking-xcode" class="level4" data-number="3.1.0.1">
+<h4 data-number="3.1.0.1" class="anchored" data-anchor-id="checking-xcode"><span class="header-section-number">3.1.0.1</span> Checking xcode</h4>
 <ol type="1">
 <li><p>Run this in your Terminal:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
@@ -198,8 +243,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You should get a path in return. Something like “/Library/Developer/CommandLineTools”.</p>
 <p>If you don’t <strong>AND ONLY IF YOU DON’T</strong>, you need to install it.</p>
 </section>
-<section id="installing-xcode-select-only-if-needed" class="level4">
-<h4 class="anchored" data-anchor-id="installing-xcode-select-only-if-needed">Installing xcode-select (only if needed)</h4>
+<section id="installing-xcode-select-only-if-needed" class="level4" data-number="3.1.0.2">
+<h4 data-number="3.1.0.2" class="anchored" data-anchor-id="installing-xcode-select-only-if-needed"><span class="header-section-number">3.1.0.2</span> Installing xcode-select (only if needed)</h4>
 <ol type="1">
 <li><p>In your Terminal run this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
@@ -207,8 +252,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>It can take a long while to download and install. If you get an error on this install, let me know as I have a copy I can give you.</p>
 </section>
-<section id="nvm" class="level4">
-<h4 class="anchored" data-anchor-id="nvm">NVM</h4>
+<section id="nvm" class="level4" data-number="3.1.0.3">
+<h4 data-number="3.1.0.3" class="anchored" data-anchor-id="nvm"><span class="header-section-number">3.1.0.3</span> NVM</h4>
 <p>We will use NVM to install Node.js. Again, follow the prompts and you should be fine.</p>
 <ol type="1">
 <li>Go to <a href="https://github.com/nvm-sh/nvm#install--update-script">this page</a> and copy the first code chunk that starts with <code>curl</code>.</li>
@@ -217,8 +262,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Test</strong>: <em>After relaunching a terminal</em> do <code>nvm list</code> to make sure you don’t get an error.</li>
 </ol>
 </section>
-<section id="node" class="level4">
-<h4 class="anchored" data-anchor-id="node">Node</h4>
+<section id="node" class="level4" data-number="3.1.0.4">
+<h4 data-number="3.1.0.4" class="anchored" data-anchor-id="node"><span class="header-section-number">3.1.0.4</span> Node</h4>
 <p>Use NVM to install Node.</p>
 <ol type="1">
 <li><p>Install “v16.18.0” of Node:</p>
@@ -245,8 +290,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="update-npm" class="level3">
-<h3 class="anchored" data-anchor-id="update-npm">Update npm</h3>
+<section id="update-npm" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="update-npm"><span class="header-section-number">3.1.1</span> Update npm</h3>
 <p>NPM is a package repository. We need to update it.</p>
 <ol type="1">
 <li><p>To update npm, run this:</p>
@@ -255,8 +300,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </section>
 </section>
-<section id="icj-project-setup" class="level2">
-<h2 class="anchored" data-anchor-id="icj-project-setup">ICJ project setup</h2>
+<section id="icj-project-setup" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="icj-project-setup"><span class="header-section-number">3.2</span> ICJ project setup</h2>
 <p>There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools.</p>
 <ol type="1">
 <li><p>Run this:</p>
@@ -264,14 +309,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>These are for the task manager <a href="https://gulpjs.com/">Gulp</a> and a scaffolding tool <a href="https://www.npmjs.com/package/degit">Degit</a>.</p>
 </section>
-<section id="google-drive-authentication" class="level2">
-<h2 class="anchored" data-anchor-id="google-drive-authentication">Google Drive authentication</h2>
+<section id="google-drive-authentication" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="google-drive-authentication"><span class="header-section-number">3.3</span> Google Drive authentication</h2>
 <p>There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we’ll need specific credentials that work only for you. We will use the Google Cloud Project’s command line interface tool to do this. Otherwise known as the <a href="https://cloud.google.com/sdk/gcloud"><code>gcloud</code> CLI</a>.</p>
 <blockquote class="blockquote">
 <p>IMPORTANT: You must have and use a <strong>PERSONAL</strong> Gmail/Google account for this process. Your <strong>UTMail Google account will not work</strong>.</p>
 </blockquote>
-<section id="install-google-cloud-tools" class="level3">
-<h3 class="anchored" data-anchor-id="install-google-cloud-tools">Install Google Cloud tools</h3>
+<section id="install-google-cloud-tools" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="install-google-cloud-tools"><span class="header-section-number">3.3.1</span> Install Google Cloud tools</h3>
 <p>Again, differences between macOS and Windows</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Windows</a></li></ul>
@@ -293,8 +338,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="authenticate-our-session" class="level3">
-<h3 class="anchored" data-anchor-id="authenticate-our-session">Authenticate our session</h3>
+<section id="authenticate-our-session" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="authenticate-our-session"><span class="header-section-number">3.3.2</span> Authenticate our session</h3>
 <p>We are now going to authenticate our Google credentials on our local machine. <strong>Make sure to select your <em>personal</em> gmail account for this part</strong>. If you use your <code>utexas.edu</code> email, you won’t have permission to do what we need to do.</p>
 <ol type="1">
 <li><p>In a web browser, make sure you are logged into your <strong>PERSONAL</strong> Google account.</p></li>
@@ -310,8 +355,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Click <code>Allow</code> and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.</p>
 </section>
-<section id="create-and-configure-project" class="level3">
-<h3 class="anchored" data-anchor-id="create-and-configure-project">Create and configure project</h3>
+<section id="create-and-configure-project" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="create-and-configure-project"><span class="header-section-number">3.3.3</span> Create and configure project</h3>
 <p>Again, be in your personal Google account as you will have to authenticate again.</p>
 <p>We are going to run through several <code>gcloud</code> commands to set you computer to access Google Docs and Google sheets through programing. It’s a lot of ecsoteric steps and things could go wrong at each step. I don’t outline the output you get in return, but there can be a little or a lot.</p>
 <p>You may be asked some questions during installation. You should be able to answer with the default answer (usually capitalized). If you try these steps more than once you might be errors that a project exists. Ask for help.</p>
@@ -352,8 +397,8 @@ Important
 <p>Yes, that was a lot. Hopefuly it worked. We’re about to find out.</p>
 </section>
 </section>
-<section id="test-these-settings" class="level2">
-<h2 class="anchored" data-anchor-id="test-these-settings">Test these settings</h2>
+<section id="test-these-settings" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="test-these-settings"><span class="header-section-number">3.4</span> Test these settings</h2>
 <ol type="1">
 <li>Create a folder in your icj folder called <code>yourname-test</code>.</li>
 <li>Open that folder in Visual Studio Code.</li>
@@ -379,7 +424,6 @@ Important
 <p>You should be done!</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -616,6 +660,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./setup-part-1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Part 1: Git, VS Code</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./codespaces.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

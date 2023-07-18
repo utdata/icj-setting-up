@@ -1,4 +1,4 @@
-# Setup: Part 1
+# Setup 2: Node, gcloud
 
 These configurations are needed to run our Node-based development environments. This comes up about half-way through the semester.
 

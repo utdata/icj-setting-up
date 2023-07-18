@@ -1,25 +1,23 @@
 project:
-  type: website
+  type: book
   output-dir: docs
 
-website:
+book:
   title: "ICJ Setting Up"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: setup-part-1.qmd
-        text: Part 1
-      - href: setup-part-2.qmd
-        text: Part 2
-      - codespaces.md
-      - gcloud.md
-      - vscode-goodies.md
+  author: "Christian McDonald"
+  date: "7/18/2023"
+  chapters:
+    - href: index.qmd
+      text: Home
+    - setup-part-1.md
+    - setup-part-2.md
+  appendices:
+    - codespaces.md
+    - gcloud.md
+    - vscode-goodies.md
 
 format:
   html:
     theme: cosmo
-    css: styles.css
     toc: true
-    df-print: paged
     code-overflow: wrap

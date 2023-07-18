@@ -1,4 +1,4 @@
-# Setup: Part 1
+# Part 1: Git, VS Code
 
 Now that you have a little familiarity with you Terminal on your computer, we're going to use it to install a bunch of stuff on you computer. During this setup you will be doing a bunch of steps on blind faith without much explanation, mostly downloading software and configuring it. I don't go into a lot of details because these steps are typically only done once.xw
 
