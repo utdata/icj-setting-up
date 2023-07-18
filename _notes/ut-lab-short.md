@@ -1,6 +1,6 @@
 # Starting up a UT Lab computer
 
-> This is for a particular use case in Fall 2020.
+> This WAS for a particular use case in Fall 2020.
 
 Lab machines could get wiped regularly, so you might have to reset everything. You definitely will have to set this up for the first time.
 

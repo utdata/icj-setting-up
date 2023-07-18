@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ICJ Setting Up"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: setup-part-1.qmd
+        text: Part 1
+      - href: setup-part-2.qmd
+        text: Part 2
+      - codespaces.md
+      - gcloud.md
+      - vscode-goodies.md
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    df-print: paged
+    code-overflow: wrap

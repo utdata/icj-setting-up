@@ -1,7 +1,9 @@
 # VS Code Goodies
+
 VS Code is a pretty awesome code editor. It can save you a $4!t-ton of time.
 
 ## Extensions
+
 If you look on the left-menu, there is a square looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
 
 Some of those that I have used (and I'm finding more every day):
@@ -10,12 +12,14 @@ Some of those that I have used (and I'm finding more every day):
 - **markdownlint**: tells you when your Markdown syntax is incorrect.
 
 ### Optional
+
 - **Excel Viewer**: is something to help preview csv files. Not essential, but helpful when working with data.
 
 ## Preferences
+
 I have some helpful user preferences for VS Code that you might find useful.
 
-- Go to the Code > Preferences > Settings.
+- Go to the Code > Settings > Settings.
 - At the top right of the code editor are a series of icons, including this one:
 
 ![vs-code-setting-as-code](images/vs-code-setting-as-code.png)

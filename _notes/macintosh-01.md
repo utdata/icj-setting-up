@@ -1,4 +1,5 @@
 # Setting up your Macintosh, Part 1
+
 Everything listed here is free.
 
 > If you have a new "M1 Apple Silicon" Mac (built 2021 or later) then pay special attention to directions when installing and look for "Apple Silicon" versions.
@@ -19,7 +20,8 @@ Homebrew is a "package manager", meaning it helps you install programs that are 
 Don't install the Git GUI clients. There isn't an "app" for Git, it just lives inside your computer.
 
 ### Set up your git user and email
-Next we'll [set your user.name](https://help.github.com/en/github/using-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) so Git knows who you are.
+
+Next we'll [set your user.name](https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git) so Git knows who you are.
 
 1. In your Terminal, do this but use _your_ name instead of Mona Lisa:
 
@@ -27,9 +29,9 @@ Next we'll [set your user.name](https://help.github.com/en/github/using-git/sett
 git config --global user.name "Mona Lisa"
 ```
 
-Now we'll [set your user.email](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git).
+Now we'll [set your user.email](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-in-git).
 
-2. In your Terminal do this but use your email:
+1. In your Terminal do this but use your email:
 
 ```bash
 git config --global user.email "email@example.com"
@@ -43,7 +45,8 @@ If you don't already have a GitHub account, go to [github.com/](http://github.co
 
 > **IMPORTANT:** Choose your username carefully and **don't make the name specific to this class**. This is your personal GitHub profile FOREVER. I would avoid upper case characters as a matter of convention. Your name becomes part of a URL for your projects when we publish them.
 
-### Saving your GitHub credentials
+### Creating ssh key
+
 We're going to create a special file on your computer so that your machine can connect to your GitHub account. (GitHub doens't like sending your password around). It will seem complicated, but it's not really.
 
 > If you have ever set up SSH keys before, find the instructor. (If that doesn't make sense to you, you likely haven't.)
@@ -52,26 +55,32 @@ We're going to create a special file on your computer so that your machine can c
 
 1. In your terminal, run the following command **but with your email**:
 
-`ssh-keygen -t ed25519 -C "your_email@example.com"`
+    ```bash
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+    ```
 
 2. When it prompts you about a location, **JUST HIT RETURN** to accept the default.
-3. when it prompts you for a passphrase, **JUST HIT RETURN** to leave it blank.
+3. When it prompts you for a passphrase, **JUST HIT RETURN** to leave it blank.
 
 You should get a nice little art looking return on your terminal, eventually.
 
-What those steps did is create a file on your computer and put inside of it a bunch of random characters.
+### Adding key to Github
 
-4. Once you are through the steps above, do the following command:
+What those steps did is create a file on your computer and put inside of it a bunch of random characters. We now need to add the contents of those files into the Github web interface, so it can confirm you are you.
 
-`pbcopy < ~/.ssh/id_ed25519.pub`
+1. Once you are through the steps above, do the following command in your terminal:
 
-This copies the contents of that file you created to your clipboard. It's like opening the file and copying the contents.
+```bash
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+This copies the contents of that file you created to your clipboard. It's like finding the file, opening it and then copying the contents.
 
 1. Go to [github.com](https://github.com/) and click your user icon and choose **Settings**.
 2. In the user settings sidebar on the left, click **SSH and GPG keys**.
 3. Click **New SSH key** or **Add SSH key**.
 4. In the "Title" field, add a descriptive label for the new key. Name it after your computer, like "Personal MacBook Air" or something.
-5. In the "Key" field, so Command-V to paste your key into the box.
+5. In the "Key" field, do Command-V to paste your key into the box.
 
 It will look something like this:
 
@@ -83,58 +92,62 @@ Almost done!
 2. If prompted, confirm your GitHub password.
 
 ### Test
+
 1. From your Terminal, do the following command:
 
-`ssh -T git@github.com`
+```bash
+ssh -T git@github.com
+```
 
 - If you are asked about "RSA key fingerprint", type **yes** and hit return.
 - In the end, you should have a success message like: "Hi username! You've successfully authenticated, but GitHub does not provide shell access." If you get that message, you are good!
 
 ## Code editor
-1. Install the code editor [Visual Studio Code](https://code.visualstudio.com/download) on your machine. (There is an Apple Silicon version for those with a new M1 Mac!) It's normal kind of application install that shouldn't give you any trouble. (There are other good code editors out there ([Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3)), but I'll use VS Code in class and I suggest you do, too.)
+
+1. Install the code editor [Visual Studio Code](https://code.visualstudio.com/download) on your machine. (There are different versionf for Apple vs Intel chips.) It's a typical application install that shouldn't give you any trouble.
 2. Follow these "Launching from the command line" [instructions](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to add the `code` command to your path. This allows us to launch Visual Studio Code from a terminal.
 3. **TEST**: Close your Terminal and restart it. Type `code ./` and see it opens VS Code. Hollar if it doesn't.
 
 ## Updating the bash_profile
+
 We are adding some software to adjust your Terminal prompt to show your git "state" when in a tracked folder.
 
 1. Open a _new_ Terminal window and do the following:
 
-```bash
-git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
-```
+    ```bash
+    git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+    ```
 
-This should install the software you need to your home directory.
+2. Now open (or create) the `.bash_profile` file. (See note below if this doesn't work)
 
-2. Now open (or create) the `.bash_profile` file.
-
-```bash
-code .bash_profile
-```
-
-> If the above command doesn't open the file in VS Code then you didn't set the `code` command in the "Code Editor" section. First quit/relaunch Terminal and try again. If that doesn't work, go back to "[Launching from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)" and do that again.)
+    ```bash
+    code .bash_profile
+    ```
 
 3. Once your `.bash_profile` opens in VS Code, copy and paste this to the bottom of the file:
 
-``` bash
-# initiates the git bash prompt
-GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
+    ``` bash
+    # initiates the git bash prompt
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source ~/.bash-git-prompt/gitprompt.sh
 
-# sets shorter prompt name
-PS1='\u:\W\$ '
+    # sets shorter prompt name
+    PS1='\u:\W\$ '
 
-# hides zsh prompt
-export BASH_SILENCE_DEPRECATION_WARNING=1
-```
+    # hides zsh prompt
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+    ```
 
-- Close and restart your Terminal program to load the new settings.
+4. Close and restart your Terminal program to load the new settings.
 
 In addition to adding some commands to help you with git, we also added something to shorten your terminal prompt. We also added a command to stop asking you to change to zsh.
+
+> If you use `code .bash_profile` and it doesn't open the file in VS Code then you didn't set the `code` command in the "Code Editor" section. First quit/relaunch Terminal and try again. If that doesn't work, go back to "[Launching from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)" and do that again.
 
 [More on git-bash-prompt if we need it](https://github.com/magicmonty/bash-git-prompt).
 
 ## VS Code extensions
+
 If you look on the left-menu of Visual Studio code, there is a square puzzle looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.
 
 1. In VS Code, click on the Extensions icon.
@@ -146,47 +159,49 @@ If you look on the left-menu of Visual Studio code, there is a square puzzle loo
 These all make Visual Studio Code more awesomer in different ways.
 
 ## VS Code preferences
+
 I have some helpful user preferences for VS Code that you might find useful.
 
 1. Go to the Code > Preferences > Settings.
 2. At the top right of the code editor are a series of icons, including this one:
 
-![vs-code-setting-as-code](images/vs-code-setting-as-code.png)
+    ![vs-code-setting-as-code](images/vs-code-setting-as-code.png)
 
 3. In the new file that opens, copy and paste the code below and replace what is there.
 
-```json
-{
-    "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 12,
-    "editor.renderWhitespace": "boundary",
-    "editor.tabSize": 2,
-    "[md]": {
-        "editor.insertSpaces": true,
+    ```json
+    {
+        "editor.fontSize": 14,
+        "terminal.integrated.fontSize": 12,
+        "editor.renderWhitespace": "boundary",
         "editor.tabSize": 2,
-    },
-    "editor.renderControlCharacters": true,
-    "highlight-matching-tag.style": {
-        "backgroundColor": "rgba(63, 191, 63, 0.20)"
-    },
-    "editor.wordWrap": "on",
-    "window.zoomLevel": 0,
-    "editor.minimap.enabled": false,
-    "files.associations": {
-        "*.html": "html"
-    },
-    "emmet.includeLanguages": {
-        "njk": "html",
-        "nunjucks": "html"
-    },
-}
-```
+        "[md]": {
+            "editor.insertSpaces": true,
+            "editor.tabSize": 2,
+        },
+        "editor.renderControlCharacters": true,
+        "highlight-matching-tag.style": {
+            "backgroundColor": "rgba(63, 191, 63, 0.20)"
+        },
+        "editor.wordWrap": "on",
+        "window.zoomLevel": 0,
+        "editor.minimap.enabled": false,
+        "files.associations": {
+            "*.html": "html"
+        },
+        "emmet.includeLanguages": {
+            "njk": "html",
+            "nunjucks": "html"
+        },
+    }
+    ```
 
 4. Save and close the file.
 
 This sets the default text size, line wrapping, tab stops and other useful things we will need.
 
 ## Testing Part 1 setup
+
 We need to make sure everything is set correctly before moving on. So here is how to check:
 
 Before doing this, open a new Terminal window:
