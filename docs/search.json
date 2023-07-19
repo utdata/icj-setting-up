@@ -60,7 +60,7 @@
     "href": "setup-part-1.html#vs-code-extensions",
     "title": "2  Part 1: Git, VS Code",
     "section": "2.8 VS Code extensions",
-    "text": "2.8 VS Code extensions\nIf you look on the left-menu of Visual Studio code, there is a square puzzle looking icon that gives you a list of extensions that you can search for an enable. See the VS Code docs for more info.\n\nIn VS Code, click on the Extensions icon.\nIn the search box, type in Live Server and find the one created by Ritwick Dey.\nClick the Install button on that page.\nDo the same for markdownlint by David Anson.\nDo the same for Nunjucks by ronnidc.\n\nThese all make Visual Studio Code more awesomer in different ways."
+    "text": "2.8 VS Code extensions\nIf you look on the left-menu of Visual Studio code, there is a square puzzle looking icon that gives you a list of extensions that you can search for an enable. See the VS Code docs for more info.\n\nIn VS Code, click on the Extensions icon.\nIn the search box, type in Live Server and find the one created by Ritwick Dey.\nClick the Install button on that page.\nDo the same for markdownlint by David Anson.\nDo the same for Nunjucks by ronnidc.\nDo the same for Path Intellisense by Christian Kohler.\n\nThese all make Visual Studio Code more awesomer in different ways."
   },
   {
     "objectID": "setup-part-1.html#vs-code-preferences",
