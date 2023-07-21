@@ -1,6 +1,10 @@
 # Part 1: Git, VS Code
 
-Now that you have a little familiarity with you Terminal on your computer, we're going to use it to install a bunch of stuff on you computer. During this setup you will be doing a bunch of steps on blind faith without much explanation, mostly downloading software and configuring it. I don't go into a lot of details because these steps are typically only done once.xw
+This material assumes you have some familiarity with the Terminal on your computer. If this is new to you, you should consider going through the opening chapters of [Intro to Coding for Journalists](https://utdata.github.io/icj-class/start-00-intro.html) before returning here.
+
+---
+
+We will use the command-line interface offered by Terminal (or Git Bash on Windows) to install a bunch of stuff on you computer. During this setup you will be doing a bunch of steps on blind faith without much explanation, mostly downloading software and configuring it. I don't go into a lot of details because these steps are typically only done once.
 
 You'll be using your Terminal (or GitBash on Windows), which is a program that allows you to talk to your computer using text. It might seem scary at first but you'll soon get used to it as you'll be using your Terminal throughout this class (mostly from within Visual Studio Code).
 
