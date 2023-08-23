@@ -137,7 +137,7 @@ Now we'll save the contents of that secret file on your computer into your Githu
 
 It will look something like this (but the contents will be different):
 
-![Saving the key](https://docs.github.com/assets/cb-24835/images/help/settings/ssh-key-paste.png)
+![Saving the key](images/git-adding-key.png)
 
 Almost done!
 
