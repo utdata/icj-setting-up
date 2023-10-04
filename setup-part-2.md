@@ -49,13 +49,13 @@ We will use NVM to install Node.js. Again, follow the prompts and you should be 
 
 Use NVM to install Node.
 
-1. Install "v16.18.0" of Node:
+1. Install the long-term support of Node:
 
     ```bash
-    nvm install 16.18.0
+    nvm install --lts
     ```
 
-2. **Test**: Do `node -v` to make sure it worked. It should give you back "v16.18.0".
+2. **Test**: Do `node -v` to make sure it worked. It should give you back a version, like "v18.18.0".
 
 ### Windows
 
@@ -66,7 +66,7 @@ Microsoft recommends using nvm-windows to install node, so let's go with that.
     - When it gets to installing Node.js **DON'T DO** `nvm install latest`. Instead, use this command:
 
       ```bash
-      nvm install v16.18.0
+      nvm install --lts
       ```
 
 2. To make sure it worked, in Git Bash do:
@@ -75,7 +75,7 @@ Microsoft recommends using nvm-windows to install node, so let's go with that.
       node --version
       ```
 
-    - You should get a response that says you are using `v16.18.0`.
+    - You should get a response that says you are using a version, like `v18.18.0`.
 
 :::
 
@@ -130,18 +130,18 @@ To make the installation of packages simple, we are going to use the MacOS packa
 
 2. **Test**: Run `gcloud --version` and make sure a version number is returned.
 
-#### Windows 
+#### Windows
 
 1. Follow the instructions found in [this link](https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows) to download and install the `gcloud` CLI tool.
 2. **Test**: Once the installation has finished, run the command `gcloud --version` in your terminal, and you should get some output similar to this: `Google Cloud SDK 428.0.0`
 
-
 :::
-
 
 ### Authenticate our session
 
 We are now going to authenticate our Google credentials on our local machine. **Make sure to select your _personal_ gmail account for this part**. If you use your `utexas.edu` email, you won't have permission to do what we need to do.
+
+It works best if you log out of all your accounts and then log in just with the personal account. Be sure to do this in your default brower (like the one that opens when you click on a link in email.)
 
 1. In a web browser, make sure you are logged into your **PERSONAL** Google account.
 1. In a Terminal, use the following command:
@@ -156,6 +156,8 @@ This will open a browser where it will show you all of your available Google nam
 
 Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
 
+1. In the same browser that opened, go to [https://console.cloud.google.com/], where it should ask you to OK the terms of service.
+
 ### Create and configure project
 
 Again, be in your personal Google account as you will have to authenticate again.
@@ -166,17 +168,16 @@ You may be asked some questions during installation. You should be able to answe
 
 Just keep an eye out for `ERROR` or `can't find [whatever]` and hollar if that happens.
 
-Launch a fresh Terminal for this.
-
+Quit your terminal and relaunch it for this.
 
 ::: callout-important
-After you run the first command below, take note of the last line of the return. Does it say `Updated property [core/project] to [icj-project]`? If not, it probably added random letters and numbers at the end of `icj-project` and you might need that string later. PLEASE ASK FOR HELP IF SO.
+You have to edit the commands below to be personal to you. Everywhere you see `icj-YOURNAME` you need to edit that part of the command to use your first name, all lowercase, like `icj-alex`.Then you use that same value for the later commands that use `icj-YOURNAME`. PLEASE ASK FOR HELP IF YOU NEED IT.
 :::
 
 1. Do this command to create the project:
 
     ```bash
-    gcloud projects create icj-project --set-as-default --name="ICJ Project"
+    gcloud projects create icj-YOURNAME --set-as-default --name="ICJ Project"
     ```
 
 1. Do this to log in and set your project as a default:
@@ -191,10 +192,10 @@ After you run the first command below, take note of the last line of the return.
     gcloud iam service-accounts create generic-service-account
     ```
 
-1. Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (**This is where we might need to make adjustments if your project id has random letters/numbers.**)
+1. Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (**There are TWO places here whereyou have to switch out `icj-YOURNAME`.**)
 
     ```bash
-    gcloud projects add-iam-policy-binding icj-project --member='serviceAccount:generic-service-account@icj-project.iam.gserviceaccount.com' --role='roles/editor'
+    gcloud projects add-iam-policy-binding icj-YOURNAME --member='serviceAccount:generic-service-account@icj-YOURNAME.iam.gserviceaccount.com' --role='roles/editor'
     ```
 
 1. Then we enable the Google Docs and Sheets API for your project:
@@ -203,11 +204,11 @@ After you run the first command below, take note of the last line of the return.
     gcloud services enable docs.googleapis.com sheets.googleapis.com
     ```
 
-1. Now we'll create a service account authorization key. This is similar to ssh key above, but for Google:
+1. Now we'll create a service account authorization key. This is similar to ssh key above, but for Google. **Again, swap out `icj-YOURNAME`**:
 
     ```bash
     gcloud iam service-accounts keys create "$HOME/.config/gcloud/service_account_key.json" \
-        --iam-account=generic-service-account@icj-project.iam.gserviceaccount.com
+        --iam-account=generic-service-account@icj-YOURNAME.iam.gserviceaccount.com
     ```
 
 1. Then add the key to your `.bash_profile` with this commaned:

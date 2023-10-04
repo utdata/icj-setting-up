@@ -266,9 +266,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="3.1.0.4" class="anchored" data-anchor-id="node"><span class="header-section-number">3.1.0.4</span> Node</h4>
 <p>Use NVM to install Node.</p>
 <ol type="1">
-<li><p>Install “v16.18.0” of Node:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install 16.18.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Test</strong>: Do <code>node -v</code> to make sure it worked. It should give you back “v16.18.0”.</p></li>
+<li><p>Install the long-term support of Node:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install <span class="at">--lts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Test</strong>: Do <code>node -v</code> to make sure it worked. It should give you back a version, like “v18.18.0”.</p></li>
 </ol>
 </section>
 </div>
@@ -279,12 +279,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p>When they say Launch Powershell, you should use <strong>Git Bash</strong> instead.</p></li>
 <li><p>When it gets to installing Node.js <strong>DON’T DO</strong> <code>nvm install latest</code>. Instead, use this command:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install v16.18.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install <span class="at">--lts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
 <li><p>To make sure it worked, in Git Bash do:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>You should get a response that says you are using <code>v16.18.0</code>.</li>
+<li>You should get a response that says you are using a version, like <code>v18.18.0</code>.</li>
 </ul></li>
 </ol>
 </div>
@@ -341,6 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="authenticate-our-session" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="authenticate-our-session"><span class="header-section-number">3.3.2</span> Authenticate our session</h3>
 <p>We are now going to authenticate our Google credentials on our local machine. <strong>Make sure to select your <em>personal</em> gmail account for this part</strong>. If you use your <code>utexas.edu</code> email, you won’t have permission to do what we need to do.</p>
+<p>It works best if you log out of all your accounts and then log in just with the personal account. Be sure to do this in your default brower (like the one that opens when you click on a link in email.)</p>
 <ol type="1">
 <li><p>In a web browser, make sure you are logged into your <strong>PERSONAL</strong> Google account.</p></li>
 <li><p>In a Terminal, use the following command:</p>
@@ -354,6 +355,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Click <code>Allow</code> and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.</p>
+<ol type="1">
+<li>In the same browser that opened, go to [https://console.cloud.google.com/], where it should ask you to OK the terms of service.</li>
+</ol>
 </section>
 <section id="create-and-configure-project" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="create-and-configure-project"><span class="header-section-number">3.3.3</span> Create and configure project</h3>
@@ -361,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We are going to run through several <code>gcloud</code> commands to set you computer to access Google Docs and Google sheets through programing. It’s a lot of ecsoteric steps and things could go wrong at each step. I don’t outline the output you get in return, but there can be a little or a lot.</p>
 <p>You may be asked some questions during installation. You should be able to answer with the default answer (usually capitalized). If you try these steps more than once you might be errors that a project exists. Ask for help.</p>
 <p>Just keep an eye out for <code>ERROR</code> or <code>can't find [whatever]</code> and hollar if that happens.</p>
-<p>Launch a fresh Terminal for this.</p>
+<p>Quit your terminal and relaunch it for this.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -372,23 +376,23 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After you run the first command below, take note of the last line of the return. Does it say <code>Updated property [core/project] to [icj-project]</code>? If not, it probably added random letters and numbers at the end of <code>icj-project</code> and you might need that string later. PLEASE ASK FOR HELP IF SO.</p>
+<p>You have to edit the commands below to be personal to you. Everywhere you see <code>icj-YOURNAME</code> you need to edit that part of the command to use your first name, all lowercase, like <code>icj-alex</code>.Then you use that same value for the later commands that use <code>icj-YOURNAME</code>. PLEASE ASK FOR HELP IF YOU NEED IT.</p>
 </div>
 </div>
 <ol type="1">
 <li><p>Do this command to create the project:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects create icj-project <span class="at">--set-as-default</span> <span class="at">--name</span><span class="op">=</span><span class="st">"ICJ Project"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects create icj-YOURNAME <span class="at">--set-as-default</span> <span class="at">--name</span><span class="op">=</span><span class="st">"ICJ Project"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Do this to log in and set your project as a default:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth application-default login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Next, we’ll create a Google service account:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> iam service-accounts create generic-service-account</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (<strong>This is where we might need to make adjustments if your project id has random letters/numbers.</strong>)</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects add-iam-policy-binding icj-project <span class="at">--member</span><span class="op">=</span><span class="st">'serviceAccount:generic-service-account@icj-project.iam.gserviceaccount.com'</span> <span class="at">--role</span><span class="op">=</span><span class="st">'roles/editor'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (<strong>There are TWO places here whereyou have to switch out <code>icj-YOURNAME</code>.</strong>)</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects add-iam-policy-binding icj-YOURNAME <span class="at">--member</span><span class="op">=</span><span class="st">'serviceAccount:generic-service-account@icj-YOURNAME.iam.gserviceaccount.com'</span> <span class="at">--role</span><span class="op">=</span><span class="st">'roles/editor'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Then we enable the Google Docs and Sheets API for your project:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> services enable docs.googleapis.com sheets.googleapis.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Now we’ll create a service account authorization key. This is similar to ssh key above, but for Google:</p>
+<li><p>Now we’ll create a service account authorization key. This is similar to ssh key above, but for Google. <strong>Again, swap out <code>icj-YOURNAME</code></strong>:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> iam service-accounts keys create <span class="st">"</span><span class="va">$HOME</span><span class="st">/.config/gcloud/service_account_key.json"</span> <span class="dt">\</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--iam-account</span><span class="op">=</span>generic-service-account@icj-project.iam.gserviceaccount.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--iam-account</span><span class="op">=</span>generic-service-account@icj-YOURNAME.iam.gserviceaccount.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Then add the key to your <code>.bash_profile</code> with this commaned:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/service_account_key.json"'</span> <span class="op">&gt;&gt;</span>~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Sync your terminal with the updated bash profile:</p>
