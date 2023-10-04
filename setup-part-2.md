@@ -171,7 +171,7 @@ Just keep an eye out for `ERROR` or `can't find [whatever]` and hollar if that h
 Quit your terminal and relaunch it for this.
 
 ::: callout-important
-You have to edit the commands below to be personal to you. Everywhere you see `icj-YOURNAME` you need to edit that part of the command to use your first name, all lowercase, like `icj-alex`.Then you use that same value for the later commands that use `icj-YOURNAME`. PLEASE ASK FOR HELP IF YOU NEED IT.
+You have to edit the commands below to be personal to you. Everywhere you see `icj-YOURNAME` you need to edit that part of the command to use your first name, all lowercase, like `icj-alex`. Then you use that same value for the later commands that use `icj-YOURNAME`. PLEASE ASK FOR HELP IF YOU NEED IT.
 :::
 
 1. Do this command to create the project:
@@ -192,7 +192,7 @@ You have to edit the commands below to be personal to you. Everywhere you see `i
     gcloud iam service-accounts create generic-service-account
     ```
 
-1. Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (**There are TWO places here whereyou have to switch out `icj-YOURNAME`.**)
+1. Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (**There are TWO places here where you have to switch out `icj-YOURNAME`.**)
 
     ```bash
     gcloud projects add-iam-policy-binding icj-YOURNAME --member='serviceAccount:generic-service-account@icj-YOURNAME.iam.gserviceaccount.com' --role='roles/editor'

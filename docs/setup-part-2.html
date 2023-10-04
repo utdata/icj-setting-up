@@ -376,7 +376,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You have to edit the commands below to be personal to you. Everywhere you see <code>icj-YOURNAME</code> you need to edit that part of the command to use your first name, all lowercase, like <code>icj-alex</code>.Then you use that same value for the later commands that use <code>icj-YOURNAME</code>. PLEASE ASK FOR HELP IF YOU NEED IT.</p>
+<p>You have to edit the commands below to be personal to you. Everywhere you see <code>icj-YOURNAME</code> you need to edit that part of the command to use your first name, all lowercase, like <code>icj-alex</code>. Then you use that same value for the later commands that use <code>icj-YOURNAME</code>. PLEASE ASK FOR HELP IF YOU NEED IT.</p>
 </div>
 </div>
 <ol type="1">
@@ -386,7 +386,7 @@ Important
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth application-default login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Next, we’ll create a Google service account:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> iam service-accounts create generic-service-account</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (<strong>There are TWO places here whereyou have to switch out <code>icj-YOURNAME</code>.</strong>)</p>
+<li><p>Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (<strong>There are TWO places here where you have to switch out <code>icj-YOURNAME</code>.</strong>)</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects add-iam-policy-binding icj-YOURNAME <span class="at">--member</span><span class="op">=</span><span class="st">'serviceAccount:generic-service-account@icj-YOURNAME.iam.gserviceaccount.com'</span> <span class="at">--role</span><span class="op">=</span><span class="st">'roles/editor'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Then we enable the Google Docs and Sheets API for your project:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> services enable docs.googleapis.com sheets.googleapis.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
