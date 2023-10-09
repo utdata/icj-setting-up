@@ -79,8 +79,6 @@ Microsoft recommends using nvm-windows to install node, so let's go with that.
 
 :::
 
-
-
 ### Update npm
 
 NPM is a package repository. We need to update it.
@@ -114,7 +112,7 @@ Otherwise known as the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud).
 
 ### Install Google Cloud tools
 
-Again, differences between macOS and Windows
+Again, differences between macOS and Windows.
 
 ::: {.panel-tabset}
 
@@ -139,24 +137,22 @@ To make the installation of packages simple, we are going to use the MacOS packa
 
 ### Authenticate our session
 
-We are now going to authenticate our Google credentials on our local machine. **Make sure to select your _personal_ gmail account for this part**. If you use your `utexas.edu` email, you won't have permission to do what we need to do.
+We are now going to authenticate our Google credentials on our local machine. 
 
-It works best if you log out of all your accounts and then log in just with the personal account. Be sure to do this in your default brower (like the one that opens when you click on a link in email.)
+> **Make sure to select your _personal_ gmail account for this part**. If you are logged into your `utexas.edu` email, you won't have permission to do what we need to do. It works best if you **log out of all your accounts in all your browsers** (Chrome, Safari, Edge, etc) before you start.
 
-1. In a web browser, make sure you are logged into your **PERSONAL** Google account.
 1. In a Terminal, use the following command:
 
     ```bash
     gcloud auth login --brief --enable-gdrive-access
     ```
 
-This will open a browser where it will show you all of your available Google names. After you select your _personal_ gmail account, you will be sent to a permissions screen that will look something like this:
+This will open a browser and ask you to log into your Google account. Select your _personal_ gmail account, you will be sent to a permissions screen that will look something like this:
 
 ![gcloud auth](images/gcloud_cli_permissions.png)
 
-Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
-
-1. In the same browser that opened, go to [https://console.cloud.google.com/], where it should ask you to OK the terms of service.
+1. Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
+1. In the same browser that opened, go to [console.cloud.google.com](https://console.cloud.google.com/), where it should ask you to OK the terms of service.
 
 ### Create and configure project
 
@@ -164,17 +160,13 @@ Again, be in your personal Google account as you will have to authenticate again
 
 We are going to run through several `gcloud` commands to set you computer to access Google Docs and Google sheets through programing. It's a lot of ecsoteric steps and things could go wrong at each step. I don't outline the output you get in return, but there can be a little or a lot.
 
-You may be asked some questions during installation. You should be able to answer with the default answer (usually capitalized). If you try these steps more than once you might be errors that a project exists. Ask for help.
-
 Just keep an eye out for `ERROR` or `can't find [whatever]` and hollar if that happens.
 
-Quit your terminal and relaunch it for this.
-
 ::: callout-important
-You have to edit the commands below to be personal to you. Everywhere you see `icj-YOURNAME` you need to edit that part of the command to use your first name, all lowercase, like `icj-alex`. Then you use that same value for the later commands that use `icj-YOURNAME`. PLEASE ASK FOR HELP IF YOU NEED IT.
+You have to edit some of the commands below to be personal to you. Everywhere you see `icj-YOURNAME` you need to edit that part of the command to use your first name, all lowercase, like `icj-alex`. Then you use that same value for the later commands that use `icj-YOURNAME`. PLEASE ASK FOR HELP IF YOU NEED IT. Important: After you paste a terminal command, to edit it you have the use the left arrow key to get to the part of the command to then delete and make changes.
 :::
 
-1. Do this command to create the project:
+1. Do this command to create the project (**but edit icj-YOURNAME as noted above**):
 
     ```bash
     gcloud projects create icj-YOURNAME --set-as-default --name="ICJ Project"
@@ -231,9 +223,9 @@ Yes, that was a lot. Hopefuly it worked. We're about to find out.
 2. Open that folder in Visual Studio Code.
 3. Open a VS Code Terminal and run:
 
-```bash
-degit utdata/icj-google-fetch-test#main
-```
+    ```bash
+    degit utdata/icj-google-fetch-test#main
+    ```
 
 You should get this in return:
 
@@ -241,7 +233,7 @@ You should get this in return:
 
 And it will download a bunch of files into your folder.
 
-1. Run `npm ci`. This will also download a bunch of files. It might take a couple of minutes to run.
+1. Run `npm install`. This will also download a bunch of files. It might take a couple of minutes to run.
 2. Run `gulp fetch`.
 
 If everything works, you should have a return like this:

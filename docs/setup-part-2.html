@@ -317,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <section id="install-google-cloud-tools" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="install-google-cloud-tools"><span class="header-section-number">3.3.1</span> Install Google Cloud tools</h3>
-<p>Again, differences between macOS and Windows</p>
+<p>Again, differences between macOS and Windows.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content">
@@ -340,32 +340,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="authenticate-our-session" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="authenticate-our-session"><span class="header-section-number">3.3.2</span> Authenticate our session</h3>
-<p>We are now going to authenticate our Google credentials on our local machine. <strong>Make sure to select your <em>personal</em> gmail account for this part</strong>. If you use your <code>utexas.edu</code> email, you won’t have permission to do what we need to do.</p>
-<p>It works best if you log out of all your accounts and then log in just with the personal account. Be sure to do this in your default brower (like the one that opens when you click on a link in email.)</p>
+<p>We are now going to authenticate our Google credentials on our local machine.</p>
+<blockquote class="blockquote">
+<p><strong>Make sure to select your <em>personal</em> gmail account for this part</strong>. If you are logged into your <code>utexas.edu</code> email, you won’t have permission to do what we need to do. It works best if you <strong>log out of all your accounts in all your browsers</strong> (Chrome, Safari, Edge, etc) before you start.</p>
+</blockquote>
 <ol type="1">
-<li><p>In a web browser, make sure you are logged into your <strong>PERSONAL</strong> Google account.</p></li>
 <li><p>In a Terminal, use the following command:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth login <span class="at">--brief</span> <span class="at">--enable-gdrive-access</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-<p>This will open a browser where it will show you all of your available Google names. After you select your <em>personal</em> gmail account, you will be sent to a permissions screen that will look something like this:</p>
+<p>This will open a browser and ask you to log into your Google account. Select your <em>personal</em> gmail account, you will be sent to a permissions screen that will look something like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/gcloud_cli_permissions.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">gcloud auth</figcaption>
 </figure>
 </div>
-<p>Click <code>Allow</code> and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.</p>
 <ol type="1">
-<li>In the same browser that opened, go to [https://console.cloud.google.com/], where it should ask you to OK the terms of service.</li>
+<li>Click <code>Allow</code> and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.</li>
+<li>In the same browser that opened, go to <a href="https://console.cloud.google.com/">console.cloud.google.com</a>, where it should ask you to OK the terms of service.</li>
 </ol>
 </section>
 <section id="create-and-configure-project" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="create-and-configure-project"><span class="header-section-number">3.3.3</span> Create and configure project</h3>
 <p>Again, be in your personal Google account as you will have to authenticate again.</p>
 <p>We are going to run through several <code>gcloud</code> commands to set you computer to access Google Docs and Google sheets through programing. It’s a lot of ecsoteric steps and things could go wrong at each step. I don’t outline the output you get in return, but there can be a little or a lot.</p>
-<p>You may be asked some questions during installation. You should be able to answer with the default answer (usually capitalized). If you try these steps more than once you might be errors that a project exists. Ask for help.</p>
 <p>Just keep an eye out for <code>ERROR</code> or <code>can't find [whatever]</code> and hollar if that happens.</p>
-<p>Quit your terminal and relaunch it for this.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -376,11 +375,11 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You have to edit the commands below to be personal to you. Everywhere you see <code>icj-YOURNAME</code> you need to edit that part of the command to use your first name, all lowercase, like <code>icj-alex</code>. Then you use that same value for the later commands that use <code>icj-YOURNAME</code>. PLEASE ASK FOR HELP IF YOU NEED IT.</p>
+<p>You have to edit some of the commands below to be personal to you. Everywhere you see <code>icj-YOURNAME</code> you need to edit that part of the command to use your first name, all lowercase, like <code>icj-alex</code>. Then you use that same value for the later commands that use <code>icj-YOURNAME</code>. PLEASE ASK FOR HELP IF YOU NEED IT. Important: After you paste a terminal command, to edit it you have the use the left arrow key to get to the part of the command to then delete and make changes.</p>
 </div>
 </div>
 <ol type="1">
-<li><p>Do this command to create the project:</p>
+<li><p>Do this command to create the project (<strong>but edit icj-YOURNAME as noted above</strong>):</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects create icj-YOURNAME <span class="at">--set-as-default</span> <span class="at">--name</span><span class="op">=</span><span class="st">"ICJ Project"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Do this to log in and set your project as a default:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth application-default login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
@@ -404,16 +403,16 @@ Important
 <section id="test-these-settings" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="test-these-settings"><span class="header-section-number">3.4</span> Test these settings</h2>
 <ol type="1">
-<li>Create a folder in your icj folder called <code>yourname-test</code>.</li>
-<li>Open that folder in Visual Studio Code.</li>
-<li>Open a VS Code Terminal and run:</li>
+<li><p>Create a folder in your icj folder called <code>yourname-test</code>.</p></li>
+<li><p>Open that folder in Visual Studio Code.</p></li>
+<li><p>Open a VS Code Terminal and run:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">degit</span> utdata/icj-google-fetch-test#main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">degit</span> utdata/icj-google-fetch-test#main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should get this in return:</p>
 <p><code>&gt; cloned utdata/icj-google-fetch-test#main</code></p>
 <p>And it will download a bunch of files into your folder.</p>
 <ol type="1">
-<li>Run <code>npm ci</code>. This will also download a bunch of files. It might take a couple of minutes to run.</li>
+<li>Run <code>npm install</code>. This will also download a bunch of files. It might take a couple of minutes to run.</li>
 <li>Run <code>gulp fetch</code>.</li>
 </ol>
 <p>If everything works, you should have a return like this:</p>
