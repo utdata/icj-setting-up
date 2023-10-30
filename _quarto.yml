@@ -15,6 +15,7 @@ book:
     - codespaces.md
     - gcloud.md
     - vscode-goodies.md
+    - old_windows_setup.md
 
 format:
   html:
