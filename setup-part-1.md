@@ -303,7 +303,7 @@ This sets the default text size, line wrapping, tab stops and other useful thing
 
 ## Use Google Chrome
 
-I recommend that you use Google Chrome as your browser for this class. It is what I'll use in class and demonstrations, and it has lots of development tools built in that will come in handy.
+I will be using Google Chrome in class because it has lots of development tools built in that are essential to the class. Safari also has those tools, [but they need to be activated](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac). I'm sure other browsers have development tools, but you are on your own figuring them out.
 
 ## Testing Part 1 setup
 

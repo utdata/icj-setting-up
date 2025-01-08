@@ -2,6 +2,18 @@
 
 These configurations are needed to run our Node-based development environments. This comes up about half-way through the semester.
 
+::: callout-important
+
+## Codespaces
+
+In the last few years, virtual computing has become so prevalent and cheap that we may not need to do this kind of development locally. Github has a feature called [Codespaces](https://github.com/features/codespaces) that is baked right into your repo.
+
+Spring 2024 is the first semester class templates have been configured to use Codespaces and I don't really have directions for using them because I haven't experienced it. Perhaps we can all learn together?
+
+That said, I'd like to try and set up computers with Node and such as outlined below. If we run into problems, Codespaces will be our go-to.
+
+:::
+
 ## Installing Node
 
 Node is a Javascript runtime environment we will use to build news applications. Installation is different for Mac vs Windows. 

@@ -1,5 +1,13 @@
 # Codespaces
 
+::: callout-warning
+
+## Out of date
+
+We've made some updates to the icj-project-rig that requires an update there that has not yet been made.
+
+:::
+
 The icj-project-rig can be used in [GitHub Codespaces](https://github.com/features/codespaces), a free virtual machine environment. This might be helpful if you have trouble with your own computer.
 
 This isn't a tutorial on using Codespaces, but it does provide some necessary information if you explore the option. This assumes you already have your own copy of the project and it is pushed to Github. You work out of your own project.
