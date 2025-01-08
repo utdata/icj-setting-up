@@ -5,7 +5,7 @@ project:
 book:
   title: "ICJ Setting Up"
   author: "Christian McDonald"
-  date: "7/18/2023"
+  date: last-modified
   chapters:
     - href: index.qmd
       text: Home

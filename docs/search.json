@@ -195,7 +195,7 @@
     "href": "codespaces.html#install-gulp",
     "title": "Appendix A — Codespaces",
     "section": "",
-    "text": "Once the container is up and running, do npm install -g gulp to install gulp.\nRun npm ci to do a clean install on all the other packages in the project.",
+    "text": "Once the container is up and running, do npm install -g gulp to install gulp. 2. Run npm ci to do a clean install on all the other packages in the project.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Codespaces</span>"
@@ -206,18 +206,7 @@
     "href": "codespaces.html#google-auth-access",
     "title": "Appendix A — Codespaces",
     "section": "A.2 Google auth access",
-    "text": "A.2 Google auth access\nThere is one gulp command that will not work in Codespaces unless you jump through some extra hoops.\ngulp fetch is the command that downloads Google Docs and Sheets documents as JSON, as outlined in project.config.json. The process expects to find an authorization file on your own computer that we set up in icj-setting-up Part 2, but that file doesn’t exist on the Codespaces virtual machine.\nYou’ll need to set up two environment variables to make it work.\n\nNOTE: It is absolutely imperative that you DO NOT commit the contents of service_account_key.json to your branch at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since service_account_key.json is in the .gitignore file, you should not be able to check it in, but it is important to remember that for the sake of transparency.\n\nWe will be following the process shown here\nAs you follow those steps you’ll need the information below.\n\nA.2.1 Credential path\n\nThe “Name” of the secret will be GOOGLE_CREDENTIALS.\nThe “Value” of the secret will be: $HOME/.config/gcloud/service_account_key.json\n\n\n\nA.2.2 Credential contents\n\nThe “Name” of the secret will be GOOGLE_APPLICATION_CREDENTIALS\nFor the “Value” of the secret you need to copy the contents of a file on your local machine. Follow the steps below:\n\n\nRun this command on your local machine, which will copy needed the file to your clipboard:\npbcopy &lt; $HOME/.config/gcloud/service_account_key.json\nReturn to your web browser and for the “Value” do Cmd-v to paste the contents of your clipboard.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Codespaces</span>"
-    ]
-  },
-  {
-    "objectID": "codespaces.html#load-the-secrets",
-    "href": "codespaces.html#load-the-secrets",
-    "title": "Appendix A — Codespaces",
-    "section": "A.3 Load the secrets",
-    "text": "A.3 Load the secrets\nWhen you open your Codespace, you will run the following command.\nnpm run codespace-google-auth\nAfter doing that, you should be able to run gulp fetch to update the data JSON files.",
+    "text": "A.2 Google auth access\nThere is one gulp command that will not work in Codespaces unless you jump through some extra hoops.\ngulp fetch is the command that downloads Google Docs and Sheets documents as JSON, as outlined in project.config.json. The process expects to find an authorization file on your own computer that we set up in icj-setting-up Part 2, but that file doesn’t exist on the Codespaces virtual machine.\nYou’ll need to set up two environment variables to make it work.\n\nNOTE: It is absolutely imperative that you DO NOT commit the contents of service_account_key.json to your branch at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since service_account_key.json is in the .gitignore file, you should not be able to check it in, but it is important to remember that for the sake of transparency.\n\nWe will be following the process shown here\nAs you follow those steps you’ll need the information below.\n\nA.2.1 Codespaces secret\n\nThe “Name” of the secret will be SERVICE_ACCOUNT_CREDENTIALS.\nThe “Content” of the secret will be the contents of the file created in ICJ setup Part 2. You should be able to “copy” that file from your terminal by running the following command:\npbcopy &lt; $HOME/.config/gcloud/service_account_key.json\nReturn to your web browser and for the “Value” do Cmd-v to paste the contents of your clipboard.\nAt the step you add repositories, you’ll need to add your repo that is a copy of the icj-project-rig.\n\nIf you build other projects that need the credential, you can come here and edit the secret to add the new repo.\n\n\nA.2.2 Might have to restart\nIf you already had a Codespace running, you might have to stop and restart it to recognize the new secret.\nYou could try this command below first, but I’m not certain it will work.\nnpm run codespace-google-auth\nAfter doing that, you should be able to run gulp fetch to update the data JSON files.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Codespaces</span>"

@@ -206,10 +206,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-gulp" id="toc-install-gulp" class="nav-link active" data-scroll-target="#install-gulp"><span class="header-section-number">A.1</span> Install gulp</a></li>
   <li><a href="#google-auth-access" id="toc-google-auth-access" class="nav-link" data-scroll-target="#google-auth-access"><span class="header-section-number">A.2</span> Google auth access</a>
   <ul class="collapse">
-  <li><a href="#credential-path" id="toc-credential-path" class="nav-link" data-scroll-target="#credential-path"><span class="header-section-number">A.2.1</span> Credential path</a></li>
-  <li><a href="#credential-contents" id="toc-credential-contents" class="nav-link" data-scroll-target="#credential-contents"><span class="header-section-number">A.2.2</span> Credential contents</a></li>
+  <li><a href="#codespaces-secret" id="toc-codespaces-secret" class="nav-link" data-scroll-target="#codespaces-secret"><span class="header-section-number">A.2.1</span> Codespaces secret</a></li>
+  <li><a href="#might-have-to-restart" id="toc-might-have-to-restart" class="nav-link" data-scroll-target="#might-have-to-restart"><span class="header-section-number">A.2.2</span> Might have to restart</a></li>
   </ul></li>
-  <li><a href="#load-the-secrets" id="toc-load-the-secrets" class="nav-link" data-scroll-target="#load-the-secrets"><span class="header-section-number">A.3</span> Load the secrets</a></li>
   </ul>
 </nav>
     </div>
@@ -235,27 +234,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Out of date
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We’ve made some updates to the icj-project-rig that requires an update there that has not yet been made.</p>
-</div>
-</div>
 <p>The icj-project-rig can be used in <a href="https://github.com/features/codespaces">GitHub Codespaces</a>, a free virtual machine environment. This might be helpful if you have trouble with your own computer.</p>
 <p>This isn’t a tutorial on using Codespaces, but it does provide some necessary information if you explore the option. This assumes you already have your own copy of the project and it is pushed to Github. You work out of your own project.</p>
 <section id="install-gulp" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="install-gulp"><span class="header-section-number">A.1</span> Install gulp</h2>
 <p>Once you launch a codespace it will recognize you are in a Node environment but you still need to install some packages the first time you launch it:</p>
 <ol type="1">
-<li>Once the container is up and running, do <code>npm install -g gulp</code> to install gulp.</li>
-<li>Run <code>npm ci</code> to do a clean install on all the other packages in the project.</li>
+<li>Once the container is up and running, do <code>npm install -g gulp</code> to install gulp. <del>2. Run <code>npm ci</code> to do a clean install on all the other packages in the project.</del></li>
 </ol>
 <p>If you come back to an existing Codespace you should not have to run those again.</p>
 </section>
@@ -269,33 +254,26 @@ Out of date
 </blockquote>
 <p>We will be following the process shown <a href="https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret">here</a></p>
 <p>As you follow those steps you’ll need the information below.</p>
-<section id="credential-path" class="level3" data-number="A.2.1">
-<h3 data-number="A.2.1" class="anchored" data-anchor-id="credential-path"><span class="header-section-number">A.2.1</span> Credential path</h3>
+<section id="codespaces-secret" class="level3" data-number="A.2.1">
+<h3 data-number="A.2.1" class="anchored" data-anchor-id="codespaces-secret"><span class="header-section-number">A.2.1</span> Codespaces secret</h3>
 <ul>
-<li>The “Name” of the secret will be <code>GOOGLE_CREDENTIALS</code>.</li>
-<li>The “Value” of the secret will be: <code>$HOME/.config/gcloud/service_account_key.json</code></li>
+<li><p>The “Name” of the secret will be <code>SERVICE_ACCOUNT_CREDENTIALS</code>.</p></li>
+<li><p>The “Content” of the secret will be the contents of the file created in ICJ setup Part 2. You should be able to “copy” that file from your terminal by running the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pbcopy</span> <span class="op">&lt;</span> <span class="va">$HOME</span>/.config/gcloud/service_account_key.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Return to your web browser and for the “Value” do <em>Cmd-v</em> to paste the contents of your clipboard.</p></li>
+<li><p>At the step you add repositories, you’ll need to add your repo that is a copy of the icj-project-rig.</p></li>
 </ul>
+<p>If you build other projects that need the credential, you can come here and edit the secret to add the new repo.</p>
 </section>
-<section id="credential-contents" class="level3" data-number="A.2.2">
-<h3 data-number="A.2.2" class="anchored" data-anchor-id="credential-contents"><span class="header-section-number">A.2.2</span> Credential contents</h3>
-<ul>
-<li>The “Name” of the secret will be <code>GOOGLE_APPLICATION_CREDENTIALS</code></li>
-<li>For the “Value” of the secret you need to copy the contents of a file on your local machine. Follow the steps below:</li>
-</ul>
-<ol type="1">
-<li><p>Run this command on your local machine, which will copy needed the file to your clipboard:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pbcopy</span> <span class="op">&lt;</span> <span class="va">$HOME</span>/.config/gcloud/service_account_key.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Return to your web browser and for the “Value” do <em>Cmd-v</em> to paste the contents of your clipboard.</p></li>
-</ol>
-</section>
-</section>
-<section id="load-the-secrets" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="load-the-secrets"><span class="header-section-number">A.3</span> Load the secrets</h2>
-<p>When you open your Codespace, you will run the following command.</p>
+<section id="might-have-to-restart" class="level3" data-number="A.2.2">
+<h3 data-number="A.2.2" class="anchored" data-anchor-id="might-have-to-restart"><span class="header-section-number">A.2.2</span> Might have to restart</h3>
+<p>If you already had a Codespace running, you might have to stop and restart it to recognize the new secret.</p>
+<p>You <em>could</em> try this command below first, but I’m not certain it will work.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run codespace-google-auth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After doing that, you should be able to run <code>gulp fetch</code> to update the data JSON files.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
