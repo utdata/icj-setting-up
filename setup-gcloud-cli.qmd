@@ -1,121 +1,10 @@
-# Part 2: Node, gcloud
-
-These configurations are needed to run our Node-based development environments. This comes up about half-way through the semester.
+# Google auth via cli
 
 ::: callout-important
 
-## Codespaces
-
-In the last few years, virtual computing has become so prevalent and cheap that we may not need to do this kind of development locally. Github has a feature called [Codespaces](https://github.com/features/codespaces) that is baked right into your repo.
-
-Spring 2024 is the first semester class templates have been configured to use Codespaces and I don't really have directions for using them because I haven't experienced it. Perhaps we can all learn together?
-
-That said, I'd like to try and set up computers with Node and such as outlined below. If we run into problems, Codespaces will be our go-to.
+This method of creating google credentials uses the gcloud command line tool. It's a bit more esoteric that the web-based setup we do in [Part 2: Google auth](setup-part-2.qmd), but I'm preserving it here.
 
 :::
-
-## Installing Node
-
-Node is a Javascript runtime environment we will use to build news applications. Installation is different for Mac vs Windows. 
-
-::: {.panel-tabset}
-
-### Mac
-
-We need to make sure you have xcode tools first.
-
-#### Checking xcode
-
-1. Run this in your Terminal:
-
-    ```bash
-    xcode-select -p
-    ```
-
-You should get a path in return. Something like "/Library/Developer/CommandLineTools".
-
-If you don't **AND ONLY IF YOU DON'T**, you need to install it.
-
-#### Installing xcode-select (only if needed)
-
-1. In your Terminal run this:
-
-    ```bash
-    xcode-select --install
-    ```
-
-2. A software update popup window will appear that asks: "The xcode-select command requires the command line developer tools. Would you like to install the tools now?" choose to confirm this by clicking **Install**, then agree to the Terms of Service when requested (feel free to read them thoroughly, we’ll be here).
-
-It can take a long while to download and install. If you get an error on this install, let me know as I have a copy I can give you.
-
-#### NVM
-
-We will use NVM to install Node.js. Again, follow the prompts and you should be fine.
-
-1. Go to [this page](https://github.com/nvm-sh/nvm#install--update-script) and copy the first code chunk that starts with `curl`.
-2. Paste that into your Terminal and run it.
-3. After it is done, quit Terminal and relaunch it.
-4. **Test**: _After relaunching a terminal_ do `nvm list` to make sure you don't get an error.
-
-#### Node
-
-Use NVM to install Node.
-
-1. Install the long-term support of Node:
-
-    ```bash
-    nvm install --lts
-    ```
-
-2. **Test**: Do `node -v` to make sure it worked. It should give you back a version, like "v18.18.0".
-
-### Windows
-
-Microsoft recommends using nvm-windows to install node, so let's go with that.
-
-1. Follow [these directions to install nvm-windows](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows) **BUT READ THE NEXT STEPS FIRST**.
-    - When they say Launch Powershell, you should use **Git Bash** instead.
-    - When it gets to installing Node.js **DON'T DO** `nvm install latest`. Instead, use this command:
-
-      ```bash
-      nvm install --lts
-      ```
-
-2. To make sure it worked, in Git Bash do:
-
-      ```bash
-      node --version
-      ```
-
-    - You should get a response that says you are using a version, like `v18.18.0`.
-
-:::
-
-### Update npm
-
-NPM is a package repository. We need to update it.
-
-1. To update npm, run this:
-
-    ```bash
-    npm install -g npm
-    ```
-
-2. **Test**: Do `npm -v` and it should return with a version number.
-
-## ICJ project setup
-
-There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools.
-
-1. Run this:
-
-    ```bash
-    npm install -g gulp degit
-    ```
-
-These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding tool [Degit](https://www.npmjs.com/package/degit).
-
-## Google Drive authentication
 
 There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we'll need specific credentials that work only for you. We will use the Google Cloud Project's command line interface tool to do this.
 Otherwise known as the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud).
@@ -229,6 +118,8 @@ You have to edit some of the commands below to be personal to you. Everywhere yo
 
 Yes, that was a lot. Hopefuly it worked. We're about to find out.
 
+> **NOTE:** It is absolutely imperative that you DO NOT commit the contents of `service_account_key.json` as a file in a project. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since `service_account_key.json` is in the `.gitignore` file, you should not be able to check it in, but it is important to remember that for the sake of transparency.
+
 ## Test these settings
 
 1. Create a folder in your icj folder called `yourname-test`.
@@ -264,3 +155,59 @@ Your path might differ for "Using gulpfile", but what you are looking for is tha
 ---
 
 You should be done!
+
+
+## Google auth access
+
+There is one `gulp` command that will not work in Codespaces unless you jump through some extra hoops.
+
+`gulp fetch` is the command that downloads Google Docs and Sheets documents as JSON, as outlined in `project.config.json`. The process expects to find an authorization file on your own computer that we set up in [icj-setting-up Part 2](https://github.com/utdata/icj-setting-up#readme), but that file doesn't exist on the Codespaces virtual machine.
+
+You'll need to set up two environment variables to make it work.
+
+> **NOTE:** It is absolutely imperative that you DO NOT commit the contents of `service_account_key.json` to your branch at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since `service_account_key.json` is in the `.gitignore` file, you should not be able to check it in, but it is important to remember that for the sake of transparency.
+
+We will be following the process shown [here](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret)
+
+As you follow those steps you'll need the information below.
+
+### Codespaces secret
+
+- The "Name" of the secret will be `SERVICE_ACCOUNT_CREDENTIALS`.
+- The "Content" of the secret will be the contents of the file created in ICJ setup Part 2. You should be able to "copy" that file from your terminal by running the following command:
+
+    ```bash
+    pbcopy < $HOME/.config/gcloud/service_account_key.json
+    ```
+
+    Return to your web browser and for the "Value" do *Cmd-v* to paste the contents of your clipboard.
+
+- At the step you add repositories, you'll need to add your repo that is a copy of the icj-project-rig.
+
+If you build other projects that need the credential, you can come here and edit the secret to add the new repo.
+
+### Might have to restart
+
+If you already had a Codespace running, you might have to stop and restart it to recognize the new secret.
+
+You _could_ try this command below first, but I'm not certain it will work.
+
+```bash
+npm run codespace-google-auth
+```
+
+After doing that, you should be able to run `gulp fetch` to update the data JSON files.
+
+## gcloud cli commands
+
+**This is for Prof. McDonald's memory and you shouldn't have to worry about it.**
+
+We end up using the Google Cloud SDK to set up authorization to allow programming access to Google Docs and Sheets. Some useful commands:
+
+- `gcloud auth list` tells you which account you are in and how to set a new active account.
+- `gcloud auth revoke` logs you out of your active account. `--all` flag logs you out of all accounts, I think.
+- `gcloud projects list` shows all the projects for the account.
+- `gcloud config get-value project` shows you which project you are in.
+- `gcloud config set project [project-id]` but replace `[project-id]` with the project name.
+
+See Setting Up Part 2 for commands to set up a project and enable the APIs.

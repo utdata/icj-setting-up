@@ -9,13 +9,12 @@ book:
   chapters:
     - href: index.qmd
       text: Home
-    - setup-part-1.md
-    - setup-part-2.md
+    - setup-part-1.qmd
+    - setup-part-2.qmd
   appendices:
-    - codespaces.md
-    - gcloud.md
-    - vscode-goodies.md
-    - old_windows_setup.md
+    - vscode-goodies.qmd
+    - setup-local-dev.qmd
+    - setup-gcloud-cli.qmd
 
 format:
   html:
