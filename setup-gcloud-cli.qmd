@@ -7,7 +7,7 @@ This method of creating google credentials uses the gcloud command line tool. It
 :::
 
 There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we'll need specific credentials that work only for you. We will use the Google Cloud Project's command line interface tool to do this.
-Otherwise known as the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud).
+Otherwise known as the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud){.external target="_blank"}.
 
 > IMPORTANT: You must have and use a **PERSONAL** Gmail/Google account for this process. Your **UTMail Google account will not work**.
 
@@ -19,7 +19,7 @@ Again, differences between macOS and Windows.
 
 #### macOS
 
-To make the installation of packages simple, we are going to use the MacOS package manager [brew](https://brew.sh/) to install some Google Cloud tools. You should already have brew installed from earlier in the semester.
+To make the installation of packages simple, we are going to use the MacOS package manager [brew](https://brew.sh/){.external target="_blank"} to install some Google Cloud tools. You should already have brew installed from earlier in the semester.
 
 1. Run the following to install the Google Cloud SDK
 
@@ -31,7 +31,7 @@ To make the installation of packages simple, we are going to use the MacOS packa
 
 #### Windows
 
-1. Follow the instructions found in [this link](https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows) to download and install the `gcloud` CLI tool.
+1. Follow the instructions found in [this link](https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows){.external target="_blank"} to download and install the `gcloud` CLI tool.
 2. **Test**: Once the installation has finished, run the command `gcloud --version` in your terminal, and you should get some output similar to this: `Google Cloud SDK 428.0.0`
 
 :::
@@ -53,7 +53,7 @@ This will open a browser and ask you to log into your Google account. Select you
 ![gcloud auth](images/gcloud_cli_permissions.png)
 
 1. Click `Allow` and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.
-1. In the same browser that opened, go to [console.cloud.google.com](https://console.cloud.google.com/), where it should ask you to OK the terms of service.
+1. In the same browser that opened, go to [console.cloud.google.com](https://console.cloud.google.com/){.external target="_blank"}, where it should ask you to OK the terms of service.
 
 ### Create and configure project
 
@@ -161,13 +161,13 @@ You should be done!
 
 There is one `gulp` command that will not work in Codespaces unless you jump through some extra hoops.
 
-`gulp fetch` is the command that downloads Google Docs and Sheets documents as JSON, as outlined in `project.config.json`. The process expects to find an authorization file on your own computer that we set up in [icj-setting-up Part 2](https://github.com/utdata/icj-setting-up#readme), but that file doesn't exist on the Codespaces virtual machine.
+`gulp fetch` is the command that downloads Google Docs and Sheets documents as JSON, as outlined in `project.config.json`. The process expects to find an authorization file on your own computer that we set up in [icj-setting-up Part 2](https://github.com/utdata/icj-setting-up#readme){.external target="_blank"}, but that file doesn't exist on the Codespaces virtual machine.
 
 You'll need to set up two environment variables to make it work.
 
 > **NOTE:** It is absolutely imperative that you DO NOT commit the contents of `service_account_key.json` to your branch at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since `service_account_key.json` is in the `.gitignore` file, you should not be able to check it in, but it is important to remember that for the sake of transparency.
 
-We will be following the process shown [here](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret)
+We will be following the process shown [here](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret){.external target="_blank"}.
 
 As you follow those steps you'll need the information below.
 
