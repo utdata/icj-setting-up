@@ -2,6 +2,8 @@
 
 VS Code is a pretty awesome code editor. It can save you a $4!t-ton of time.
 
+We will need to install some of these extesions in your Codespace.
+
 ## Extensions
 
 If you look on the left-menu, there is a square looking icon that gives you a list of extensions that you can search for an enable. See the [VS Code docs](https://code.visualstudio.com/docs/editor/extension-gallery) for more info.

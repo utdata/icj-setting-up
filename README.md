@@ -4,18 +4,18 @@ Find the published version of this material here: [ICJ Setting Up](https://utdat
 
 ---
 
-This site outlines how to set up a computer for [Intro to Coding for Journalists](https://utdata.github.io/icj-class), a class in the School of Journalism and Media at the University of Texas at Austin. If you are new to coding, I suggest you begin with the [Getting Started](https://utdata.github.io/icj-class/start-00-intro.html) chapter there.
+This site outlines how to set up a computer for [Intro to Coding for Journalists](https://utdata.github.io/icj-class), a class in the School of Journalism and Media at the University of Texas at Austin. If you are new to coding, I suggest you begin with the [Getting Started](https://utdata.github.io/icj-class/) section there.
 
-Both macOS and Windows platforms are covered with these instructions. Chromebooks and tablets are not supported for this class.
+Both macOS and Windows platforms are covered with these instructions. Chromebooks and tablets are not supported for this class at this time.
 
 If you are using a UT lab computer, get with your instructor.
 
-- [Setup part 1](setup-part-1.md) we do at the beginning of the semester
-- [Setup part 2](setup-part-2.md) we do in the middle of the semester
+- [Setup part 1](setup-part-1.qmd) we do at the beginning of the semester
+- [Setup part 2](setup-part-2.qmd) we do in the middle of the semester
 
 ---
 
-### About the author  {.unnumbered}
+## About the author  {.unnumbered}
 
 Christian McDonald\
 Associate Professor of Practice\

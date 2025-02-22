@@ -1,0 +1,142 @@
+# Local Node development
+
+::: callout-important
+
+These configurations are needed to run Node-based development environments on a personal computer. This is an option that comes up about half-way through the semester, though we are mostly using Github Codespaces instead.
+
+Here I preserve the steps in case an ambitious student wants to try it.
+
+:::
+
+## Installing Node
+
+Node is a Javascript runtime environment we will use to build news applications. Installation is different for Mac vs Windows.
+
+::: {.panel-tabset}
+
+### Mac
+
+We need to make sure you have xcode tools first.
+
+#### Checking xcode
+
+1. Run this in your Terminal:
+
+    ```bash
+    xcode-select -p
+    ```
+
+You should get a path in return. Something like "/Library/Developer/CommandLineTools".
+
+If you don't **AND ONLY IF YOU DON'T**, you need to install it.
+
+#### Installing xcode-select (only if needed)
+
+1. In your Terminal run this:
+
+    ```bash
+    xcode-select --install
+    ```
+
+2. A software update popup window will appear that asks: "The xcode-select command requires the command line developer tools. Would you like to install the tools now?" choose to confirm this by clicking **Install**, then agree to the Terms of Service when requested (feel free to read them thoroughly, we’ll be here).
+
+It can take a long while to download and install. If you get an error on this install, let me know as I have a copy I can give you.
+
+#### NVM
+
+We will use NVM to install Node.js. Again, follow the prompts and you should be fine.
+
+1. Go to [this page](https://github.com/nvm-sh/nvm#install--update-script) and copy the first code chunk that starts with `curl`.
+2. Paste that into your Terminal and run it.
+3. After it is done, quit Terminal and relaunch it.
+4. **Test**: _After relaunching a terminal_ do `nvm list` to make sure you don't get an error.
+
+#### Node
+
+Use NVM to install Node.
+
+1. Install the long-term support of Node:
+
+    ```bash
+    nvm install --lts
+    ```
+
+2. **Test**: Do `node -v` to make sure it worked. It should give you back a version, like "v18.18.0".
+
+### Windows
+
+Microsoft recommends using nvm-windows to install node, so let's go with that.
+
+1. Follow [these directions to install nvm-windows](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows) **BUT READ THE NEXT STEPS FIRST**.
+    - When they say Launch Powershell, you should use **Git Bash** instead.
+    - When it gets to installing Node.js **DON'T DO** `nvm install latest`. Instead, use this command:
+
+      ```bash
+      nvm install --lts
+      ```
+
+2. To make sure it worked, in Git Bash do:
+
+      ```bash
+      node --version
+      ```
+
+    - You should get a response that says you are using a version, like `v18.18.0`.
+
+:::
+
+### Update npm
+
+NPM is a package repository. We need to update it.
+
+1. To update npm, run this:
+
+    ```bash
+    npm install -g npm
+    ```
+
+2. **Test**: Do `npm -v` and it should return with a version number.
+
+## ICJ project setup
+
+There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools.
+
+1. Run this:
+
+    ```bash
+    npm install -g gulp degit
+    ```
+
+These are for the task manager [Gulp](https://gulpjs.com/) and a scaffolding tool [Degit](https://www.npmjs.com/package/degit).
+
+## Google Cloud services
+
+There is one more setup necessary to connect the [icj-project-rig](https://github.com/utdata/icj-project-rig) to Google Sheets and Docs, but there are multiple ways to go about it.
+
+### Google CLI
+
+You can follow the [Google CLI](setup-gcloud-cli.qmd) steps, which will save a JSON credential key to your computer and allow for local development. Those directions also show how you can add the key to Github for Codespaces.
+
+### Web credentials
+
+> OR, AND THIS IS ACTUALLY UNTESTED ...
+
+You can go through [Setup Part 2](setup-part-2.qmd) which goes through using web interfaces to set up credentials. Once that process is done, you have an additional setup to intall your credential in you bash profile:
+
+1. Take the JSON file that was downloaded (something like `icj-project-rig-8caa102dfbf6.json`) and rename it to exactly this: `service_account_key.json`. Leave it in your Downloads folder for now.
+2. With the next command, we'll create a hidden folder and then copy the .json file into it. These are two different commands:
+
+    ```bash
+    mkdir ~/.config/icj
+    cp ~/Downloads/service_account_key.json ~/.config/icj/service_account_key.json
+    ```
+
+    We've left a copy of the file in Downloads just for safety. Once everything works, you should be able to remove it.
+
+3. Now we need to add the path to that file to your .bash_profile, which we'll do with the following command:
+
+    ```bash
+    echo 'export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/icj/service_account_key.json"' >>~/.bash_profile
+    ```
+
+You should then test if it is working by going into a project that uses the icj-project-rig, launching a new Terminal and running `gulp fetch`. That should download the `libary` and `bookstores` files.

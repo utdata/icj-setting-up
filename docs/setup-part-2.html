@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Part 2: Node, gcloud – ICJ Setting Up</title>
+<title>3&nbsp; Part 2: Google auth – ICJ Setting Up</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./codespaces.html" rel="next">
+<link href="./vscode-goodies.html" rel="next">
 <link href="./setup-part-1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup-part-2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Node, gcloud</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup-part-2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Google auth</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup-part-2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Node, gcloud</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Google auth</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -169,26 +169,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./codespaces.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./gcloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">gcloud cli</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./vscode-goodies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./old_windows_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Old Google auth for Windows</span></span></a>
+  <a href="./setup-local-dev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Local Node development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup-gcloud-cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Google auth via cli</span></span></a>
   </div>
 </li>
       </ul>
@@ -203,18 +197,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-node" id="toc-installing-node" class="nav-link active" data-scroll-target="#installing-node"><span class="header-section-number">3.1</span> Installing Node</a>
+  <li><a href="#github-codespaces" id="toc-github-codespaces" class="nav-link active" data-scroll-target="#github-codespaces"><span class="header-section-number">3.1</span> Github Codespaces</a></li>
+  <li><a href="#google-cloud-services" id="toc-google-cloud-services" class="nav-link" data-scroll-target="#google-cloud-services"><span class="header-section-number">3.2</span> Google Cloud services</a></li>
+  <li><a href="#overall-steps" id="toc-overall-steps" class="nav-link" data-scroll-target="#overall-steps"><span class="header-section-number">3.3</span> Overall steps</a></li>
+  <li><a href="#start-with-non-ut-gmail-account" id="toc-start-with-non-ut-gmail-account" class="nav-link" data-scroll-target="#start-with-non-ut-gmail-account"><span class="header-section-number">3.4</span> Start with non-UT gmail account</a></li>
+  <li><a href="#creating-a-project" id="toc-creating-a-project" class="nav-link" data-scroll-target="#creating-a-project"><span class="header-section-number">3.5</span> Creating a project</a></li>
+  <li><a href="#enable-apis" id="toc-enable-apis" class="nav-link" data-scroll-target="#enable-apis"><span class="header-section-number">3.6</span> Enable APIs</a>
   <ul class="collapse">
-  <li><a href="#update-npm" id="toc-update-npm" class="nav-link" data-scroll-target="#update-npm"><span class="header-section-number">3.1.1</span> Update npm</a></li>
+  <li><a href="#repeat-for-other-apis" id="toc-repeat-for-other-apis" class="nav-link" data-scroll-target="#repeat-for-other-apis"><span class="header-section-number">3.6.1</span> Repeat for other APIs</a></li>
   </ul></li>
-  <li><a href="#icj-project-setup" id="toc-icj-project-setup" class="nav-link" data-scroll-target="#icj-project-setup"><span class="header-section-number">3.2</span> ICJ project setup</a></li>
-  <li><a href="#google-drive-authentication" id="toc-google-drive-authentication" class="nav-link" data-scroll-target="#google-drive-authentication"><span class="header-section-number">3.3</span> Google Drive authentication</a>
-  <ul class="collapse">
-  <li><a href="#install-google-cloud-tools" id="toc-install-google-cloud-tools" class="nav-link" data-scroll-target="#install-google-cloud-tools"><span class="header-section-number">3.3.1</span> Install Google Cloud tools</a></li>
-  <li><a href="#authenticate-our-session" id="toc-authenticate-our-session" class="nav-link" data-scroll-target="#authenticate-our-session"><span class="header-section-number">3.3.2</span> Authenticate our session</a></li>
-  <li><a href="#create-and-configure-project" id="toc-create-and-configure-project" class="nav-link" data-scroll-target="#create-and-configure-project"><span class="header-section-number">3.3.3</span> Create and configure project</a></li>
-  </ul></li>
-  <li><a href="#test-these-settings" id="toc-test-these-settings" class="nav-link" data-scroll-target="#test-these-settings"><span class="header-section-number">3.4</span> Test these settings</a></li>
+  <li><a href="#adding-a-service-account" id="toc-adding-a-service-account" class="nav-link" data-scroll-target="#adding-a-service-account"><span class="header-section-number">3.7</span> Adding a service account</a></li>
+  <li><a href="#create-service-account-key" id="toc-create-service-account-key" class="nav-link" data-scroll-target="#create-service-account-key"><span class="header-section-number">3.8</span> Create service account key</a></li>
+  <li><a href="#add-key-to-codespaces" id="toc-add-key-to-codespaces" class="nav-link" data-scroll-target="#add-key-to-codespaces"><span class="header-section-number">3.9</span> Add key to Codespaces</a></li>
+  <li><a href="#test-the-credential" id="toc-test-the-credential" class="nav-link" data-scroll-target="#test-the-credential"><span class="header-section-number">3.10</span> Test the credential</a></li>
   </ul>
 </nav>
     </div>
@@ -223,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Node, gcloud</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Google auth</span></h1>
 </div>
 
 
@@ -240,221 +235,216 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>These configurations are needed to run our Node-based development environments. This comes up about half-way through the semester.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Codespaces
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the last few years, virtual computing has become so prevalent and cheap that we may not need to do this kind of development locally. Github has a feature called <a href="https://github.com/features/codespaces">Codespaces</a> that is baked right into your repo.</p>
-<p>Spring 2024 is the first semester class templates have been configured to use Codespaces and I don’t really have directions for using them because I haven’t experienced it. Perhaps we can all learn together?</p>
-<p>That said, I’d like to try and set up computers with Node and such as outlined below. If we run into problems, Codespaces will be our go-to.</p>
-</div>
-</div>
-<section id="installing-node" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="installing-node"><span class="header-section-number">3.1</span> Installing Node</h2>
-<p>Node is a Javascript runtime environment we will use to build news applications. Installation is different for Mac vs Windows.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>We need to make sure you have xcode tools first.</p>
-<section id="checking-xcode" class="level4" data-number="3.1.0.1">
-<h4 data-number="3.1.0.1" class="anchored" data-anchor-id="checking-xcode"><span class="header-section-number">3.1.0.1</span> Checking xcode</h4>
-<ol type="1">
-<li><p>Run this in your Terminal:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<p>You should get a path in return. Something like “/Library/Developer/CommandLineTools”.</p>
-<p>If you don’t <strong>AND ONLY IF YOU DON’T</strong>, you need to install it.</p>
+<p>About half way through the semester we start using Node-based development environments. This page covers setup for that using Codespaces.</p>
+<section id="github-codespaces" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="github-codespaces"><span class="header-section-number">3.1</span> Github Codespaces</h2>
+<p>In the last few years, virtual computing has become so prevalent and cheap that we may not need to do this kind of development locally. Github has a virtual machine (VM) called <a href="https://github.com/features/codespaces">Codespaces</a> that is baked right into your repo.</p>
+<p>Using Codespaces saves us from <em>some</em> computer setup because the virtual computer recognizes and installs most of what we need.</p>
+<p>We handle to how to start a new codespace from a repo in <a href="https://utdata.github.io/icj-class/setup/setup-02-codespaces.html">Intro to Coding for Journalists</a>.</p>
 </section>
-<section id="installing-xcode-select-only-if-needed" class="level4" data-number="3.1.0.2">
-<h4 data-number="3.1.0.2" class="anchored" data-anchor-id="installing-xcode-select-only-if-needed"><span class="header-section-number">3.1.0.2</span> Installing xcode-select (only if needed)</h4>
-<ol type="1">
-<li><p>In your Terminal run this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>A software update popup window will appear that asks: “The xcode-select command requires the command line developer tools. Would you like to install the tools now?” choose to confirm this by clicking <strong>Install</strong>, then agree to the Terms of Service when requested (feel free to read them thoroughly, we’ll be here).</p></li>
-</ol>
-<p>It can take a long while to download and install. If you get an error on this install, let me know as I have a copy I can give you.</p>
+<section id="google-cloud-services" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="google-cloud-services"><span class="header-section-number">3.2</span> Google Cloud services</h2>
+<p>When we start building projects using the <a href="https://github.com/utdata/icj-project-rig">icj-project-rig</a> there is a feature that allows non-coders to store and edit data in Google Docs and Google Sheets, but allow us to then “fetch” that content as data into our project.</p>
+<p>To do this, we access to Google Cloud’s application programming interfaces, or APIs. Having these will allow us to use our code to talk to Google Sheets and Google Docs.</p>
+<p>This requires a non-UT gmail account and some setup.</p>
 </section>
-<section id="nvm" class="level4" data-number="3.1.0.3">
-<h4 data-number="3.1.0.3" class="anchored" data-anchor-id="nvm"><span class="header-section-number">3.1.0.3</span> NVM</h4>
-<p>We will use NVM to install Node.js. Again, follow the prompts and you should be fine.</p>
-<ol type="1">
-<li>Go to <a href="https://github.com/nvm-sh/nvm#install--update-script">this page</a> and copy the first code chunk that starts with <code>curl</code>.</li>
-<li>Paste that into your Terminal and run it.</li>
-<li>After it is done, quit Terminal and relaunch it.</li>
-<li><strong>Test</strong>: <em>After relaunching a terminal</em> do <code>nvm list</code> to make sure you don’t get an error.</li>
-</ol>
-</section>
-<section id="node" class="level4" data-number="3.1.0.4">
-<h4 data-number="3.1.0.4" class="anchored" data-anchor-id="node"><span class="header-section-number">3.1.0.4</span> Node</h4>
-<p>Use NVM to install Node.</p>
-<ol type="1">
-<li><p>Install the long-term support of Node:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install <span class="at">--lts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Test</strong>: Do <code>node -v</code> to make sure it worked. It should give you back a version, like “v18.18.0”.</p></li>
-</ol>
-</section>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Microsoft recommends using nvm-windows to install node, so let’s go with that.</p>
-<ol type="1">
-<li><p>Follow <a href="https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows">these directions to install nvm-windows</a> <strong>BUT READ THE NEXT STEPS FIRST</strong>.</p>
+<section id="overall-steps" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="overall-steps"><span class="header-section-number">3.3</span> Overall steps</h2>
+<p>These are the general steps, but the details are below.</p>
 <ul>
-<li><p>When they say Launch Powershell, you should use <strong>Git Bash</strong> instead.</p></li>
-<li><p>When it gets to installing Node.js <strong>DON’T DO</strong> <code>nvm install latest</code>. Instead, use this command:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install <span class="at">--lts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><p>To make sure it worked, in Git Bash do:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>You should get a response that says you are using a version, like <code>v18.18.0</code>.</li>
-</ul></li>
-</ol>
-</div>
-</div>
-</div>
-<section id="update-npm" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="update-npm"><span class="header-section-number">3.1.1</span> Update npm</h3>
-<p>NPM is a package repository. We need to update it.</p>
-<ol type="1">
-<li><p>To update npm, run this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> npm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Test</strong>: Do <code>npm -v</code> and it should return with a version number.</p></li>
-</ol>
+<li>From the Google Cloud Console, create a new project</li>
+<li>Enable APIS for Drive, Docs Sheets</li>
+<li>Create a Service Account in IAM</li>
+<li>Create a Key</li>
+<li>Create a CodeSpaces secret</li>
+<li>Share it with your repository</li>
+<li>Copy that Key into the CodeSpaces secret</li>
+</ul>
 </section>
+<section id="start-with-non-ut-gmail-account" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="start-with-non-ut-gmail-account"><span class="header-section-number">3.4</span> Start with non-UT gmail account</h2>
+<p>The Google features we want to access are not avilable through your UTMail Google account, and perhaps not by other “organizational” accounts. What you need here is a good ol’ generic <code>@gmail.com</code> account. If you don’t have one already, create one and log in and make sure you use that browser window.</p>
 </section>
-<section id="icj-project-setup" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="icj-project-setup"><span class="header-section-number">3.2</span> ICJ project setup</h2>
-<p>There are some additional global npm tools that we need to install for our tour of NodeJS-based build tools.</p>
+<section id="creating-a-project" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="creating-a-project"><span class="header-section-number">3.5</span> Creating a project</h2>
+<p>Our first step will to create a Google Cloud “project” that will hold all your credentials.</p>
 <ol type="1">
-<li><p>Run this:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> gulp degit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<p>These are for the task manager <a href="https://gulpjs.com/">Gulp</a> and a scaffolding tool <a href="https://www.npmjs.com/package/degit">Degit</a>.</p>
-</section>
-<section id="google-drive-authentication" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="google-drive-authentication"><span class="header-section-number">3.3</span> Google Drive authentication</h2>
-<p>There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we’ll need specific credentials that work only for you. We will use the Google Cloud Project’s command line interface tool to do this. Otherwise known as the <a href="https://cloud.google.com/sdk/gcloud"><code>gcloud</code> CLI</a>.</p>
-<blockquote class="blockquote">
-<p>IMPORTANT: You must have and use a <strong>PERSONAL</strong> Gmail/Google account for this process. Your <strong>UTMail Google account will not work</strong>.</p>
-</blockquote>
-<section id="install-google-cloud-tools" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="install-google-cloud-tools"><span class="header-section-number">3.3.1</span> Install Google Cloud tools</h3>
-<p>Again, differences between macOS and Windows.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>To make the installation of packages simple, we are going to use the MacOS package manager <a href="https://brew.sh/">brew</a> to install some Google Cloud tools. You should already have brew installed from earlier in the semester.</p>
-<ol type="1">
-<li><p>Run the following to install the Google Cloud SDK</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> google-cloud-sdk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Test</strong>: Run <code>gcloud --version</code> and make sure a version number is returned.</p></li>
-</ol>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<ol type="1">
-<li>Follow the instructions found in <a href="https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows">this link</a> to download and install the <code>gcloud</code> CLI tool.</li>
-<li><strong>Test</strong>: Once the installation has finished, run the command <code>gcloud --version</code> in your terminal, and you should get some output similar to this: <code>Google Cloud SDK 428.0.0</code></li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="authenticate-our-session" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="authenticate-our-session"><span class="header-section-number">3.3.2</span> Authenticate our session</h3>
-<p>We are now going to authenticate our Google credentials on our local machine.</p>
-<blockquote class="blockquote">
-<p><strong>Make sure to select your <em>personal</em> gmail account for this part</strong>. If you are logged into your <code>utexas.edu</code> email, you won’t have permission to do what we need to do. It works best if you <strong>log out of all your accounts in all your browsers</strong> (Chrome, Safari, Edge, etc) before you start.</p>
-</blockquote>
-<ol type="1">
-<li><p>In a Terminal, use the following command:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth login <span class="at">--brief</span> <span class="at">--enable-gdrive-access</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<p>This will open a browser and ask you to log into your Google account. Select your <em>personal</em> gmail account, you will be sent to a permissions screen that will look something like this:</p>
+<li><p>In the browser logged into your gmail account, go to <a href="https://console.cloud.google.com/projectcreate" class="uri">https://console.cloud.google.com/projectcreate</a></p></li>
+<li><p>For the Project name use: <strong>ICJ Project Rig</strong></p></li>
+<li><p>For the Location, leave it as <strong>No organization</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/gcloud_cli_permissions.png" class="img-fluid figure-img"></p>
-<figcaption>gcloud auth</figcaption>
+<p><img src="images/gc-new-project.png" class="img-fluid figure-img"></p>
+<figcaption>GCloud project</figcaption>
+</figure>
+</div></li>
+<li><p>Click <strong>Create</strong>.</p>
+<p>This will take a couple of seconds to complete and you’ll be taken to a new screen. As part of that you’ll get a Notification.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-newproj-notification.png" class="img-fluid figure-img"></p>
+<figcaption>Notifcaiton</figcaption>
+</figure>
+</div></li>
+<li><p>Click on the <strong>SELECT PROJECT</strong> link in the notificaiton.</p>
+<p>Once you do that, you should see the project listed next to the Google Cloud logo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-project-selected.png" class="img-fluid figure-img"></p>
+<figcaption>Project selected</figcaption>
+</figure>
+</div></li>
+</ol>
+</section>
+<section id="enable-apis" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="enable-apis"><span class="header-section-number">3.6</span> Enable APIs</h2>
+<ol type="1">
+<li><p>Scroll down the page to find the <em>Getting Started</em> panel, then find <strong>Explore and enable APIs</strong> and click on it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-find-apis.png" class="img-fluid figure-img"></p>
+<figcaption>Find APIs</figcaption>
+</figure>
+</div></li>
+<li><p>You’ll be taken to a new page that wil have a blue-bordered button <strong>ENABLE APIS AND SERVICES</strong>. Click it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-enable-apis.png" class="img-fluid figure-img"></p>
+<figcaption>API button</figcaption>
+</figure>
+</div></li>
+<li><p>You’ll be taken to yet a new page with a search bar. Type in “Google Drive” and search. In the search return, among the top results should be <strong>Google Drive API</strong>, which is what we want. (We don’t need the “Activity” version.)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-drive-api-return.png" class="img-fluid figure-img"></p>
+<figcaption>Drive API</figcaption>
+</figure>
+</div></li>
+<li><p>Click on the <strong>Google Drive API</strong> result.</p></li>
+<li><p>Then click the blue <strong>ENABLE</strong> button.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-click-enable.png" class="img-fluid figure-img"></p>
+<figcaption>Enable API</figcaption>
+</figure>
+</div></li>
+<li><p>You’ll be taken to a new page, but the API is now enabled. Click on the <strong>Enable APIs &amp; services</strong> link on the left navigation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-back-to-apis.png" class="img-fluid figure-img"></p>
+<figcaption>Back to APIs</figcaption>
+</figure>
+</div></li>
+</ol>
+<section id="repeat-for-other-apis" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="repeat-for-other-apis"><span class="header-section-number">3.6.1</span> Repeat for other APIs</h3>
+<p>Now you need to Click on the blue-bordered <strong>+ENABLE APIS AND SERVICES</strong> button again and go through the same steps to search for and enable two more APIs:</p>
+<ul>
+<li>Google Docs API</li>
+<li>Google Sheets API</li>
+</ul>
+</section>
+</section>
+<section id="adding-a-service-account" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="adding-a-service-account"><span class="header-section-number">3.7</span> Adding a service account</h2>
+<p>A “service account” is a credential that allows you to interact with the APIs we just enabled.</p>
+<ol type="1">
+<li><p>Go to the search bar and type in <strong>service account</strong>. As you type, you should see the <strong>Service Accounts</strong> tool show up. Click on it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-service-account-srch.png" class="img-fluid figure-img"></p>
+<figcaption>Service search</figcaption>
+</figure>
+</div></li>
+<li><p>Next you want to click on the <strong>+ CREATE SERVICE ACCOUNT</strong> linke.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-create-service.png" class="img-fluid figure-img"></p>
+<figcaption>Create Service Account</figcaption>
+</figure>
+</div></li>
+<li><p>Fill out the fields as follows:</p>
+<ul>
+<li>Service account name: icj-user</li>
+<li>Service account id (this should get filled out automatically): icj-user</li>
+<li>Service account description: ICJ Final Project</li>
+</ul></li>
+<li><p>Click <strong>Create and continue</strong> to make the account.</p></li>
+<li><p>Click <strong>Done</strong>. Once that is created, you are taken to another screen.</p></li>
+<li><p>Click on the service account link name.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-open-account.png" class="img-fluid figure-img"></p>
+<figcaption>Open service account</figcaption>
+</figure>
+</div></li>
+</ol>
+</section>
+<section id="create-service-account-key" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="create-service-account-key"><span class="header-section-number">3.8</span> Create service account key</h2>
+<p>Now that you have the service account, we need to create a key for it. This is the credential that will allow us to access these APIs from our code.</p>
+<ol type="1">
+<li><p>Click on the <strong>Key</strong> tab.</p></li>
+<li><p>Under the <strong>ADD KEY</strong> button, choose <strong>Create new key</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-create-key.png" class="img-fluid figure-img"></p>
+<figcaption>Create key</figcaption>
+</figure>
+</div></li>
+<li><p>And then you get a window to choose the file format. Choose <strong>JSON</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-pick-json.png" class="img-fluid figure-img"></p>
+<figcaption>Pick JSON</figcaption>
 </figure>
 </div>
-<ol type="1">
-<li>Click <code>Allow</code> and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.</li>
-<li>In the same browser that opened, go to <a href="https://console.cloud.google.com/">console.cloud.google.com</a>, where it should ask you to OK the terms of service.</li>
+<p>A file gets created and it should save automatically do your Downloads folder. It’s called something like <strong>icj-project-rig-8cbb102dgaf8.json</strong>.</p></li>
 </ol>
 </section>
-<section id="create-and-configure-project" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="create-and-configure-project"><span class="header-section-number">3.3.3</span> Create and configure project</h3>
-<p>Again, be in your personal Google account as you will have to authenticate again.</p>
-<p>We are going to run through several <code>gcloud</code> commands to set you computer to access Google Docs and Google sheets through programing. It’s a lot of ecsoteric steps and things could go wrong at each step. I don’t outline the output you get in return, but there can be a little or a lot.</p>
-<p>Just keep an eye out for <code>ERROR</code> or <code>can't find [whatever]</code> and hollar if that happens.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You have to edit some of the commands below to be personal to you. Everywhere you see <code>icj-YOURNAME</code> you need to edit that part of the command to use your first name, all lowercase, like <code>icj-alex</code>. Then you use that same value for the later commands that use <code>icj-YOURNAME</code>. PLEASE ASK FOR HELP IF YOU NEED IT. Important: After you paste a terminal command, to edit it you have the use the left arrow key to get to the part of the command to then delete and make changes.</p>
-</div>
-</div>
+<section id="add-key-to-codespaces" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="add-key-to-codespaces"><span class="header-section-number">3.9</span> Add key to Codespaces</h2>
+<blockquote class="blockquote">
+<p><strong>NOTE:</strong> It is absolutely imperative that you DO NOT commit the contents of <code>service_account_key.json</code> as a file in a project. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since <code>service_account_key.json</code> is in the <code>.gitignore</code> file, you should not be able to check it in, but it is important to remember that for the sake of transparency.</p>
+</blockquote>
+<p>Our aim now is to save the contents of that downloaded file into Github, and then to share it with repos that need it.</p>
 <ol type="1">
-<li><p>Do this command to create the project (<strong>but edit icj-YOURNAME as noted above</strong>):</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects create icj-YOURNAME <span class="at">--set-as-default</span> <span class="at">--name</span><span class="op">=</span><span class="st">"ICJ Project"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Do this to log in and set your project as a default:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth application-default login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Next, we’ll create a Google service account:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> iam service-accounts create generic-service-account</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (<strong>There are TWO places here where you have to switch out <code>icj-YOURNAME</code>.</strong>)</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects add-iam-policy-binding icj-YOURNAME <span class="at">--member</span><span class="op">=</span><span class="st">'serviceAccount:generic-service-account@icj-YOURNAME.iam.gserviceaccount.com'</span> <span class="at">--role</span><span class="op">=</span><span class="st">'roles/editor'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Then we enable the Google Docs and Sheets API for your project:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> services enable docs.googleapis.com sheets.googleapis.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Now we’ll create a service account authorization key. This is similar to ssh key above, but for Google. <strong>Again, swap out <code>icj-YOURNAME</code></strong>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> iam service-accounts keys create <span class="st">"</span><span class="va">$HOME</span><span class="st">/.config/gcloud/service_account_key.json"</span> <span class="dt">\</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--iam-account</span><span class="op">=</span>generic-service-account@icj-YOURNAME.iam.gserviceaccount.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Then add the key to your <code>.bash_profile</code> with this commaned:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/service_account_key.json"'</span> <span class="op">&gt;&gt;</span>~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Sync your terminal with the updated bash profile:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>In a browser logged into Github, go to <a href="https://github.com/settings/codespaces" class="uri">https://github.com/settings/codespaces</a>.</p></li>
+<li><p>Under <em>Secrets</em> it probably says there are no secrets and a button for <strong>New secret</strong>. Use that to create a <strong>New secret</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-newkey.png" class="img-fluid figure-img"></p>
+<figcaption>New key</figcaption>
+</figure>
+</div></li>
+<li><p>For the Name, use exactly this: <code>SERVICE_ACCOUNT_CREDENTIALS</code></p></li>
+<li><p>For the value, you want to paste in the content of the downloaded <code>.json</code> file from the last step. So, you’ll want to use Visual Studio Code on your computer to open that file from your Downloads folder and copy/paste the entire contents into the value field.</p></li>
+<li><p>Under <strong>Select repositories</strong>, you want to choose use the dropdown to search for and click the checkmark for your project repo that needs this secret.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-keycred.png" class="img-fluid figure-img"></p>
+<figcaption>Key crendtials</figcaption>
+</figure>
+</div></li>
 </ol>
-<p>Yes, that was a lot. Hopefuly it worked. We’re about to find out.</p>
+<p>If you create different repos later that need this same Codespace secret, you can come back to here, edit the existing key and add the repo.</p>
 </section>
-</section>
-<section id="test-these-settings" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="test-these-settings"><span class="header-section-number">3.4</span> Test these settings</h2>
+<section id="test-the-credential" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="test-the-credential"><span class="header-section-number">3.10</span> Test the credential</h2>
+<p>Now you’ll want to go back to the codespace for your project and test that you completed your access.</p>
 <ol type="1">
-<li><p>Create a folder in your icj folder called <code>yourname-test</code>.</p></li>
-<li><p>Open that folder in Visual Studio Code.</p></li>
-<li><p>Open a VS Code Terminal and run:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">degit</span> utdata/icj-google-fetch-test#main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Launch the codespace where you want to test the credential.</p></li>
+<li><p>In the Terminal, run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SERVICE_ACCOUNT_CREDENTIALS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In return, you should get some JSON that starts with <code>"type": "service_account"</code></p></li>
 </ol>
-<p>You should get this in return:</p>
-<p><code>&gt; cloned utdata/icj-google-fetch-test#main</code></p>
-<p>And it will download a bunch of files into your folder.</p>
-<ol type="1">
-<li>Run <code>npm install</code>. This will also download a bunch of files. It might take a couple of minutes to run.</li>
-<li>Run <code>gulp fetch</code>.</li>
-</ol>
-<p>If everything works, you should have a return like this:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gulp fetch</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[14:38:53]</span> Using gulpfile ~/Documents/icj/icj-fetch-test/gulpfile.js</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[14:38:53]</span> Starting <span class="st">'fetch'</span>...</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">[14:38:53]</span> Finished <span class="st">'fetch'</span> after 8.61 ms</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloaded</span> <span class="kw">`</span><span class="ex">library</span><span class="kw">`</span> <span class="er">(</span><span class="ex">1RgMhjtkXlbbf9uzSzy_xPRKwxcVZIZqVytgM_JoU4E4</span><span class="kw">)</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloaded</span> <span class="kw">`</span><span class="ex">bookstores</span><span class="kw">`</span> <span class="er">(</span><span class="ex">1gDwO-32cgpBDn_0niV0iu6TqQTaRDr4nmSqnT53magY</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Your path might differ for “Using gulpfile”, but what you are looking for is that two files were downloaded, one called <code>library</code> and one called <code>bookstores</code>.</p>
-<hr>
-<p>You should be done!</p>
+<p>If you using the icj-project-rig, you should try to download the connected Google Sheet and Google Docs data, which is why we did all this!</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">gulp</span> fetch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’ll should get a return that says you downloaded <code>library</code> and <code>bookstores</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[12:34:05]</span> Starting <span class="st">'fetch'</span>...</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[12:34:05]</span> Finished <span class="st">'fetch'</span> after 1.96 ms</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloaded</span> <span class="kw">`</span><span class="ex">library</span><span class="kw">`</span> <span class="er">(</span><span class="ex">1RgMhjtkXlbbf9uzSzy_xPRKwxcVZIZqVytgM_JoU4E4</span><span class="kw">)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloaded</span> <span class="kw">`</span><span class="ex">bookstores</span><span class="kw">`</span> <span class="er">(</span><span class="ex">1gDwO-32cgpBDn_0niV0iu6TqQTaRDr4nmSqnT53magY</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -884,8 +874,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./codespaces.html" class="pagination-link" aria-label="Codespaces">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./vscode-goodies.html" class="pagination-link" aria-label="VS Code Goodies">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix C — VS Code Goodies – ICJ Setting Up</title>
+<title>Appendix A — VS Code Goodies – ICJ Setting Up</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./old_windows_setup.html" rel="next">
-<link href="./gcloud.html" rel="prev">
+<link href="./setup-local-dev.html" rel="next">
+<link href="./setup-part-2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./codespaces.html">Appendices</a></li><li class="breadcrumb-item"><a href="./vscode-goodies.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vscode-goodies.html">Appendices</a></li><li class="breadcrumb-item"><a href="./vscode-goodies.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup-part-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Node, gcloud</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Google auth</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -169,26 +169,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./codespaces.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./gcloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">gcloud cli</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./vscode-goodies.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./old_windows_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Old Google auth for Windows</span></span></a>
+  <a href="./setup-local-dev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Local Node development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup-gcloud-cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Google auth via cli</span></span></a>
   </div>
 </li>
       </ul>
@@ -203,20 +197,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#extensions" id="toc-extensions" class="nav-link active" data-scroll-target="#extensions"><span class="header-section-number">C.1</span> Extensions</a>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link active" data-scroll-target="#extensions"><span class="header-section-number">A.1</span> Extensions</a>
   <ul class="collapse">
-  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional"><span class="header-section-number">C.1.1</span> Optional</a></li>
+  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional"><span class="header-section-number">A.1.1</span> Optional</a></li>
   </ul></li>
-  <li><a href="#preferences" id="toc-preferences" class="nav-link" data-scroll-target="#preferences"><span class="header-section-number">C.2</span> Preferences</a></li>
+  <li><a href="#preferences" id="toc-preferences" class="nav-link" data-scroll-target="#preferences"><span class="header-section-number">A.2</span> Preferences</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./codespaces.html">Appendices</a></li><li class="breadcrumb-item"><a href="./vscode-goodies.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vscode-goodies.html">Appendices</a></li><li class="breadcrumb-item"><a href="./vscode-goodies.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix C — VS Code Goodies</h1>
+<h1 class="title">Appendix A — VS Code Goodies</h1>
 </div>
 
 
@@ -234,23 +228,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>VS Code is a pretty awesome code editor. It can save you a $4!t-ton of time.</p>
-<section id="extensions" class="level2" data-number="C.1">
-<h2 data-number="C.1" class="anchored" data-anchor-id="extensions"><span class="header-section-number">C.1</span> Extensions</h2>
+<p>We will need to install some of these extesions in your Codespace.</p>
+<section id="extensions" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="extensions"><span class="header-section-number">A.1</span> Extensions</h2>
 <p>If you look on the left-menu, there is a square looking icon that gives you a list of extensions that you can search for an enable. See the <a href="https://code.visualstudio.com/docs/editor/extension-gallery">VS Code docs</a> for more info.</p>
 <p>Some of those that I have used (and I’m finding more every day):</p>
 <ul>
 <li><strong>Nunjucks Templates</strong>: gives you syntax highlighting for Nunjucks pages. Needs a little configuration to work with our First Graphics App pages. See Preferences below.</li>
 <li><strong>markdownlint</strong>: tells you when your Markdown syntax is incorrect.</li>
 </ul>
-<section id="optional" class="level3" data-number="C.1.1">
-<h3 data-number="C.1.1" class="anchored" data-anchor-id="optional"><span class="header-section-number">C.1.1</span> Optional</h3>
+<section id="optional" class="level3" data-number="A.1.1">
+<h3 data-number="A.1.1" class="anchored" data-anchor-id="optional"><span class="header-section-number">A.1.1</span> Optional</h3>
 <ul>
 <li><strong>Excel Viewer</strong>: is something to help preview csv files. Not essential, but helpful when working with data.</li>
 </ul>
 </section>
 </section>
-<section id="preferences" class="level2" data-number="C.2">
-<h2 data-number="C.2" class="anchored" data-anchor-id="preferences"><span class="header-section-number">C.2</span> Preferences</h2>
+<section id="preferences" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="preferences"><span class="header-section-number">A.2</span> Preferences</h2>
 <p>I have some helpful user preferences for VS Code that you might find useful.</p>
 <ul>
 <li>Go to the Code &gt; Settings &gt; Settings.</li>
@@ -723,13 +718,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./gcloud.html" class="pagination-link" aria-label="gcloud cli">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">gcloud cli</span></span>
+      <a href="./setup-part-2.html" class="pagination-link" aria-label="Part 2: Google auth">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Google auth</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./old_windows_setup.html" class="pagination-link" aria-label="Old Google auth for Windows">
-        <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Old Google auth for Windows</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./setup-local-dev.html" class="pagination-link" aria-label="Local Node development">
+        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Local Node development</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

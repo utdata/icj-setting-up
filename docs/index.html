@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Christian McDonald">
-<meta name="dcterms.date" content="2025-01-08">
+<meta name="dcterms.date" content="2025-02-22">
 
 <title>ICJ Setting Up</title>
 <style>
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup-part-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Node, gcloud</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Google auth</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -136,26 +136,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./codespaces.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./gcloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">gcloud cli</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./vscode-goodies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./old_windows_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Old Google auth for Windows</span></span></a>
+  <a href="./setup-local-dev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Local Node development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup-gcloud-cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Google auth via cli</span></span></a>
   </div>
 </li>
       </ul>
@@ -172,8 +166,10 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#setting-up-your-computer-for-icj" id="toc-setting-up-your-computer-for-icj" class="nav-link active" data-scroll-target="#setting-up-your-computer-for-icj">Setting up your computer for ICJ</a>
   <ul class="collapse">
-  <li><a href="#about-the-author" id="toc-about-the-author" class="nav-link" data-scroll-target="#about-the-author">About the author</a></li>
+  <li><a href="#about-the-author" id="toc-about-the-author" class="nav-link" data-scroll-target="#about-the-author">About the author</a>
+  <ul class="collapse">
   <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -200,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 8, 2025</p>
+      <p class="date">February 22, 2025</p>
     </div>
   </div>
   
@@ -216,16 +212,16 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="unnumbered">Setting up your computer for ICJ</h1>
 <p>Find the published version of this material here: <a href="https://utdata.github.io/icj-setting-up">ICJ Setting Up</a></p>
 <hr>
-<p>This site outlines how to set up a computer for <a href="https://utdata.github.io/icj-class">Intro to Coding for Journalists</a>, a class in the School of Journalism and Media at the University of Texas at Austin. If you are new to coding, I suggest you begin with the <a href="https://utdata.github.io/icj-class/start-00-intro.html">Getting Started</a> chapter there.</p>
-<p>Both macOS and Windows platforms are covered with these instructions. Chromebooks and tablets are not supported for this class.</p>
+<p>This site outlines how to set up a computer for <a href="https://utdata.github.io/icj-class">Intro to Coding for Journalists</a>, a class in the School of Journalism and Media at the University of Texas at Austin. If you are new to coding, I suggest you begin with the <a href="https://utdata.github.io/icj-class/">Getting Started</a> section there.</p>
+<p>Both macOS and Windows platforms are covered with these instructions. Chromebooks and tablets are not supported for this class at this time.</p>
 <p>If you are using a UT lab computer, get with your instructor.</p>
 <ul>
 <li><a href="./setup-part-1.html">Setup part 1</a> we do at the beginning of the semester</li>
 <li><a href="./setup-part-2.html">Setup part 2</a> we do in the middle of the semester</li>
 </ul>
 <hr>
-<section id="about-the-author" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="about-the-author">About the author</h3>
+<section id="about-the-author" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="about-the-author">About the author</h2>
 <p>Christian McDonald<br>
 Associate Professor of Practice<br>
 School of Journalism and Media<br>
@@ -239,7 +235,6 @@ University of Texas at Austin</p>
 <li>Email: <a href="mailto:christian.mcdonald@utexas.edu" class="email">christian.mcdonald@utexas.edu</a></li>
 </ul>
 <p>Special thanks to <a href="https://github.com/michplunkett">Michael Plunkett</a> for helping figure out Google Cloud CLI.</p>
-</section>
 <section id="license" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="license">License</h3>
 <div class="quarto-figure quarto-figure-left">
@@ -250,6 +245,7 @@ University of Texas at Austin</p>
 <p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. Let’s just say this is free on the internet. I don’t make any money from it and you shouldn’t either.</p>
 
 
+</section>
 </section>
 </section>
 

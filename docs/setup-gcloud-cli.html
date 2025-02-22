@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix A — Codespaces – ICJ Setting Up</title>
+<title>Appendix C — Google auth via cli – ICJ Setting Up</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./gcloud.html" rel="next">
-<link href="./setup-part-2.html" rel="prev">
+<link href="./setup-local-dev.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./codespaces.html">Appendices</a></li><li class="breadcrumb-item"><a href="./codespaces.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vscode-goodies.html">Appendices</a></li><li class="breadcrumb-item"><a href="./setup-gcloud-cli.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Google auth via cli</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup-part-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Node, gcloud</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Google auth</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -169,26 +168,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./codespaces.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./gcloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">gcloud cli</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./vscode-goodies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">VS Code Goodies</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./old_windows_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Old Google auth for Windows</span></span></a>
+  <a href="./setup-local-dev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Local Node development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup-gcloud-cli.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Google auth via cli</span></span></a>
   </div>
 </li>
       </ul>
@@ -203,21 +196,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#install-gulp" id="toc-install-gulp" class="nav-link active" data-scroll-target="#install-gulp"><span class="header-section-number">A.1</span> Install gulp</a></li>
-  <li><a href="#google-auth-access" id="toc-google-auth-access" class="nav-link" data-scroll-target="#google-auth-access"><span class="header-section-number">A.2</span> Google auth access</a>
+  <li><a href="#install-google-cloud-tools" id="toc-install-google-cloud-tools" class="nav-link active" data-scroll-target="#install-google-cloud-tools"><span class="header-section-number">C.0.1</span> Install Google Cloud tools</a></li>
+  <li><a href="#authenticate-our-session" id="toc-authenticate-our-session" class="nav-link" data-scroll-target="#authenticate-our-session"><span class="header-section-number">C.0.2</span> Authenticate our session</a></li>
+  <li><a href="#create-and-configure-project" id="toc-create-and-configure-project" class="nav-link" data-scroll-target="#create-and-configure-project"><span class="header-section-number">C.0.3</span> Create and configure project</a></li>
+  <li><a href="#test-these-settings" id="toc-test-these-settings" class="nav-link" data-scroll-target="#test-these-settings"><span class="header-section-number">C.1</span> Test these settings</a></li>
+  <li><a href="#google-auth-access" id="toc-google-auth-access" class="nav-link" data-scroll-target="#google-auth-access"><span class="header-section-number">C.2</span> Google auth access</a>
   <ul class="collapse">
-  <li><a href="#codespaces-secret" id="toc-codespaces-secret" class="nav-link" data-scroll-target="#codespaces-secret"><span class="header-section-number">A.2.1</span> Codespaces secret</a></li>
-  <li><a href="#might-have-to-restart" id="toc-might-have-to-restart" class="nav-link" data-scroll-target="#might-have-to-restart"><span class="header-section-number">A.2.2</span> Might have to restart</a></li>
+  <li><a href="#codespaces-secret" id="toc-codespaces-secret" class="nav-link" data-scroll-target="#codespaces-secret"><span class="header-section-number">C.2.1</span> Codespaces secret</a></li>
+  <li><a href="#might-have-to-restart" id="toc-might-have-to-restart" class="nav-link" data-scroll-target="#might-have-to-restart"><span class="header-section-number">C.2.2</span> Might have to restart</a></li>
   </ul></li>
+  <li><a href="#gcloud-cli-commands" id="toc-gcloud-cli-commands" class="nav-link" data-scroll-target="#gcloud-cli-commands"><span class="header-section-number">C.3</span> gcloud cli commands</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./codespaces.html">Appendices</a></li><li class="breadcrumb-item"><a href="./codespaces.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Codespaces</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vscode-goodies.html">Appendices</a></li><li class="breadcrumb-item"><a href="./setup-gcloud-cli.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Google auth via cli</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix A — Codespaces</h1>
+<h1 class="title">Appendix C — Google auth via cli</h1>
 </div>
 
 
@@ -234,18 +231,138 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The icj-project-rig can be used in <a href="https://github.com/features/codespaces">GitHub Codespaces</a>, a free virtual machine environment. This might be helpful if you have trouble with your own computer.</p>
-<p>This isn’t a tutorial on using Codespaces, but it does provide some necessary information if you explore the option. This assumes you already have your own copy of the project and it is pushed to Github. You work out of your own project.</p>
-<section id="install-gulp" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="install-gulp"><span class="header-section-number">A.1</span> Install gulp</h2>
-<p>Once you launch a codespace it will recognize you are in a Node environment but you still need to install some packages the first time you launch it:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This method of creating google credentials uses the gcloud command line tool. It’s a bit more esoteric that the web-based setup we do in <a href="./setup-part-2.html">Part 2: Google auth</a>, but I’m preserving it here.</p>
+</div>
+</div>
+<p>There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we’ll need specific credentials that work only for you. We will use the Google Cloud Project’s command line interface tool to do this. Otherwise known as the <a href="https://cloud.google.com/sdk/gcloud"><code>gcloud</code> CLI</a>.</p>
+<blockquote class="blockquote">
+<p>IMPORTANT: You must have and use a <strong>PERSONAL</strong> Gmail/Google account for this process. Your <strong>UTMail Google account will not work</strong>.</p>
+</blockquote>
+<section id="install-google-cloud-tools" class="level3" data-number="C.0.1">
+<h3 data-number="C.0.1" class="anchored" data-anchor-id="install-google-cloud-tools"><span class="header-section-number">C.0.1</span> Install Google Cloud tools</h3>
+<p>Again, differences between macOS and Windows.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>To make the installation of packages simple, we are going to use the MacOS package manager <a href="https://brew.sh/">brew</a> to install some Google Cloud tools. You should already have brew installed from earlier in the semester.</p>
 <ol type="1">
-<li>Once the container is up and running, do <code>npm install -g gulp</code> to install gulp. <del>2. Run <code>npm ci</code> to do a clean install on all the other packages in the project.</del></li>
+<li><p>Run the following to install the Google Cloud SDK</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> google-cloud-sdk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Test</strong>: Run <code>gcloud --version</code> and make sure a version number is returned.</p></li>
 </ol>
-<p>If you come back to an existing Codespace you should not have to run those again.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ol type="1">
+<li>Follow the instructions found in <a href="https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows">this link</a> to download and install the <code>gcloud</code> CLI tool.</li>
+<li><strong>Test</strong>: Once the installation has finished, run the command <code>gcloud --version</code> in your terminal, and you should get some output similar to this: <code>Google Cloud SDK 428.0.0</code></li>
+</ol>
+</div>
+</div>
+</div>
 </section>
-<section id="google-auth-access" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="google-auth-access"><span class="header-section-number">A.2</span> Google auth access</h2>
+<section id="authenticate-our-session" class="level3" data-number="C.0.2">
+<h3 data-number="C.0.2" class="anchored" data-anchor-id="authenticate-our-session"><span class="header-section-number">C.0.2</span> Authenticate our session</h3>
+<p>We are now going to authenticate our Google credentials on our local machine.</p>
+<blockquote class="blockquote">
+<p><strong>Make sure to select your <em>personal</em> gmail account for this part</strong>. If you are logged into your <code>utexas.edu</code> email, you won’t have permission to do what we need to do. It works best if you <strong>log out of all your accounts in all your browsers</strong> (Chrome, Safari, Edge, etc) before you start.</p>
+</blockquote>
+<ol type="1">
+<li><p>In a Terminal, use the following command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth login <span class="at">--brief</span> <span class="at">--enable-gdrive-access</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>This will open a browser and ask you to log into your Google account. Select your <em>personal</em> gmail account, you will be sent to a permissions screen that will look something like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gcloud_cli_permissions.png" class="img-fluid figure-img"></p>
+<figcaption>gcloud auth</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li>Click <code>Allow</code> and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.</li>
+<li>In the same browser that opened, go to <a href="https://console.cloud.google.com/">console.cloud.google.com</a>, where it should ask you to OK the terms of service.</li>
+</ol>
+</section>
+<section id="create-and-configure-project" class="level3" data-number="C.0.3">
+<h3 data-number="C.0.3" class="anchored" data-anchor-id="create-and-configure-project"><span class="header-section-number">C.0.3</span> Create and configure project</h3>
+<p>Again, be in your personal Google account as you will have to authenticate again.</p>
+<p>We are going to run through several <code>gcloud</code> commands to set you computer to access Google Docs and Google sheets through programing. It’s a lot of ecsoteric steps and things could go wrong at each step. I don’t outline the output you get in return, but there can be a little or a lot.</p>
+<p>Just keep an eye out for <code>ERROR</code> or <code>can't find [whatever]</code> and hollar if that happens.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You have to edit some of the commands below to be personal to you. Everywhere you see <code>icj-YOURNAME</code> you need to edit that part of the command to use your first name, all lowercase, like <code>icj-alex</code>. Then you use that same value for the later commands that use <code>icj-YOURNAME</code>. PLEASE ASK FOR HELP IF YOU NEED IT. Important: After you paste a terminal command, to edit it you have the use the left arrow key to get to the part of the command to then delete and make changes.</p>
+</div>
+</div>
+<ol type="1">
+<li><p>Do this command to create the project (<strong>but edit icj-YOURNAME as noted above</strong>):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects create icj-YOURNAME <span class="at">--set-as-default</span> <span class="at">--name</span><span class="op">=</span><span class="st">"ICJ Project"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Do this to log in and set your project as a default:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth application-default login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Next, we’ll create a Google service account:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> iam service-accounts create generic-service-account</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Next we need to bind the service account to our project with the command below. You should get a reply that reports bindings for roles of editor and owner. (<strong>There are TWO places here where you have to switch out <code>icj-YOURNAME</code>.</strong>)</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> projects add-iam-policy-binding icj-YOURNAME <span class="at">--member</span><span class="op">=</span><span class="st">'serviceAccount:generic-service-account@icj-YOURNAME.iam.gserviceaccount.com'</span> <span class="at">--role</span><span class="op">=</span><span class="st">'roles/editor'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Then we enable the Google Docs and Sheets API for your project:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> services enable docs.googleapis.com sheets.googleapis.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Now we’ll create a service account authorization key. This is similar to ssh key above, but for Google. <strong>Again, swap out <code>icj-YOURNAME</code></strong>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> iam service-accounts keys create <span class="st">"</span><span class="va">$HOME</span><span class="st">/.config/gcloud/service_account_key.json"</span> <span class="dt">\</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--iam-account</span><span class="op">=</span>generic-service-account@icj-YOURNAME.iam.gserviceaccount.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Then add the key to your <code>.bash_profile</code> with this commaned:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/service_account_key.json"'</span> <span class="op">&gt;&gt;</span>~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Sync your terminal with the updated bash profile:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>Yes, that was a lot. Hopefuly it worked. We’re about to find out.</p>
+<blockquote class="blockquote">
+<p><strong>NOTE:</strong> It is absolutely imperative that you DO NOT commit the contents of <code>service_account_key.json</code> as a file in a project. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since <code>service_account_key.json</code> is in the <code>.gitignore</code> file, you should not be able to check it in, but it is important to remember that for the sake of transparency.</p>
+</blockquote>
+</section>
+<section id="test-these-settings" class="level2" data-number="C.1">
+<h2 data-number="C.1" class="anchored" data-anchor-id="test-these-settings"><span class="header-section-number">C.1</span> Test these settings</h2>
+<ol type="1">
+<li><p>Create a folder in your icj folder called <code>yourname-test</code>.</p></li>
+<li><p>Open that folder in Visual Studio Code.</p></li>
+<li><p>Open a VS Code Terminal and run:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">degit</span> utdata/icj-google-fetch-test#main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>You should get this in return:</p>
+<p><code>&gt; cloned utdata/icj-google-fetch-test#main</code></p>
+<p>And it will download a bunch of files into your folder.</p>
+<ol type="1">
+<li>Run <code>npm install</code>. This will also download a bunch of files. It might take a couple of minutes to run.</li>
+<li>Run <code>gulp fetch</code>.</li>
+</ol>
+<p>If everything works, you should have a return like this:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gulp fetch</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[14:38:53]</span> Using gulpfile ~/Documents/icj/icj-fetch-test/gulpfile.js</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[14:38:53]</span> Starting <span class="st">'fetch'</span>...</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">[14:38:53]</span> Finished <span class="st">'fetch'</span> after 8.61 ms</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloaded</span> <span class="kw">`</span><span class="ex">library</span><span class="kw">`</span> <span class="er">(</span><span class="ex">1RgMhjtkXlbbf9uzSzy_xPRKwxcVZIZqVytgM_JoU4E4</span><span class="kw">)</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloaded</span> <span class="kw">`</span><span class="ex">bookstores</span><span class="kw">`</span> <span class="er">(</span><span class="ex">1gDwO-32cgpBDn_0niV0iu6TqQTaRDr4nmSqnT53magY</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Your path might differ for “Using gulpfile”, but what you are looking for is that two files were downloaded, one called <code>library</code> and one called <code>bookstores</code>.</p>
+<hr>
+<p>You should be done!</p>
+</section>
+<section id="google-auth-access" class="level2" data-number="C.2">
+<h2 data-number="C.2" class="anchored" data-anchor-id="google-auth-access"><span class="header-section-number">C.2</span> Google auth access</h2>
 <p>There is one <code>gulp</code> command that will not work in Codespaces unless you jump through some extra hoops.</p>
 <p><code>gulp fetch</code> is the command that downloads Google Docs and Sheets documents as JSON, as outlined in <code>project.config.json</code>. The process expects to find an authorization file on your own computer that we set up in <a href="https://github.com/utdata/icj-setting-up#readme">icj-setting-up Part 2</a>, but that file doesn’t exist on the Codespaces virtual machine.</p>
 <p>You’ll need to set up two environment variables to make it work.</p>
@@ -254,26 +371,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <p>We will be following the process shown <a href="https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret">here</a></p>
 <p>As you follow those steps you’ll need the information below.</p>
-<section id="codespaces-secret" class="level3" data-number="A.2.1">
-<h3 data-number="A.2.1" class="anchored" data-anchor-id="codespaces-secret"><span class="header-section-number">A.2.1</span> Codespaces secret</h3>
+<section id="codespaces-secret" class="level3" data-number="C.2.1">
+<h3 data-number="C.2.1" class="anchored" data-anchor-id="codespaces-secret"><span class="header-section-number">C.2.1</span> Codespaces secret</h3>
 <ul>
 <li><p>The “Name” of the secret will be <code>SERVICE_ACCOUNT_CREDENTIALS</code>.</p></li>
 <li><p>The “Content” of the secret will be the contents of the file created in ICJ setup Part 2. You should be able to “copy” that file from your terminal by running the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pbcopy</span> <span class="op">&lt;</span> <span class="va">$HOME</span>/.config/gcloud/service_account_key.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pbcopy</span> <span class="op">&lt;</span> <span class="va">$HOME</span>/.config/gcloud/service_account_key.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Return to your web browser and for the “Value” do <em>Cmd-v</em> to paste the contents of your clipboard.</p></li>
 <li><p>At the step you add repositories, you’ll need to add your repo that is a copy of the icj-project-rig.</p></li>
 </ul>
 <p>If you build other projects that need the credential, you can come here and edit the secret to add the new repo.</p>
 </section>
-<section id="might-have-to-restart" class="level3" data-number="A.2.2">
-<h3 data-number="A.2.2" class="anchored" data-anchor-id="might-have-to-restart"><span class="header-section-number">A.2.2</span> Might have to restart</h3>
+<section id="might-have-to-restart" class="level3" data-number="C.2.2">
+<h3 data-number="C.2.2" class="anchored" data-anchor-id="might-have-to-restart"><span class="header-section-number">C.2.2</span> Might have to restart</h3>
 <p>If you already had a Codespace running, you might have to stop and restart it to recognize the new secret.</p>
 <p>You <em>could</em> try this command below first, but I’m not certain it will work.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run codespace-google-auth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run codespace-google-auth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After doing that, you should be able to run <code>gulp fetch</code> to update the data JSON files.</p>
-
-
 </section>
+</section>
+<section id="gcloud-cli-commands" class="level2" data-number="C.3">
+<h2 data-number="C.3" class="anchored" data-anchor-id="gcloud-cli-commands"><span class="header-section-number">C.3</span> gcloud cli commands</h2>
+<p><strong>This is for Prof.&nbsp;McDonald’s memory and you shouldn’t have to worry about it.</strong></p>
+<p>We end up using the Google Cloud SDK to set up authorization to allow programming access to Google Docs and Sheets. Some useful commands:</p>
+<ul>
+<li><code>gcloud auth list</code> tells you which account you are in and how to set a new active account.</li>
+<li><code>gcloud auth revoke</code> logs you out of your active account. <code>--all</code> flag logs you out of all accounts, I think.</li>
+<li><code>gcloud projects list</code> shows all the projects for the account.</li>
+<li><code>gcloud config get-value project</code> shows you which project you are in.</li>
+<li><code>gcloud config set project [project-id]</code> but replace <code>[project-id]</code> with the project name.</li>
+</ul>
+<p>See Setting Up Part 2 for commands to set up a project and enable the APIs.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -696,14 +826,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./setup-part-2.html" class="pagination-link" aria-label="Part 2: Node, gcloud">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Part 2: Node, gcloud</span></span>
+      <a href="./setup-local-dev.html" class="pagination-link" aria-label="Local Node development">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Local Node development</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./gcloud.html" class="pagination-link" aria-label="gcloud cli">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">gcloud cli</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
