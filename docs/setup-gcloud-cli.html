@@ -244,7 +244,7 @@ Important
 <p>This method of creating google credentials uses the gcloud command line tool. It’s a bit more esoteric that the web-based setup we do in <a href="./setup-part-2.html">Part 2: Google auth</a>, but I’m preserving it here.</p>
 </div>
 </div>
-<p>There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we’ll need specific credentials that work only for you. We will use the Google Cloud Project’s command line interface tool to do this. Otherwise known as the <a href="https://cloud.google.com/sdk/gcloud"><code>gcloud</code> CLI</a>.</p>
+<p>There is a point in class when your computer will need access to your Google Drive account. Much like ssh keys, we’ll need specific credentials that work only for you. We will use the Google Cloud Project’s command line interface tool to do this. Otherwise known as the <a href="https://cloud.google.com/sdk/gcloud" class="external" target="_blank"><code>gcloud</code> CLI</a>.</p>
 <blockquote class="blockquote">
 <p>IMPORTANT: You must have and use a <strong>PERSONAL</strong> Gmail/Google account for this process. Your <strong>UTMail Google account will not work</strong>.</p>
 </blockquote>
@@ -255,7 +255,7 @@ Important
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>To make the installation of packages simple, we are going to use the MacOS package manager <a href="https://brew.sh/">brew</a> to install some Google Cloud tools. You should already have brew installed from earlier in the semester.</p>
+<p>To make the installation of packages simple, we are going to use the MacOS package manager <a href="https://brew.sh/" class="external" target="_blank">brew</a> to install some Google Cloud tools. You should already have brew installed from earlier in the semester.</p>
 <ol type="1">
 <li><p>Run the following to install the Google Cloud SDK</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> google-cloud-sdk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
@@ -264,7 +264,7 @@ Important
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
-<li>Follow the instructions found in <a href="https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows">this link</a> to download and install the <code>gcloud</code> CLI tool.</li>
+<li>Follow the instructions found in <a href="https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows" class="external" target="_blank">this link</a> to download and install the <code>gcloud</code> CLI tool.</li>
 <li><strong>Test</strong>: Once the installation has finished, run the command <code>gcloud --version</code> in your terminal, and you should get some output similar to this: <code>Google Cloud SDK 428.0.0</code></li>
 </ol>
 </div>
@@ -290,7 +290,7 @@ Important
 </div>
 <ol type="1">
 <li>Click <code>Allow</code> and you will have given your computer access to manage files on your Google Drive and in the Google Cloud Project.</li>
-<li>In the same browser that opened, go to <a href="https://console.cloud.google.com/">console.cloud.google.com</a>, where it should ask you to OK the terms of service.</li>
+<li>In the same browser that opened, go to <a href="https://console.cloud.google.com/" class="external" target="_blank">console.cloud.google.com</a>, where it should ask you to OK the terms of service.</li>
 </ol>
 </section>
 <section id="create-and-configure-project" class="level3" data-number="C.0.3">
@@ -364,12 +364,12 @@ Important
 <section id="google-auth-access" class="level2" data-number="C.2">
 <h2 data-number="C.2" class="anchored" data-anchor-id="google-auth-access"><span class="header-section-number">C.2</span> Google auth access</h2>
 <p>There is one <code>gulp</code> command that will not work in Codespaces unless you jump through some extra hoops.</p>
-<p><code>gulp fetch</code> is the command that downloads Google Docs and Sheets documents as JSON, as outlined in <code>project.config.json</code>. The process expects to find an authorization file on your own computer that we set up in <a href="https://github.com/utdata/icj-setting-up#readme">icj-setting-up Part 2</a>, but that file doesn’t exist on the Codespaces virtual machine.</p>
+<p><code>gulp fetch</code> is the command that downloads Google Docs and Sheets documents as JSON, as outlined in <code>project.config.json</code>. The process expects to find an authorization file on your own computer that we set up in <a href="https://github.com/utdata/icj-setting-up#readme" class="external" target="_blank">icj-setting-up Part 2</a>, but that file doesn’t exist on the Codespaces virtual machine.</p>
 <p>You’ll need to set up two environment variables to make it work.</p>
 <blockquote class="blockquote">
 <p><strong>NOTE:</strong> It is absolutely imperative that you DO NOT commit the contents of <code>service_account_key.json</code> to your branch at all. If someone else were able to see the contents of that file, they could execute any action that service account has in its abilities. Since <code>service_account_key.json</code> is in the <code>.gitignore</code> file, you should not be able to check it in, but it is important to remember that for the sake of transparency.</p>
 </blockquote>
-<p>We will be following the process shown <a href="https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret">here</a></p>
+<p>We will be following the process shown <a href="https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces#adding-a-secret" class="external" target="_blank">here</a>.</p>
 <p>As you follow those steps you’ll need the information below.</p>
 <section id="codespaces-secret" class="level3" data-number="C.2.1">
 <h3 data-number="C.2.1" class="anchored" data-anchor-id="codespaces-secret"><span class="header-section-number">C.2.1</span> Codespaces secret</h3>
@@ -511,13 +511,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
-          // default icon
-          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
