@@ -21,3 +21,5 @@ format:
     theme: cosmo
     toc: true
     code-overflow: wrap
+    link-external-icon: true
+    link-external-newwindow: true
