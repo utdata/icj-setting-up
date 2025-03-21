@@ -136,11 +136,11 @@ Our aim now is to save the contents of that downloaded file into Github, and the
 
 1. For the Name, use exactly this: `SERVICE_ACCOUNT_CREDENTIALS`
 1. For the value, you want to paste in the content of the downloaded `.json` file from the last step. So, you'll want to use Visual Studio Code on your computer to open that file from your Downloads folder and copy/paste the entire contents into the value field.
-1. Under **Select repositories**, you want to choose use the dropdown to search for and click the checkmark for your project repo that needs this secret.
+1. Under **Select repositories**, you want to choose use the dropdown to search for and click the checkmark for your project repo that needs this secret. (You'll want to choose a repo where you are using the icj-project-rig, like the static-apps lesson. If you don't have such a repo yet, you'll have to come back to this last step after you create the repo.)
 
     ![Key crendtials](images/gc-keycred.png)
 
-If you create different repos later that need this same Codespace secret, you can come back to here, edit the existing key and add the repo.
+If you create different repos later (like your final project) that need this same Codespace secret, you can come back to here, edit the existing key and add the repo.
 
 ## Test the credential
 
